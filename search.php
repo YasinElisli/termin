@@ -1,11 +1,5 @@
 <?php
-	$hostname = "localhost";
-$username = "root";
-$password = "";
-$dbname = "terminology";
-
-$connectToServer = mysqli_connect($hostname,$username, $password,$dbname);
-$selectDb = mysqli_select_db($connectToServer,$dbname);
+include 'db.php';
 
 //collect
 $output="";
@@ -18,9 +12,9 @@ if (isset($_POST['searchVal'])) {
 	$count = mysqli_num_rows($query);
 	$output = "<ul>";
 	if ($count == 0) {
-		$output.= "<li>".$searchq."</li>";		
+		$output.= "<li>".$searchq."</li>";
 	} else {
-		
+
 		while ($row = mysqli_fetch_assoc($query)){
 			$fname = $row['username'];
 			$lname = $row['firstname'];
