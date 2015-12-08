@@ -1,6 +1,4 @@
-.headNav{
-	margin-bottom: 0px !important;
-}
+/*main div where search bar is placed*/
 .main {
 	height: 450px;
 	border: 1px solid black;
@@ -8,21 +6,18 @@
 	background: #ffd280;
 }
 
-/*.form-control{
-	height: 100%;
-}*/
+
 .stylish-input-group .input-group-addon{
     background: white !important;
 }
+
+/*div with search input and search button*/
 .stylish-input-group {
-	/*padding-top:150px;*/
 	padding-top: 150px !important;
-	height: 55px;
 }
-/*.dropdownBoxes {
-	padding-top: 40px;
-}*/
-.stylish-input-group .form-control{
+
+/*form-control - class for search input*/
+.stylish-input-group .form-control {
 	border-right:0;
 	box-shadow:0 0 0;
 	border-color:#ccc;
@@ -33,9 +28,16 @@
 	color:#232323!important;
 }
 
+/*class for the search button which is inside the span tag*/
 .input-group-addon button{
     border:0;
     background:transparent;
+}
+
+/*div for the result of an instant search*/
+#output {
+	border:1px solid #CCCCCC;
+	padding: 0px;
 }
 
 #output ul {
@@ -44,27 +46,8 @@
 	margin:0px;
 }
 
-#output {
-	border:1px solid #CCCCCC;
-	padding: 0px;
-}
-
+/*each result is inside the li tag*/
 #output ul li {
 	background-color:#FFFFFF;
 	text-align: left;
 }
-/*#output ul li:hover {
-	background-color:#EBEBEB;
-}*/
-/*.search_abc {
-	float: left;
-	margin-left: 20px;
-}
-.search_cat {
-	float: left;
-	padding:0 25px;
-}
-.search_key {
-	float: left;
-	padding:0 18px;
-}*/
