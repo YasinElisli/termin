@@ -28,7 +28,8 @@ function addTermin(){
 </form>';
 }
 function bestWriter(){
-
+  
+}
 }
 function newestTermin(){
 
