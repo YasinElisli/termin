@@ -3,9 +3,13 @@
   <head>
     <meta charset="utf-8">
     <title>Termin.az</title>
-    <?php include 'link.php'; ?>
+    <?php include 'link.php';
+          include 'core.php'; ?>
   </head>
   <body>
-    <?php include 'header.php'; ?>
+    <?php include 'header.php';
+     echo addTermin();
+
+     ?>
   </body>
 </html>

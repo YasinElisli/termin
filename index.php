@@ -3,7 +3,9 @@
 <head>
 	<title></title>
   <meta charset="utf-8">
-	<?php include 'link.php'; ?>
+	<?php include 'link.php';
+				include 'core.php';
+	 ?>
 </head>
 <body>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
@@ -39,8 +41,8 @@
 	</div>
 
 	<script src="js/search.js" type="text/javascript">
-	
-	
+
+
 	</script>
 </body>
 </html>
