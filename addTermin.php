@@ -9,7 +9,11 @@
   <body>
     <?php include 'header.php';
      echo addTermin();
-
      ?>
+
+
+
+
+     <?php include 'script.php'; ?>
   </body>
 </html>

@@ -8,15 +8,12 @@
 	 ?>
 </head>
 <body>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="bootstrap/js/bootstrap.min.js"></script>
 	<div class="container-fluid">
     <div class="row">
     	<?php include 'header.php'; ?>
     </div>
-		<div class="row">
-			<div class="main">
+		<div class="row" id="search">
+			<!-- <div class="main">
 
 				<div class = "col-lg-6  col-lg-offset-3 input-group stylish-input-group">
 
@@ -30,19 +27,34 @@
 
 				<div id="output" class ="col-lg-6  col-lg-offset-3"
 				 style="display:none;">
-
 				</div>
+			</div> -->
+			<div class="col-lg-3"></div>
+			<div class="col-lg-6">
+				<div class="searchGroup">
+					<form action="termin.php" method="post">
+							<!-- <input type="text" name="search" class="form-control searchInp" placeholder="Search" autocomplete="off" onkeyup="searchq()"> -->
+						  <!-- <span class="input-group-addon" id="basic-addon2">search</span> -->
 
+
+						<div class="input-group">
+						      <input type="text"  name="search" class="form-control searchInp" placeholder="Search for..." aria-describedby="sizing-addon2" autocomplete="off" onkeyup="searchq()">
+						      <span class="input-group-btn input-group-addon" id="sizing-addon2">
+						        <button class="btn btn-default" type="button">
+						        	<span class="glyphicon glyphicon-search"></span>
+						        </button>
+						      </span>
+						    </div>
+
+
+					</form>
+				</div>
+				<div id="output" style="display:none"></div>
 			</div>
-
-
-
+			<div class="col-lg-3"></div>
 		</div>
 	</div>
 
-	<script src="js/search.js" type="text/javascript">
-
-
-	</script>
+<?php include 'script.php'; ?>
 </body>
 </html>

@@ -1,19 +1,50 @@
 /*header hissesi*/
 .headNav{
 	margin-bottom: 0 !important;
+	background: #3E4C4E;
+	border: none;
+	border-radius: 0px;
+}
+.topMenu *{
+	color: #fff !important;
+}
+.dropdown-menu a{
+	color: red !important;
+}
+.dropdown-toggle{
+	background: #0f6f2e;
+}
+.topSearchIco{
+	color: #555 !important;
 }
 /*termin elave et bolmesi*/
 .terminForm{
 	max-width: 400px;
+	margin-left: 100px;
+	margin-top: 20px;
+}
+.terminForm button[type="submit"]{
+	background: rgb(63, 144, 32);
+	color: #fff;
 }
 #terminInput{
 	width: 200px;
 }
-/*main div where search bar is placed*/
-.main {
+/*axtaris hissesi*/
+#search {
 	height: 550px;
 	border-top: none;
-	background: #ccc;
+	background: #eee;
+}
+.searchGroup{
+	margin-top: 230px;
+	height: 50px;
+}
+.searchInp{
+	height: 50px;
+}
+.searcForm{
+
 }
 .stylish-input-group .input-group-addon{
     background: white !important;
