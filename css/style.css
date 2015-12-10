@@ -291,26 +291,31 @@
 	.submitinput{
 		margin-right: 20px;
 	}
-/*right-panel*//*right-panel*//*right-panel*/
+/*termin axtaris sehifesinin kodlari*/
+.terminMain{
+	width: 1024px;
+}
+.topBanner{
+	width: 1024px;
+	height: 100px;
+	background: #ccc;
+}
+/*right-panel*/
 #statistic {
     width: 250px;
-    height: 772px;
-    padding-top: 20px;
-    position: absolute;
-    right: 0;
-    padding: 5px !important;
+    padding: 0px !important;
 }
 
 .most_search_term {
     height: 250px;
     text-align: center;
-    margin-bottom: 2px;
+    margin-bottom: 1px;
 }
 
 .newest_term {
     height: 250px;
     text-align: center;
-    margin-bottom: 5px;
+    margin-bottom: 1px;
 }
 
 .top_rated_wr {
@@ -324,6 +329,10 @@
 
 .panel-heading {
     font-weight: bold;
+		background: #3E4C4E !important;
+		color: #fafafa !important;
+		border-radius: 0px;
+		border: 0px !important;
 }
 .a-clas{
 	display: block;
@@ -331,4 +340,8 @@
 }
 .disp-block{
 	display: inline-block;
+}
+.padreset{
+	padding-right: 0px !important;
+	padding-left: 0px !important;
 }

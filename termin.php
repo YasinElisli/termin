@@ -7,8 +7,22 @@
   </head>
   <body>
     <?php include 'header.php'; ?>
+      <div class="container terminMain">
+        <div class="row">
+          <div class="col-lg-12 padreset">
+            <div class="topBanner"></div>
+          </div>
+        </div>
+        <div class="row pull-left">
+          <div class="col-lg-12 padreset">left </div>
+        </div>
+          <div class="row pull-right">
+            <div class="col-lg-12 padreset">
+        <?php include "rightPanel.php"; ?>
+      </div>
+  </div>
+</div>
 
-	<?php include "rightPanel.php"; ?>
 
     <?php include 'script.php'; ?>
   </body>
