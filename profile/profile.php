@@ -1,3 +1,4 @@
+<?php include 'core.php'; ?>
 <div class="container my_main col-xs-12 col-sm-12 col-md-12 col-lg-12">
 	<div class="my_profile_leftside col-xs-2 col-sm-2 col-md-2 col-lg-2">
 		<center><div class="pp"></div></center>
@@ -28,8 +29,7 @@
       <p>Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
     </div>
     <div id="addtermin" class="tab-pane fade">
-      <h3>Add Termin</h3>
-      <p>Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+    <?php echo addTermin(); ?>
     </div>
   </div>
 </div>
