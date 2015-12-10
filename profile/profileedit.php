@@ -1,9 +1,3 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Profile Edit</title>
-</head>
-<body>
 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 	<div class="prf-edt">
 				<div>
@@ -39,5 +33,3 @@
 				</div>
 	</div>
 </div>
-</body>
-</html>

@@ -1,9 +1,3 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Bookmarks</title>
-</head>
-<body>
 <div class="col-xs-10 col-sm-10 col-md-6 col-lg-6 my_termin">
 	<h3 class="disp_in-block">
 		<a href="">Termin</a>
@@ -26,5 +20,3 @@
 		tempor incididunt ut labore et dolore magna aliqua.</p>
 	</div>
 </div>
-</body>
-</html>
