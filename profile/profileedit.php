@@ -2,39 +2,6 @@
 <html>
 <head>
 	<title>Profile Edit</title>
-	<style type="text/css">
-	.prf-edt input{
-		width: 300px;
-		display: inline-block;
-	}
-	.prf-edt{
-	padding: 15px;
-	margin-left: 2%;
-	min-width: 500px;
-	max-width: 500px;
-}
-	.dispinblock{
-		display: inline-block;
-	}
-	.prf-edt-paragr{
-		display: inline-block;
-		width: 120px;
-	}
-	.dateinput{
-		width: 210px !important;
-	}
-	.radioinput{
-		width: 40px !important;
-	}
-	.submit{
-		text-align: center;
-		width: 100%;
-		padding-top: 30px;
-	}
-	.submitinput{
-		margin-right: 20px;
-	}
-	</style>
 </head>
 <body>
 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
