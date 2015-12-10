@@ -9,7 +9,7 @@
     <?php include 'header.php';?>
 
 
-
+	<?php include 'profile/profile.php';?>
 
 
 
