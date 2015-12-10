@@ -44,9 +44,7 @@
 						        	<span class="glyphicon glyphicon-search"></span>
 						        </button>
 						      </span>
-						    </div>
-
-
+						    </div> 
 					</form>
 				</div>
 				<div id="output" style="display:none"></div>
