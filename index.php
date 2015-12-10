@@ -16,7 +16,6 @@
     </div>
 		<div class="row" id="search">
 			<!-- <div class="main">
-
 				<div class = "col-lg-6  col-lg-offset-3 input-group stylish-input-group">
 
 					<input type="text" name="search" class="form-control" placeholder="Search" autocomplete="off" onkeyup="searchq()">
