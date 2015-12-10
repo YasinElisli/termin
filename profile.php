@@ -8,7 +8,7 @@
   <body>
     <?php include 'header.php';?>
 
-
+  <!-- PROFIL PAGE -->
 	<?php include 'profile/profile.php';?>
 
 
