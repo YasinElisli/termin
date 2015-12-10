@@ -108,14 +108,22 @@
 }
 .my_profile{
   padding-top: 10px;
+<<<<<<< HEAD
   background: #fafafa;
+=======
+  background: #f2f2f2;
+>>>>>>> 02cec32e55eb2e3332bc17b1d59b25d29c62cea0
   height: 100%;
 }
 .pp{
   width: 150px;
   height: 150px;
   border-radius: 50%;
+<<<<<<< HEAD
   background: url(../img/p.png);
+=======
+  background: url(../img/profil_pic.jpg);
+>>>>>>> 02cec32e55eb2e3332bc17b1d59b25d29c62cea0
 }
 .profil_username{
   padding-left: 1px;
@@ -127,7 +135,11 @@
   width: 40px;
   height: 40px;
   border-radius: 50%;
+<<<<<<< HEAD
   background-image: url(../img/p.png);
+=======
+  background-image: url(../img/profil_pic.jpg);
+>>>>>>> 02cec32e55eb2e3332bc17b1d59b25d29c62cea0
   background-size: cover;
 }
 .profil_username{
@@ -141,7 +153,11 @@
   width: 65px;
   height: 65px;
   border-radius: 50%;
+<<<<<<< HEAD
   background-image: url(../img/p.png);
+=======
+  background-image: url(../img/profil_pic.jpg);
+>>>>>>> 02cec32e55eb2e3332bc17b1d59b25d29c62cea0
   background-size: cover;
 }
 .profil_username{
@@ -155,7 +171,11 @@
   width: 100px;
   height: 100px;
   border-radius: 50%;
+<<<<<<< HEAD
   background-image: url(../img/p.png);
+=======
+  background-image: url(../img/profil_pic.jpg);
+>>>>>>> 02cec32e55eb2e3332bc17b1d59b25d29c62cea0
   background-size: cover;
 }
 .profil_username{
@@ -169,7 +189,11 @@
   width: 120px;
   height: 120px;
   border-radius: 50%;
+<<<<<<< HEAD
   background-image: url(../img/p.png);
+=======
+  background-image: url(../img/profil_pic.jpg);
+>>>>>>> 02cec32e55eb2e3332bc17b1d59b25d29c62cea0
   background-size: cover;
 }
 .profil_username{
@@ -183,7 +207,11 @@
   width: 150px;
   height: 150px;
   border-radius: 50%;
+<<<<<<< HEAD
   background-image: url(../img/p.png);
+=======
+  background-image: url(../img/profil_pic.jpg);
+>>>>>>> 02cec32e55eb2e3332bc17b1d59b25d29c62cea0
   background-size: cover;
 }
 }
@@ -200,11 +228,19 @@
 		color: #404040;
 	}
 	#div1 {
+<<<<<<< HEAD
     white-space: nowrap;
     width: 70%;
     overflow: hidden;
     text-overflow: clip;
     display: inline-block;
+=======
+    white-space: nowrap;
+    width: 70%;
+    overflow: hidden;
+    text-overflow: clip;
+    display: inline-block;
+>>>>>>> 02cec32e55eb2e3332bc17b1d59b25d29c62cea0
 }
 .disp_in-block{
 	display: inline-block;
@@ -240,7 +276,11 @@
 	}
 	.date_div{
 		margin-right: 15px;
+<<<<<<< HEAD
 		margin-top:
+=======
+		margin-top:
+>>>>>>> 02cec32e55eb2e3332bc17b1d59b25d29c62cea0
 	}
 	.glyphicon-trash,.edit_button{
 		color: white;
@@ -259,11 +299,19 @@
 		color: #404040;
 	}
 	#div1 {
+<<<<<<< HEAD
     white-space: nowrap;
     width: 70%;
     overflow: hidden;
     text-overflow: clip;
     display: inline-block;
+=======
+    white-space: nowrap;
+    width: 70%;
+    overflow: hidden;
+    text-overflow: clip;
+    display: inline-block;
+>>>>>>> 02cec32e55eb2e3332bc17b1d59b25d29c62cea0
 }
 /*profil edit*//*profil edit*//*profil edit*//*profil edit*/
 .prf-edt input{
@@ -297,3 +345,47 @@
 	.submitinput{
 		margin-right: 20px;
 	}
+<<<<<<< HEAD
+=======
+/*right-panel*//*right-panel*//*right-panel*/
+#statistic {
+    width: 250px;
+    height: 772px;
+    padding-top: 20px;
+    position: absolute;
+    right: 0;
+    padding: 5px !important;
+}
+
+.most_search_term {
+    height: 250px;
+    text-align: center;
+    margin-bottom: 2px;
+}
+
+.newest_term {
+    height: 250px;
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+.top_rated_wr {
+    height: 250px;
+    text-align: center;
+}
+
+.panel-body {
+    padding: 5px;
+}
+
+.panel-heading {
+    font-weight: bold;
+}
+.a-clas{
+	display: block;
+	text-align: center;
+}
+.disp-block{
+	display: inline-block;
+}
+>>>>>>> 02cec32e55eb2e3332bc17b1d59b25d29c62cea0

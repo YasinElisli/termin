@@ -8,8 +8,7 @@
   <body>
     <?php include 'header.php'; ?>
 
-
-
+	<?php include "rightPanel.php"; ?>
 
     <?php include 'script.php'; ?>
   </body>
