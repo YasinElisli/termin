@@ -33,8 +33,7 @@
 /*axtaris hissesi*/
 #search {
 	height: 550px;
-	border-top: none;
-	background: #eee;
+	background: linear-gradient(to left, #ECE9E6 , #FFFFFF);
 }
 .searchGroup{
 	margin-top: 230px;
@@ -96,7 +95,7 @@
   padding: 0px !important;
 }
 .my_profile_leftside{
-  background: #DFEDD6;
+	background: linear-gradient(to left, #ECE9E6 , #FFFFFF);
   padding: 10px;
   padding-top: 50px;
   height: 100%;
@@ -109,7 +108,7 @@
 }
 .my_profile{
   padding-top: 10px;
-  background: #f2f2f2;
+  background: #fafafa;
   height: 100%;
 }
 .pp{
