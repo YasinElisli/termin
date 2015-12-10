@@ -13,6 +13,7 @@
     	<?php include 'header.php'; ?>
     </div>
 		<div class="row" id="search">
+		test
 			<!-- <div class="main">
 
 				<div class = "col-lg-6  col-lg-offset-3 input-group stylish-input-group">
