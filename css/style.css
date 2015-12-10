@@ -116,7 +116,7 @@
   width: 150px;
   height: 150px;
   border-radius: 50%;
-  background: url(../img/profil_pic.jpg);
+  background: url(../img/p.png);
 }
 .profil_username{
   padding-left: 1px;
@@ -128,7 +128,7 @@
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background-image: url(../img/profil_pic.jpg);
+  background-image: url(../img/p.png);
   background-size: cover;
 }
 .profil_username{
@@ -142,7 +142,7 @@
   width: 65px;
   height: 65px;
   border-radius: 50%;
-  background-image: url(../img/profil_pic.jpg);
+  background-image: url(../img/p.png);
   background-size: cover;
 }
 .profil_username{
@@ -156,7 +156,7 @@
   width: 100px;
   height: 100px;
   border-radius: 50%;
-  background-image: url(../img/profil_pic.jpg);
+  background-image: url(../img/p.png);
   background-size: cover;
 }
 .profil_username{
@@ -170,7 +170,7 @@
   width: 120px;
   height: 120px;
   border-radius: 50%;
-  background-image: url(../img/profil_pic.jpg);
+  background-image: url(../img/p.png);
   background-size: cover;
 }
 .profil_username{
@@ -184,7 +184,7 @@
   width: 150px;
   height: 150px;
   border-radius: 50%;
-  background-image: url(../img/profil_pic.jpg);
+  background-image: url(../img/p.png);
   background-size: cover;
 }
 }
@@ -201,11 +201,11 @@
 		color: #404040;
 	}
 	#div1 {
-    white-space: nowrap; 
-    width: 70%; 
+    white-space: nowrap;
+    width: 70%;
     overflow: hidden;
     text-overflow: clip;
-    display: inline-block; 
+    display: inline-block;
 }
 .disp_in-block{
 	display: inline-block;
@@ -241,7 +241,7 @@
 	}
 	.date_div{
 		margin-right: 15px;
-		margin-top: 
+		margin-top:
 	}
 	.glyphicon-trash,.edit_button{
 		color: white;
@@ -260,11 +260,11 @@
 		color: #404040;
 	}
 	#div1 {
-    white-space: nowrap; 
-    width: 70%; 
+    white-space: nowrap;
+    width: 70%;
     overflow: hidden;
     text-overflow: clip;
-    display: inline-block; 
+    display: inline-block;
 }
 /*profil edit*//*profil edit*//*profil edit*//*profil edit*/
 .prf-edt input{
