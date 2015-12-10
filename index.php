@@ -8,6 +8,8 @@
 	 ?>
 </head>
 <body>
+	<?php include 'script.php'; ?>
+	<script type="text/javascript" src="js/search.js"></script>
 	<div class="container-fluid">
     <div class="row">
     	<?php include 'header.php'; ?>
@@ -53,6 +55,6 @@
 		</div>
 	</div>
 
-<?php include 'script.php'; ?>
+
 </body>
 </html>
