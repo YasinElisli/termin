@@ -6,10 +6,8 @@
     <?php include 'link.php'; ?>
   </head>
   <body>
-    <?php include 'header.php';?>
-
-  <!-- PROFIL PAGE -->
-	<?php include 'profile/profile.php';?>
+    <?php include 'header.php';
+          include 'profile/profile.php';?>
 
 
 

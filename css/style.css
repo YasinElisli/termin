@@ -90,3 +90,252 @@
 	background-color:#FFFFFF;
 	text-align: left;
 }
+/* profile page *//* profile page *//* profile page *//* profile page */
+.my_main{
+  height: 550px;
+  padding: 0px !important;
+}
+.my_profile_leftside{
+  background: #DFEDD6;
+  padding: 10px;
+  padding-top: 50px;
+  height: 100%;
+  overflow: hidden;
+}
+.mypara{
+  display: inline-block;
+  padding-top: 20px;
+  font-size: 13px;
+}
+.my_profile{
+  padding-top: 10px;
+  background: #f2f2f2;
+  height: 100%;
+}
+.pp{
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background: url(../img/profil_pic.jpg);
+}
+.profil_username{
+  padding-left: 1px;
+  padding-right: 1px;
+  font-size: 22px;
+}
+@media (min-width: 144px) {
+  .pp{
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-image: url(../img/profil_pic.jpg);
+  background-size: cover;
+}
+.profil_username{
+  padding-left: 1px;
+  padding-right: 1px;
+  font-size: 12px;
+}
+}
+@media (min-width: 480px) {
+  .pp{
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+  background-image: url(../img/profil_pic.jpg);
+  background-size: cover;
+}
+.profil_username{
+  padding-left: 1px;
+  padding-right: 1px;
+  font-size: 14px;
+}
+}
+@media (min-width: 768px) {
+  .pp{
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-image: url(../img/profil_pic.jpg);
+  background-size: cover;
+}
+.profil_username{
+  padding-left: 1px;
+  padding-right: 1px;
+  font-size: 17px;
+}
+}
+@media (min-width: 992px) {
+  .pp{
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background-image: url(../img/profil_pic.jpg);
+  background-size: cover;
+}
+.profil_username{
+  padding-left: 1px;
+  padding-right: 1px;
+  font-size: 20px;
+}
+}
+@media (min-width: 1200px) {
+  .pp{
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background-image: url(../img/profil_pic.jpg);
+  background-size: cover;
+}
+}
+/*my termin*//*my termin*//*my termin*//*my termin*//*my termin*/
+.my_termin{
+		margin-top: 10px;
+		padding: 2px;
+		padding-left: 10px;
+		border-radius: 6px;
+		box-shadow:0px 1px 7px rgba(50, 50, 50, 0.93);
+	}
+	.desct{
+		margin-bottom: 0px !important;
+		color: #404040;
+	}
+	#div1 {
+    white-space: nowrap; 
+    width: 70%; 
+    overflow: hidden;
+    text-overflow: clip;
+    display: inline-block; 
+}
+.disp_in-block{
+	display: inline-block;
+}
+.float_r{
+	float: right;
+}
+.edit_button{
+	width: 35px;
+	height: 38px;
+	border:0px;
+	margin-top:5px;
+	border-radius: 5px;
+	margin-right: 3px;
+	background: #2A60DE;
+}
+	.delete_glyphico{
+		width: 35px;
+		height: 38px;
+		border:0px;
+		border-radius: 5px;
+		margin-right: 3px;
+		margin-top: 8px;
+		background: #ff4d4d;
+	}
+	.date{
+		font-size: 14px;
+		color: gray;
+	}
+	.date_time{
+		color: lightgray;
+		font-size: 12px;
+	}
+	.date_div{
+		margin-right: 15px;
+		margin-top: 
+	}
+	.glyphicon-trash,.edit_button{
+		color: white;
+	}
+
+	/*bookmarks*//*bookmarks*//*bookmarks*//*bookmarks*/
+	.bookmark{
+		margin-top: 10px;
+		padding: 2px;
+		padding-left: 10px;
+		border-radius: 6px;
+		box-shadow:0px 1px 7px rgba(50, 50, 50, 0.93);
+	}
+	.desct{
+		margin-bottom: 0px !important;
+		color: #404040;
+	}
+	#div1 {
+    white-space: nowrap; 
+    width: 70%; 
+    overflow: hidden;
+    text-overflow: clip;
+    display: inline-block; 
+}
+/*profil edit*//*profil edit*//*profil edit*//*profil edit*/
+.prf-edt input{
+		width: 300px;
+		display: inline-block;
+	}
+	.prf-edt{
+	padding: 15px;
+	margin-left: 2%;
+	min-width: 500px;
+	max-width: 500px;
+}
+	.dispinblock{
+		display: inline-block;
+	}
+	.prf-edt-paragr{
+		display: inline-block;
+		width: 120px;
+	}
+	.dateinput{
+		width: 210px !important;
+	}
+	.radioinput{
+		width: 40px !important;
+	}
+	.submit{
+		text-align: center;
+		width: 100%;
+		padding-top: 30px;
+	}
+	.submitinput{
+		margin-right: 20px;
+	}
+/*right-panel*//*right-panel*//*right-panel*/
+#statistic {
+    width: 250px;
+    height: 772px;
+    padding-top: 20px;
+    position: absolute;
+    right: 0;
+    padding: 5px !important;
+}
+
+.most_search_term {
+    height: 250px;
+    text-align: center;
+    margin-bottom: 2px;
+}
+
+.newest_term {
+    height: 250px;
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+.top_rated_wr {
+    height: 250px;
+    text-align: center;
+}
+
+.panel-body {
+    padding: 5px;
+}
+
+.panel-heading {
+    font-weight: bold;
+}
+.a-clas{
+	display: block;
+	text-align: center;
+}
+.disp-block{
+	display: inline-block;
+}
