@@ -17,6 +17,16 @@ function addTermin(){
   <textarea type="password" class="form-control" id="termDesc" placeholder="Qısa izahı daxil edin"></textarea>
 </div>
 <div class="form-group">
+  <label for="kateqoriya">Kateqoriya</label>
+  <select type="text" class="form-control" name="source" id="kateqoriya" placeholder="Əgər varsa">
+    <option value="Digər">Digər</option>
+    <option value="IT">IT</option>
+    <option value="Tibb">Tibb</option>
+    <option value="Kimya">Kimya</option>
+    <option value="Riyaziyyat">Riyaziyyat</option>
+  </select>
+</div>
+<div class="form-group">
   <label for="source">Mənbə</label>
   <input type="text" class="form-control" name="source" id="source" placeholder="Əgər varsa">
 </div>
