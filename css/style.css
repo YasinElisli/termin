@@ -30,10 +30,14 @@
 #terminInput{
 	width: 200px;
 }
+#kateqoriya{
+	max-width: 100px;
+}
 /*axtaris hissesi*/
 #search {
 	height: 550px;
-	background: linear-gradient(to left, #ECE9E6 , #FFFFFF);
+	/*background: linear-gradient(to left, #ECE9E6 , #FFFFFF);*/
+	background: linear-gradient(to bottom, #00bf8f , #001510);
 }
 .searchGroup{
 	margin-top: 230px;
@@ -93,6 +97,7 @@
 .footMain{
 	height: 100px;
 	background: #292c2f;
+	margin-top: 10px;
 }
 .copyRight{
 	color: #fafafa;
@@ -108,7 +113,7 @@
   padding: 0px !important;
 }
 .my_profile_leftside{
-	background: linear-gradient(to left, #ECE9E6 , #FFFFFF);
+	background: linear-gradient(to bottom, #abbaab , #ffffff);
   padding: 10px;
   padding-top: 50px;
   height: 100%;

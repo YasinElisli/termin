@@ -1,5 +1,5 @@
-<footer class="container-fluid footMain">
-  <div class="row">
+<footer class="footMain">
+  <div class="container">
     <div class="col-md-4">
       <p class="copyRight">Termin © 2015</p></div>
     <div class="col-md-8">
