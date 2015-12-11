@@ -1,3 +1,6 @@
-<script src="js/search.js" type="text/javascript"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+
+
+	<script type="text/javascript" src="js/search.js"></script>
 <script src="js/bootstrap.min.js"></script>
