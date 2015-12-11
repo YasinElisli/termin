@@ -185,12 +185,61 @@
 			</div>
 			<div class="col-lg-3 popular">
 				<div class="forborder">
-					<h3> Taglar</h3>
-					<a href="#" class="tags"> Java </a>
-					<span class="item-multiplier-x">×</span>
-					<span class="item-multiplier-count">asjhdjshd</span>
-					 
-				</div>
+					<h3 class="tag-heading"> Taglar</h3>
+					<div class="row">
+						<div class="col-lg-6 no-padding">
+							<a href="#" class="tags"> Java </a>
+							<span class="item-multiplier-x">×</span>
+							<span class="item-multiplier-count">74384</span>
+							<div class="excerpt">
+								Java (not to be confused with JavaScript) is a general-purpose object-oriented programming language designed to be 
+							</div>
+						</div>
+						<div class="col-lg-6 no-padding">
+							<a href="#" class="tags"> Java </a>
+							<span class="item-multiplier-x">×</span>
+							<span class="item-multiplier-count">74384</span>
+							<div class="excerpt">
+								Java (not to be confused with JavaScript) is a general-purpose object-oriented programming language designed to be 
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-lg-6 no-padding">
+							<a href="#" class="tags"> Java </a>
+							<span class="item-multiplier-x">×</span>
+							<span class="item-multiplier-count">74384</span>
+							<div class="excerpt">
+								Java (not to be confused with JavaScript) is a general-purpose object-oriented programming language designed to be 
+							</div>
+					   </div>
+					   <div class="col-lg-6 no-padding">
+							<a href="#" class="tags"> Java </a>
+							<span class="item-multiplier-x">×</span>
+							<span class="item-multiplier-count">74384</span>
+							<div class="excerpt">
+								Java (not to be confused with JavaScript) is a general-purpose object-oriented programming language designed to be 
+							</div>
+					   </div>
+					</div>
+					<div class="row">
+						<div class="col-lg-6 no-padding">
+							<a href="#" class="tags"> Java </a>
+							<span class="item-multiplier-x">×</span>
+							<span class="item-multiplier-count">74384</span>
+							<div class="excerpt">
+								Java (not to be confused with JavaScript) is a general-purpose object-oriented programming language designed to be 
+							</div>
+					   </div>
+					   <div class="col-lg-6 no-padding">
+							<a href="#" class="tags"> Java </a>
+							<span class="item-multiplier-x">×</span>
+							<span class="item-multiplier-count">74384</span>
+							<div class="excerpt">
+								Java (not to be confused with JavaScript) is a general-purpose object-oriented programming language designed to be 
+							</div>
+					   </div>
+					</div>
 			</div>
 		</div>
 	</div>
