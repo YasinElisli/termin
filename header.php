@@ -15,7 +15,7 @@
       <div class="navbar-collapse collapse" id="bs-example-navbar-collapse-1" aria-expanded="false" style="height: 1px;">
         <ul class="nav navbar-nav navbar-right container-full topMenu">
           <li><a href="addTermin.php">Termin əlavə et <span class="sr-only">(current)</span></a></li>
-          <li><a href="#">Login</a></li>
+          <li><a href="#" data-toggle="modal" data-target="#loginModal">Login</a></li>
           <li><a href="#">Qeydiyyat</a></li>
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Yasin Elisli <span class="caret"></span></a>
