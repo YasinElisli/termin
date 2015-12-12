@@ -365,12 +365,18 @@
 	margin-right: 30px;
 }
 .forborder {
-	border-right: 1px solid #111111;
+	border-right: 1px solid #dcdcdc;
+}
+.norightborder {
+	border: none;
+}
+ li:last-child {
+	border: none;
 }
 .article {
 	background: url(../img/standard.png) no-repeat;
 	padding-left: 24px;
-	border-bottom: 1px solid #111111;
+	border-bottom: 1px solid #dcdcdc;
 }
 /**/
 .article > h4 a{

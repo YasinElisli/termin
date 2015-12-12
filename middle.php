@@ -132,7 +132,7 @@
       </div>
   </div>
   <div class="col-lg-3 popular">
-    <div class="forborder">
+    <div class="forborder norightborder">
       <h3 class="tag-heading"> Taglar</h3>
       <div class="row">
         <div class="col-lg-6 no-padding">
