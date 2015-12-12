@@ -7,13 +7,17 @@
           include 'core.php'; ?>
   </head>
   <body>
-    <?php include 'header.php';
-     echo addTermin();
-     ?>
+    <?php include 'script.php'; ?>
+
+      <?php include 'header.php';?>
+      <div class="container addTerminMain">
+      <?php echo addTermin();
+       ?>
+    </div>
 
 
 
 
-     <?php include 'script.php'; ?>
+     <?php include 'footer.php'; ?>
   </body>
 </html>
