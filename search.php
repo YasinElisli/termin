@@ -8,7 +8,7 @@ if (isset($_POST['searchVal'])) {
 
 	$searchq = preg_replace("#[^0-9a-z]#i","",$searchq);
 	// echo $searchq;
-	$query = mysqli_query($connectToServer,"SELECT * FROM user WHERE username LIKE '%$searchq%' OR firstname LIKE '%$searchq%'");
+	$query = mysqli_query($db_connection,"SELECT * FROM user WHERE username LIKE '%$searchq%' OR firstname LIKE '%$searchq%'");
 	$count = mysqli_num_rows($query);
 	$output = "<ul>";
 	if ($count == 0) {
