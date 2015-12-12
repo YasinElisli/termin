@@ -17,7 +17,7 @@
           <li><a href="addTermin.php">Termin əlavə et <span class="sr-only">(current)</span></a></li>
           <li><a href="#" data-toggle="modal" data-target="#loginModal">Login</a></li>
           <li><a href="#">Qeydiyyat</a></li>
-          <li class="dropdown">
+          <li class="dropdown disable">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Yasin Elisli <span class="caret"></span></a>
             <ul class="dropdown-menu">
               <li><a href="profile.php">Profil</a></li>
@@ -25,7 +25,7 @@
             </ul>
           </li>
         </ul>
-        <form class="navbar-form navbar-left" role="search" action="search.php">
+        <form class="navbar-form navbar-left disable" role="search" action="search.php">
           <div class="form-group">
             <input type="text" class="form-control" placeholder="Search">
           </div>

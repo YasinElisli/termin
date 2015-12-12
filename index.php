@@ -69,14 +69,14 @@
 					    	<li role="presentation"><a id="signup-taba" href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Qeydiyyat</a></li>
 					    	<li role="presentation"><a id="forgetpass-taba" href="#forget_password" aria-controls="forget_password" role="tab" data-toggle="tab">Şifrəni unutmuşam</a></li>
 					  	</ul>
-					
+
 					  	<!-- Tab panes -->
 					 	<div class="tab-content">
 					    	<div role="tabpanel" class="tab-pane active text-center" id="home">
 					    		&nbsp;&nbsp;
 					    		<span id="login_fail" class="response_error" style="display: none;">Loggin failed, please try again.</span>
 					    		<div class="clearfix"></div>
-					    		<form>
+					    		<form class="loginForm">
 									<div class="form-group">
 								    	<div class="input-group">
 								      		<div class="input-group-addon"><i class="fa fa-user"></i></div>
@@ -98,9 +98,9 @@
 											<div class="col-xs-8 col-sm-8 col-md-8">
 												<i class="fa fa-lock"></i>
 												<a href="javascript:;" class="forgetpass-tab"> Forgot password? </a>
-											
+
 											</div>
-											
+
 											<div class="col-xs-4 col-sm-4 col-md-4">
 												<i class="fa fa-check"></i>
 												<a href="javascript:;" class="signup-tab"> Sign Up </a>
@@ -156,9 +156,9 @@
 											<div class="col-xs-8 col-sm-8 col-md-8">
 												<i class="fa fa-lock"></i>
 												<a href="javascript:;" class="forgetpass-tab"> Forgot password? </a>
-											
+
 											</div>
-											
+
 											<div class="col-xs-4 col-sm-4 col-md-4">
 												<i class="fa fa-check"></i>
 												<a href="javascript:;" class="signin-tab"> Sign In </a>
@@ -179,7 +179,7 @@
 									    	</div>
 									    	<span class="help-block has-error" data-error='0' id="femail-error"></span>
 									  	</div>
-									  	
+
 							  			<button type="button" id="reset_btn" class="btn btn-block bt-login" data-loading-text="Please wait....">Forget Password</button>
 										<div class="clearfix"></div>
 										<div class="login-modal-footer">
@@ -187,9 +187,9 @@
 												<div class="col-xs-6 col-sm-6 col-md-6">
 													<i class="fa fa-lock"></i>
 													<a href="javascript:;" class="signin-tab"> Sign In </a>
-												
+
 												</div>
-												
+
 												<div class="col-xs-6 col-sm-6 col-md-6">
 													<i class="fa fa-check"></i>
 													<a href="javascript:;" class="signup-tab"> Sign Up </a>
@@ -200,15 +200,15 @@
 						    	</div>
 						  	</div>
 						</div>
-	      				
+
 	      			</div>
 	      		</div>
-	      		
+
 	    	</div>
 	   </div>
  	</div>
  	<!-- - Login Model Ends Here -->
-	
+
 
 
 

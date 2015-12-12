@@ -1,3 +1,6 @@
+.disable{
+	display: none !important;
+}
 /*header hissesi*/
 .headNav{
 	margin-bottom: 0 !important;
@@ -20,8 +23,6 @@
 /*termin elave et bolmesi*/
 .terminForm{
 	max-width: 400px;
-	margin-left: 100px;
-	margin-top: 20px;
 }
 .terminForm button[type="submit"]{
 	background: rgb(63, 144, 32);
@@ -32,11 +33,11 @@
 }
 /*axtaris hissesi*/
 #search {
-	height: 450px !important;
+	height: 490px !important;
 	background: linear-gradient(to left, #ECE9E6 , #FFFFFF);
 }
 .searchGroup{
-	margin-top: 230px;
+	margin-top: 200px !important;
 	height: 50px;
 }
 .searchInp{
@@ -381,5 +382,3 @@
 .popular h3 {
 	margin: 35px 0px 30px 0px;
 }
-
-
