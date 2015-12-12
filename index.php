@@ -53,7 +53,7 @@
 
 	</div>
 	<!-- Login Modal  -->
-	 <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
+	<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
 	<div class="modal-dialog">
     	<div class="modal-content login-modal">
       		<div class="modal-header login-modal-header">
@@ -214,6 +214,19 @@
 
 <div class="container"><?php include 'middle.php';  ?></div>
 <?php include 'footer.php'; ?>
+<script type="text/javascript">
+	$("#signupli").click(function() {
+		console.log("changing class");
+		$(".login-tab ul li:first-child").removeClass("active");
+		$(".login-tab ul li:nth-child(2)").addClass("active");
 
+	});
+	$(".close").click(function() {
+		console.log("changing class");
+		$(".login-tab ul li:first-child").addClass("active");
+		$(".login-tab ul li:nth-child(2)").removeClass("active");
+
+	});
+</script>
 </body>
 </html>

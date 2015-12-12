@@ -13,4 +13,13 @@ $(document).ready(function(){
 	 	e.preventDefault();
 	   	$('#forgetpass-taba').tab('show');
 	});
+
+	$("#signupli").click(function() {
+		console.log("changing class");
+		$(".login-tab ul li:first-child").removeClass("active");
+		$(".login-tab ul li:nth-child(2)").addClass("active");
+
+	});
 });	
+
+	console.log($("#signupli"));
