@@ -1,0 +1,35 @@
+.tags {
+	color: #3e6d8e;
+	background: #e4edf4;
+}
+
+.item-multiplier-x {
+	margin:5px;
+}
+
+.item-multiplier-count {
+	font-size: 11px;
+	color: #777;
+	margin: 0px;
+	padding: 0px;
+}
+.excerpt {
+	font-size: 12px;
+    height: 39px;
+    line-height: 14px;
+    overflow: hidden;
+    margin-bottom: 4px;
+    color: #888;
+}
+
+.no-padding {
+	padding: 2px !important;
+}
+
+.tag-heading {
+	margin-bottom: 10px !important;
+}
+
+.forborder .row {
+	padding: 10px 0px;
+} 
