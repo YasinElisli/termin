@@ -7,7 +7,7 @@
 	</div>
 	<div class="my_profile col-xs-10 col-sm-10 col-md-10 col-lg-10">
 
-	  <ul class="nav nav-tabs">
+	  <ul class="nav nav-tabs profilNav">
 	    <li class="active"><a data-toggle="tab" href="#MyTermin">My Termin</a></li>
 	    <li><a data-toggle="tab" href="#Bookmarks">Bookmarks</a></li>
 	    <li><a data-toggle="tab" href="#ProfileEdit">Profile Edit</a></li>
