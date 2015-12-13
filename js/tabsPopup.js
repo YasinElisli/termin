@@ -13,4 +13,4 @@ $(document).ready(function(){
 	 	e.preventDefault();
 	   	$('#forgetpass-taba').tab('show');
 	});
-});	
+});

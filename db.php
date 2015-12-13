@@ -4,6 +4,7 @@ $username = "root";
 $password = "";
 $dbname = "terminology";
 
-$connectToServer = mysqli_connect($hostname,$username, $password,$dbname);
-$selectDb = mysqli_select_db($connectToServer,$dbname);
+$db_connection = mysqli_connect($hostname,$username, $password,$dbname)
+   or die("Could not connect to db");
+// $selectDb = mysqli_select_db($connectToServer,$dbname);
  ?>

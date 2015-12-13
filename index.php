@@ -53,7 +53,7 @@
 
 	</div>
 	<!-- Login Modal  -->
-	 <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
+	<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
 	<div class="modal-dialog">
     	<div class="modal-content login-modal">
       		<div class="modal-header login-modal-header">
@@ -76,22 +76,22 @@
 					    		&nbsp;&nbsp;
 					    		<span id="login_fail" class="response_error" style="display: none;">Loggin failed, please try again.</span>
 					    		<div class="clearfix"></div>
-					    		<form class="loginForm">
+					    		<form class="loginForm" role="form" action="login.php" method="post">
 									<div class="form-group">
 								    	<div class="input-group">
 								      		<div class="input-group-addon"><i class="fa fa-user"></i></div>
-								      		<input type="text" class="form-control" id="login_username" placeholder="Username">
+								      		<input type="text" name="username" class="form-control" id="login_username" placeholder="Username">
 								    	</div>
 								    	<span class="help-block has-error" id="email-error"></span>
 								  	</div>
 								  	<div class="form-group">
 								    	<div class="input-group">
 								      		<div class="input-group-addon"><i class="fa fa-lock"></i></div>
-								      		<input type="password" class="form-control" id="password" placeholder="Password">
+								      		<input type="password" name="password" class="form-control" id="password" placeholder="Password">
 								    	</div>
 								    	<span class="help-block has-error" id="password-error"></span>
 								  	</div>
-						  			<button type="button" id="login_btn" class="btn btn-block bt-login" data-loading-text="Signing In....">Daxil ol</button>
+						  			<input type="submit" value="Göndər"name="submit" id="login_btn" class="btn btn-block bt-login" data-loading-text="Signing In....">
 						  			<div class="clearfix"></div>
 						  			<div class="login-modal-footer">
 						  				<div class="row">
@@ -214,6 +214,19 @@
 
 <div class="container"><?php include 'middle.php';  ?></div>
 <?php include 'footer.php'; ?>
+<script type="text/javascript">
+	$("#signupli").click(function() {
+		console.log("changing class");
+		$(".login-tab ul li:first-child").removeClass("active");
+		$(".login-tab ul li:nth-child(2)").addClass("active");
 
+	});
+	$(".close").click(function() {
+		console.log("changing class");
+		$(".login-tab ul li:first-child").addClass("active");
+		$(".login-tab ul li:nth-child(2)").removeClass("active");
+
+	});
+</script>
 </body>
 </html>
