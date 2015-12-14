@@ -1,8 +1,8 @@
 <?php
 $hostname = "localhost";
-$username = "root";
-$password = "";
-$dbname = "terminology";
+$username = "kerimovs_termin";
+$password = "termin123";
+$dbname = "kerimovs_termin";
 
 $db_connection = mysqli_connect($hostname,$username, $password,$dbname)
    or die("Could not connect to db");

@@ -11,12 +11,10 @@ if (isset($_SESSION['username'])) {
      echo '<script type="text/javascript">
             $(document).ready(function() {
          $(".reg").removeClass("disable");
-         $(".dropdown").addClass("disable");
         });
         </script>';
    }
  ?>
-
 <nav class="navbar navbar-default headNav">
     <div class="container-fluid">
       <!-- Brand and toggle get grouped for better mobile display -->
