@@ -4,7 +4,7 @@
 	<title></title>
   <meta charset="utf-8">
 	<?php include 'link.php';
-				include 'core.php';
+		  include 'core.php';
 	 ?>
 </head>
 <body>
@@ -113,43 +113,43 @@
 					    	    &nbsp;&nbsp;
 					    	    <span id="registration_fail" class="response_error" style="display: none;">Registration failed, please try again.</span>
 					    		<div class="clearfix"></div>
-					    		<form>
+					    		<form role="form" action="index.php" method="post">
 									<div class="form-group">
 								    	<div class="input-group">
 								      		<div class="input-group-addon"><i class="fa fa-user"></i></div>
-								      		<input type="text" class="form-control" id="username" placeholder="Username">
+								      		<input type="text" name="username" class="form-control" id="username" placeholder="Username">
 								    	</div>
 								    	<span class="help-block has-error" data-error='0' id="username-error"></span>
 								  	</div>
 								  	<div class="form-group">
 								    	<div class="input-group">
 								      		<div class="input-group-addon"><i class="fa fa-at"></i></div>
-								      		<input type="text" class="form-control" id="remail" placeholder="Email">
+								      		<input type="password" name="password" class="form-control" id="inputPassword" placeholder="Password">
 								    	</div>
 								    	<span class="help-block has-error" data-error='0' id="remail-error"></span>
 								  	</div>
 								  	<div class="form-group">
 								    	<div class="input-group">
 								      		<div class="input-group-addon"><i class="fa fa-at"></i></div>
-								      		<input type="text" class="form-control" id="remail" placeholder="Password">
+								      		<input type="password" name="password_retyped" class="form-control" id="retypePassword" placeholder="Type password again">
 								    	</div>
 								    	<span class="help-block has-error" data-error='0' id="remail-error"></span>
 								  	</div>
 								  	<div class="form-group">
 								    	<div class="input-group">
 								      		<div class="input-group-addon"><i class="fa fa-at"></i></div>
-								      		<input type="text" class="form-control" id="remail" placeholder="Retype password">
+								      		<input type="email" name="email" class="form-control" id="inputEmail" placeholder="Email">
 								    	</div>
 								    	<span class="help-block has-error" data-error='0' id="remail-error"></span>
 								  	</div>
 								  	<div class="form-group">
 								    	<div class="input-group">
 								      		<div class="input-group-addon"><i class="fa fa-at"></i></div>
-								      		<input type="text" class="form-control" id="remail" placeholder="Name">
+								      		<input type="text" name="name" class="form-control" id="inputNameSurname" placeholder="Name">
 								    	</div>
 								    	<span class="help-block has-error" data-error='0' id="remail-error"></span>
 								  	</div>
-						  			<button type="button" id="register_btn" class="btn btn-block bt-login" data-loading-text="Registering....">Register</button>
+						  			<input type="submit" name="submit" id="register_btn" class="btn btn-block bt-login" data-loading-text="Registering...." value="Qeydiyyatdan keç">
 									<div class="clearfix"></div>
 									<div class="login-modal-footer">
 						  				<div class="row">
@@ -209,11 +209,12 @@
  	</div>
  	<!-- - Login Model Ends Here -->
 
-
+ 	<
 
 
 <div class="container"><?php include 'middle.php';  ?></div>
 <?php include 'footer.php'; ?>
+<?php include 'validation.php'; ?>
 <script type="text/javascript">
 	$("#signupli").click(function() {
 		console.log("changing class");
