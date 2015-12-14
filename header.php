@@ -1,3 +1,21 @@
+<?php
+session_start();
+
+if (isset($_SESSION['username'])) {
+  echo '<script type="text/javascript">
+         $(document).ready(function() {
+      $(".dropdown").removeClass("disable");
+     });
+     </script>';
+   }
+   else {
+     echo '<script type="text/javascript">
+            $(document).ready(function() {
+         $(".reg").removeClass("disable");
+        });
+        </script>';
+   }
+ ?>
 <nav class="navbar navbar-default headNav">
     <div class="container-fluid">
       <!-- Brand and toggle get grouped for better mobile display -->
@@ -10,18 +28,17 @@
         </button>
         <a class="navbar-brand" href="index.php">Termin</a>
       </div>
-
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="navbar-collapse collapse" id="bs-example-navbar-collapse-1" aria-expanded="false" style="height: 1px;">
         <ul class="nav navbar-nav navbar-right container-full topMenu">
           <li><a href="addTermin.php">Termin əlavə et <span class="sr-only">(current)</span></a></li>
-          <li><a href="#" data-toggle="modal" data-target="#loginModal">Login</a></li>
-          <li><a href="#" data-toggle="modal" data-target="#loginModal" id="signupli">Qeydiyyat</a></li>
+          <li class="reg disable"><a href="#" data-toggle="modal" data-target="#loginModal">Login</a></li>
+          <li class="reg disable"><a href="#" data-toggle="modal" data-target="#loginModal" id="signupli">Qeydiyyat</a></li>
           <li class="dropdown disable">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Yasin Elisli <span class="caret"></span></a>
-            <ul class="dropdown-menu">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><?php echo $_SESSION['username']; ?><span class="caret"></span></a>
+            <ul class="dropdown-menu ">
               <li><a href="profile.php">Profil</a></li>
-              <li><a href="#">Çıxış</a></li>
+              <li><a href="logout.php">Çıxış</a></li>
             </ul>
           </li>
         </ul>
