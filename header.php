@@ -37,7 +37,7 @@ if (isset($_SESSION['username'])) {
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Yasin Elisli <span class="caret"></span></a>
             <ul class="dropdown-menu ">
               <li><a href="profile.php">Profil</a></li>
-              <li><a href="#">Çıxış</a></li>
+              <li><a href="logout.php">Çıxış</a></li>
             </ul>
           </li>
         </ul>
