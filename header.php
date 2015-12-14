@@ -1,5 +1,6 @@
 <?php
-// $_SESSION['username'] = "sadsad";
+session_start();
+
 if (isset($_SESSION['username'])) {
   echo '<script type="text/javascript">
          $(document).ready(function() {
@@ -34,7 +35,7 @@ if (isset($_SESSION['username'])) {
           <li class="reg disable"><a href="#" data-toggle="modal" data-target="#loginModal">Login</a></li>
           <li class="reg disable"><a href="#" data-toggle="modal" data-target="#loginModal" id="signupli">Qeydiyyat</a></li>
           <li class="dropdown disable">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Yasin Elisli <span class="caret"></span></a>
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><?php echo $_SESSION['username']; ?><span class="caret"></span></a>
             <ul class="dropdown-menu ">
               <li><a href="profile.php">Profil</a></li>
               <li><a href="logout.php">Çıxış</a></li>

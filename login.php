@@ -1,9 +1,10 @@
 <?php
-	
-	include "user.php";
+	include 'core.php';
+	include 'db.php';
+	// include "user.php";
 
 	if ($_POST['submit']) {
-		
+
 		$username = $_POST['username'];
 		$password = $_POST['password'];
 
@@ -15,28 +16,29 @@
 			$errors[] = "That user does not exits<br>";
 		} else if (!user_active($username)) {
 			$errors[] = "You have not activated your account<br>";
-		} else 
+		} else
 			signin($username,$password);
 
-	} 
+	}
 
 
 	function signin($user_name,$user_password) {
 		
-		include 'init.php';
+		include 'db.php';
 		echo "username: ".$user_name."<br>";
 		echo "password: ".$user_password."<br>";
 		$sql = "SELECT * FROM user WHERE username='$user_name'";
 		$query = mysqli_query($db_connection, $sql);
 
 		$numrow = mysqli_num_rows($query);
-		
+
 		if ($numrow === 1) {
-				
+
 			while ($row = mysqli_fetch_assoc($query)) {
 				$dbusername = $row['username'];
 				$dbpassword = $row['password'];
 				$dbregdate = $row['reg_date'];
+				$dbuserID = $row['id'];
 			}
 
 			echo "username ".$user_name." dbusername ". $dbusername."<br>";
@@ -48,12 +50,11 @@
 				/*session-a yuklenen butun datalar profile sehifesinde
 				 * lazim olacag ki muvafig yerlerde gosterilsin
 				 */
-				session_start();
-				echo $_SESSION['user_id']."<br>";
-				$_SESSION['user_id'] = $user_name;
+				 session_start();
+				$_SESSION['username'] = $user_name;
+				$_SESSION['user_id'] = $dbuserID;
 				$_SESSION['user_reg_date'] = $dbregdate;
-				echo $_SESSION['user_id']."<br>";
-				//redirect user to new Welcome user page 
+				//redirect user to new Welcome user page
 				header('Location: profile.php');
 			} else {
 				echo "incorrect password";
