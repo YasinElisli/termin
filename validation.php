@@ -54,5 +54,6 @@ if (isset($_POST['submit'])) {
 			if ($user_verified && empty($errors)) {			
 					register_user($user_data);	//add to database				
 			}
+			mysqli_close($db_connection);
 		}
 ?>

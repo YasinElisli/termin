@@ -129,12 +129,14 @@ function tags(){
 	function register_user($register_data) {
 		
 				global $table_users, $db_connection;
-
-				$table_columns = "(username, firstname, email, password)";
+				$today = date("Y-m-d");
+				
+				$table_columns = "(username, firstname, email, password, reg_date)";
 				$table_values = "('$register_data[username]', 
 								  '$register_data[name]', 
 								  '$register_data[email]', 
-								  '$register_data[password]')";
+								  '$register_data[password]',
+								  '$today')";
 				// echo $table_values;
 
 				$sql = "INSERT INTO $table_users ".$table_columns. " VALUES ".$table_values;
@@ -143,6 +145,7 @@ function tags(){
 				
 				if ($query) {
 					echo "inserted";
+					// header("Location: profile.php");
 				} else {
 					$errors[] =  "Error: " . $sql . mysqli_error($db_connection). "<br>";
 				}
