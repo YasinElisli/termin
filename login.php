@@ -23,7 +23,7 @@
 
 
 	function signin($user_name,$user_password) {
-		
+
 		include 'db.php';
 		echo "username: ".$user_name."<br>";
 		echo "password: ".$user_password."<br>";
@@ -50,10 +50,10 @@
 				/*session-a yuklenen butun datalar profile sehifesinde
 				 * lazim olacag ki muvafig yerlerde gosterilsin
 				 */
-				if (!isset($_SESSION)) { 
-        			session_start(); 
+				if (!isset($_SESSION)) {
+        			session_start();
         			echo "<br>Session started<br>";
-   				} 
+   				}
 				$_SESSION['username'] = $user_name;
 				$_SESSION['user_id'] = $dbuserID;
 				$_SESSION['user_reg_date'] = $dbregdate;
