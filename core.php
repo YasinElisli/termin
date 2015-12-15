@@ -130,7 +130,7 @@ function tags(){
 		
 				global $table_users, $db_connection;
 				$today = date("Y-m-d");
-				
+
 				$table_columns = "(username, firstname, email, password, reg_date)";
 				$table_values = "('$register_data[username]', 
 								  '$register_data[name]', 
@@ -144,8 +144,13 @@ function tags(){
 				$query = mysqli_query($db_connection, $sql);
 				
 				if ($query) {
-					echo "inserted";
-					// header("Location: profile.php");
+					if (!isset($_SESSION)) { 
+        				session_start(); 
+   					} 
+					$_SESSION['username'] = $register_data['username'];
+					$_SESSION['user_reg_date'] = $today;
+					//qeydiyyatdan kechmish userin yeni profiline kech
+					header('Location: profile.php');
 				} else {
 					$errors[] =  "Error: " . $sql . mysqli_error($db_connection). "<br>";
 				}

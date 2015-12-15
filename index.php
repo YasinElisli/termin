@@ -9,6 +9,7 @@
 </head>
 <body>
 	<?php include 'script.php'; ?>
+	<?php ob_start();?>
 	<div class="container-fluid">
     <div class="row">
     	<?php include 'header.php'; ?>
@@ -208,10 +209,6 @@
 	   </div>
  	</div>
  	<!-- - Login Model Ends Here -->
-
- 	<
-
-
 <div class="container"><?php include 'middle.php';  ?></div>
 <?php include 'footer.php'; ?>
 <?php include 'validation.php'; ?>
