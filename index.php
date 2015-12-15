@@ -209,6 +209,7 @@
 	    	</div>
 	   </div>
  	</div>
+ 	
  	<!-- - Login Model Ends Here -->
 <div class="container"><?php include 'middle.php';  ?></div>
 <?php include 'footer.php'; ?>
