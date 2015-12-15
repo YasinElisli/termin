@@ -9,7 +9,6 @@
 </head>
 <body>
 	<?php include 'script.php'; ?>
-	<?php ob_start();?>
 	<div class="container-fluid">
     <div class="row">
     	<?php include 'header.php'; ?>
