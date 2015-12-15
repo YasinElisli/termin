@@ -50,12 +50,15 @@
 				/*session-a yuklenen butun datalar profile sehifesinde
 				 * lazim olacag ki muvafig yerlerde gosterilsin
 				 */
-				 session_start();
+				if (!isset($_SESSION)) { 
+        			session_start(); 
+        			echo "<br>Session started<br>";
+   				} 
 				$_SESSION['username'] = $user_name;
 				$_SESSION['user_id'] = $dbuserID;
 				$_SESSION['user_reg_date'] = $dbregdate;
 				//redirect user to new Welcome user page
-				header('Location: profile.php');
+				// header('Location: profile.php');
 			} else {
 				echo "incorrect password";
 			}
