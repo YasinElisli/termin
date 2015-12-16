@@ -1,19 +1,22 @@
 <?php
 ob_start();
 session_start();
+
+// include 'script.php';
 if (isset($_SESSION['username'])) {
   echo '<script type="text/javascript">
          $(document).ready(function() {
-      $(".dropdown").removeClass("disable");
-     });
+              console.log("removing");
+          $(".dropdown").removeClass("disable");
+         });
      </script>';
    }
    else {
      echo '<script type="text/javascript">
             $(document).ready(function() {
-         $(".reg").removeClass("disable");
-        });
-        </script>';
+               $(".reg").removeClass("disable");
+            });
+          </script>';
         }
         if ($_SERVER['REQUEST_URI'] !== "/~kerimovs/termin/index.php") {
           echo '<script type="text/javascript">

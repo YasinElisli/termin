@@ -5,6 +5,7 @@
     <meta charset="utf-8">
     <title>Profile</title>
     <?php include 'link.php'; ?>
+    <?php include 'script.php'; ?>
   </head>
   <body>
     <?php include 'header.php';
@@ -12,6 +13,6 @@
 
 
 
-    <?php include 'script.php'; ?>
+     <?php //include 'script.php'; ?>
   </body>
 </html>
