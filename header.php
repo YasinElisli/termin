@@ -14,6 +14,13 @@ if (isset($_SESSION['username'])) {
          $(".reg").removeClass("disable");
         });
         </script>';
+        if ($_SERVER['REQUEST_URI'] == "/terminGit/index.php") {
+          echo '<script type="text/javascript">
+                 $(document).ready(function() {
+              $(".topSearch").addClass("disable");
+             });
+             </script>';
+        }
    }
  ?>
 <nav class="navbar navbar-default headNav">
@@ -42,7 +49,7 @@ if (isset($_SESSION['username'])) {
             </ul>
           </li>
         </ul>
-        <form class="navbar-form navbar-left disable" role="search" action="search.php">
+        <form class="navbar-form navbar-left topSearch" role="search" action="search.php">
           <div class="form-group">
             <input type="text" class="form-control" placeholder="Search">
           </div>
