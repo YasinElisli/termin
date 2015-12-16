@@ -52,8 +52,8 @@
 				 */
 				if (!isset($_SESSION)) {
         			session_start();
-        			echo "<br>Session started<br>";
    				}
+
 				$_SESSION['username'] = $user_name;
 				$_SESSION['user_id'] = $dbuserID;
 				$_SESSION['user_reg_date'] = $dbregdate;

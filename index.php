@@ -1,4 +1,4 @@
-	<?php ob_start();?>
+<?php ob_start();?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,7 +10,6 @@
 </head>
 <body>
 	<?php include 'script.php'; ?>
-
 	<div class="container-fluid">
     <div class="row">
     	<?php include 'header.php'; ?>
@@ -209,7 +208,7 @@
 	    	</div>
 	   </div>
  	</div>
- 	
+
  	<!-- - Login Model Ends Here -->
 <div class="container"><?php include 'middle.php';  ?></div>
 <?php include 'footer.php'; ?>

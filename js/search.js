@@ -48,10 +48,18 @@ var doSearch = true;
               return false;
         }
 
+        if (e.keyCode == 38) {
+            $(".input-group").blur();
+            $("#output").focus();
+            navigate('up');
+            console.log("up is pressed");
+              return false;
+        }
+
         //hide search results on ESC
         if (e.keyCode == 27) {
             $("#results").hide();
-            $("#s").blur();
+            $("input[name='search']").blur();
               return false;
         }
 
@@ -75,7 +83,7 @@ var doSearch = true;
 
 		//JBP - focus back on search field if up arrow pressed on top search result
 		if(direction == 'up' && currentSelection == 0) {
-			$("#s").focus();
+			$("input[name='search']").focus();
 		}
 		//
 
