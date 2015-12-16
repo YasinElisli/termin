@@ -14,6 +14,11 @@
       <div class="container addTerminMain">
       <?php echo addTermin();
        ?>
+       <?php 
+       if(isset($_POST['submit'])) {
+        elaveTermin();
+       }
+              ?>
     </div>
 
 
