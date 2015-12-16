@@ -9,18 +9,18 @@ function mustSign() {
 }
 //user termin elave ede bilmesi ucun form
 function addTermin(){
-  return '<form class="terminForm">
+  return '<form class="terminForm" action="addTermin.php" method="POST">
 <div class="form-group">
   <label for="terminInput">Termin</label>
-  <input type="email" class="form-control" id="terminInput" placeholder="Termin">
+  <input type="text" class="form-control" id="terminInput" placeholder="Termin" name="termin">
 </div>
 <div class="form-group">
   <label for="termDesc">Izahatı</label>
-  <textarea type="password" class="form-control" id="termDesc" placeholder="Qısa izahı daxil edin"></textarea>
+  <textarea type="password" class="form-control" id="termDesc" placeholder="Qısa izahı daxil edin" name="termin_desc"></textarea>
 </div>
 <div class="form-group">
   <label for="kateqoriya">Kateqoriya</label>
-  <select type="text" class="form-control" name="source" id="kateqoriya" placeholder="Əgər varsa">
+  <select type="text" class="form-control"  id="kateqoriya" placeholder="Əgər varsa"  name="ter_cat">
     <option value="Digər">Digər</option>
     <option value="IT">IT</option>
     <option value="Tibb">Tibb</option>
@@ -36,7 +36,7 @@ function addTermin(){
   <label for="keyWord">Açar söz (arasında vergül qoymaqla)</label>
   <input type="text" class="form-control" name="keyWord" id="keyWord" placeholder="Tags">
 </div>
-<button type="submit" class="btn btn-default">Göndər</button>
+<button type="submit" class="btn btn-default" name="submit">Göndər</button>
 </form>';
 }
 function bestWriter(){
@@ -156,5 +156,41 @@ function tags(){
 				}
 		
 	}
+	function elaveTermin(){
+		include('db.php');
+
+			$termin = $_POST['termin'];
+			$termin_desc = $_POST['termin_desc'];
+			$ter_cat = $_POST['ter_cat'];
+
+			$selecet= "SELECT * FROM termin WHERE termin='$termin'";
+			$result=mysqli_query($db_connection,$selecet);
+			 $num_rows=mysqli_num_rows ($result);
+			 echo $num_rows;
+				
+				if($num_rows>0){
+				echo " termin artiq movcuddur";
+				
+
+				} else {
+
+					$user=$_SESSION['user_id'];
+					$today = date("Y-m-d");
+						$add = "INSERT INTO termin(user_id,termin, termin_desc, ter_cat,ter_pub_date) VALUES('$user','$termin', '$termin_desc', '$ter_cat','$today')";
+						$insert = mysqli_query($db_connection,$add);
+
+						if($insert){
+
+						  // header("Location:index.php");
+							echo "ay qaaaa alindidaaaaa elcekkkkk!!!!";
+
+						}else{
+
+						  echo 'ay qaaaaa alinmadidaaaa!!!';
+
+				}
+			}
+		}
+	
 
  ?>
