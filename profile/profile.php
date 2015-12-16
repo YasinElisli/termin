@@ -1,3 +1,4 @@
+<?php ob_start();?>
 <?php
     include 'core.php';
     // include 'user.php';
