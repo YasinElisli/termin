@@ -1,8 +1,8 @@
 <?php
 $hostname = "localhost";
-$username = "kerimovs_termin";
-$password = "termin123";
-$dbname = "kerimovs_termin";
+$username = "root";
+$password = "";
+$dbname = "terminology";
 //table-in adi
 $table_users = "user";
 
