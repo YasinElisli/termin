@@ -3,12 +3,13 @@
 	if (isset($_POST)) {
 
 		$termin = $_POST['search'];
+		//Default deyerler. Yeni hetta oxsharlar da tapilmasa bunu gosterecek
 		$termin_desc = "Bu termin üçün heç bir izahat yoxdur. Bəlkə özünüz izah edəsiniz?";
 		$user_name = "Daxil edilməyib";
 		$publ_date = "Daxil edilməyib";
 		$kategoriya = "Daxil edilməyib";
 
-		// $sql = "SELECT termin, termin_desc FROM termin WHERE termin LIKE '%$searchq%' OR termin_desc LIKE '%$searchq%' "
+		//mehs bu sozu axtar.
 		$sql = "SELECT u.username, ter.termin, ter.termin_desc, ter.ter_pub_date, ter.ter_cat FROM user AS u, termin AS ter WHERE u.id = ter.user_id
 		 AND ter.termin LIKE '$termin'";
 
