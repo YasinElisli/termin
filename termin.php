@@ -6,6 +6,7 @@
     <?php include 'link.php'; ?>
   </head>
   <body>
+    <?php include 'searchWords.php'; ?>
     <?php include 'header.php'; ?>
       <div class="container terminMain">
         <div class="row">
@@ -17,24 +18,22 @@
           <div class="col-lg-12 padreset">
             <div class="container-fluid">
           <div class="month">
-            <div class="mm">25 Noy 2015</div>
- <div class="term">Termin Kateqoriyasi</div>
+            <div class="mm">Daxil edilib: <?php echo $publ_date ?></div>
+ <div class="term">Kategoriya: <?php echo $kategoriya ?></div>
   <div class="sosial">
     <a href="#"><i class="fa fa-star  fa-lg"></i></a>
     <a href="#"><i class="fa fa-twitter fa-lg"></i></a>
             <a href="#"><i class="fa fa-facebook-official fa-lg"></i></a>
             <a href="#"><i class="fa fa-google-plus fa-lg"></i></a>       
         <a href="#"><i class="fa fa-share-alt fa-lg"></i></a> </div>
-        <div class="demo">Demo Termin</div>
-        <div class="izah">Qisa izzahat:Lorem ipsum dolor sit amet,
-        Lorem ipsum dolor sit amet
-      </div>
+        <div class="demo"><?php echo $termin ?></div>
+        <div class="izah"><?php echo $termin_desc ?></div>
       <div class="button">
       <a href="#"><i class="fa fa-thumbs-o-up  fa-3x"></i></a>
       <a href="#"><i class="fa fa-thumbs-o-down  fa-3x"></i></a>
 
       </div>
-      <div class="yazar" >Elave etdi: Yazar1</div>
+      <div class="yazar" >Əlave etdi: <?php echo $user_name ?></div>
       <div class="random"><button type="button" class="btn btn-secondary">Random Termin</button></div>
 
       </div>
