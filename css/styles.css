@@ -75,8 +75,10 @@
 
 /*div for the result of an instant search*/
 #output {
+	height: 220px !important;
 	border:1px solid #CCCCCC;
 	padding: 0px;
+	overflow: scroll !important;
 }
 
 #output ul {

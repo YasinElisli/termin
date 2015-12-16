@@ -1,6 +1,6 @@
 <?php
+ob_start();
 session_start();
-
 if (isset($_SESSION['username'])) {
   echo '<script type="text/javascript">
          $(document).ready(function() {
