@@ -12,9 +12,15 @@
 
       <?php include 'header.php';?>
       <div class="container addTerminMain">
-      <?php echo addTermin();
+      <?php
+      if (isset($_SESSION['username'])) {
+        echo addTermin();
+      }
+       else {
+         echo mustSign();
+       }
        ?>
-       <?php 
+       <?php
        if(isset($_POST['submit'])) {
         elaveTermin();
        }
