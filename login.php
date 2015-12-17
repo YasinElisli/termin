@@ -2,7 +2,7 @@
 	include 'core.php';
 	include 'db.php';
 	// include "user.php";
-
+	ob_start();
 	if ($_POST['submit']) {
 
 		$username = $_POST['username'];
