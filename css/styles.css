@@ -307,95 +307,6 @@
 	height: 100px;
 	background: #ccc;
 }
-/*leftttt*/
-
-.month{
-
-	float: left;	
-	color: #7c4dff;
-	height: 404px;
-	width: 773px;
-	
-	background-color:#F8F8FF;
-	position: relative;
-    right: 15px;
-
-
-}
-.mm{
-	float: left;
-	padding-top: 15px;
-	color: blue;
-	margin-left: 10px;
-}
-.term{
-	float: left;
-	padding-left: 10px;
-	padding-top: 15px;
-}
-.sosial{
-	float: right;
-	padding: 15px;
-
-}
-i{
-	padding: 5px;
-
-}
-.fa-facebook-official:hover{
-  color: #3B5998;
-}
-.fa-twitter:hover{
-	color: #3CF;
-}
-.fa-google-plus:hover{
-	color: #DC4A38;
-}
-.fa-star:hover{
-	color: #fdd835;
-}
-.fa-share-alt:hover{
-	color: blue;
-}
-.demo{
-	margin-top: 50px;
-	color: red;
-	font-family: Arial;
-	font-size: 20px;	
-	margin-left: 10px;
-	padding-right: 100px;
-}
-.izah{
-	margin-top: 20px;
-	margin-left: 10px;
-	color: grey;
-	
-}
-.button{
-	margin-top: 200px;
-	float: left;
-	padding: 10px;
-	margin-left: 10px;
-}
-.fa-thumbs-o-up:active{
-	background-color: rgba(40,138,121,1);
-}
-.fa-thumbs-o-down:active{
-	background-color: rgba(40,138,121,1);
-}
-.yazar{
-	float:left;
-	margin-top: 220px;
-	padding: 10px;
-}
-.random{
-	float:right;
-	margin-top: 200px;
-	padding: 20px;
-}
-
-
-
 /*right-panel*/
 #statistic {
     width: 250px;
@@ -501,5 +412,3 @@ i{
 .social{
 	margin-top: 30px;
 }
-
-

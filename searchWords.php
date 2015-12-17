@@ -14,7 +14,7 @@
 		 AND ter.termin LIKE '$termin'";
 
 		$query = mysqli_query($db_connection, $sql);
-		
+		//eger 1 dene deyer varsa, demeli baza da var
 		if (mysqli_num_rows($query)) { 
 				
 					$first_row = mysqli_fetch_assoc($query);
@@ -30,7 +30,7 @@
 		 	AND ter.termin LIKE '%$termin%'";
 
 			$query = mysqli_query($db_connection, $sql);
-			//eger result bosh deyilse
+			//eger result bosh deyilse, hech olmasa 1 dene oxshar var
 			if (mysqli_num_rows($query)) {
 				//butun oxshar terminleri bu arraye yig ve sonra usere goster
 				$oxshar_terminler = array();

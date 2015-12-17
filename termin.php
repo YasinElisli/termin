@@ -1,10 +1,10 @@
-<?php ob_start();?>
 <!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8">
     <title>Termin</title>
     <?php include 'link.php'; ?>
+    <?php include 'script.php'; ?>
   </head>
   <body>
     <?php include 'searchWords.php'; ?>
@@ -25,7 +25,7 @@
     <a href="#"><i class="fa fa-star  fa-lg"></i></a>
     <a href="#"><i class="fa fa-twitter fa-lg"></i></a>
             <a href="#"><i class="fa fa-facebook-official fa-lg"></i></a>
-            <a href="#"><i class="fa fa-google-plus fa-lg"></i></a>
+            <a href="#"><i class="fa fa-google-plus fa-lg"></i></a>       
         <a href="#"><i class="fa fa-share-alt fa-lg"></i></a> </div>
         <div class="demo"><?php echo $termin ?></div>
         <div class="izah"><?php echo $termin_desc ?></div>
@@ -39,7 +39,7 @@
 
       </div>
 
-        </div>
+        </div> 
       </div>
         </div>
           <div class="row pull-right">
@@ -55,10 +55,8 @@
 
 </div>
 
+  
 
 
-
-
-    <?php include 'script.php'; ?>
   </body>
 </html>
