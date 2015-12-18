@@ -2,31 +2,35 @@ var doSearch = true;
 		function searchq() {
 			if (doSearch) {
 			var searchTxt = $("input[name='search']").val();
-			console.log("I am searching ",searchTxt);
-			$.post("search.php", {searchVal:searchTxt}, function (output) {
-					$("#output").html(output);
-					//shows output div with the result of instant search when starting to type in it
-					$("#output").show();
+			console.log("I am searching ",searchTxt.length);
+			//eger daxil edilen textin uzunlugu 2 den choxdursa yalniz onda axtarish et
+			if (searchTxt.length > 0) {
+					
+					$.post("search.php", {searchVal:searchTxt}, function (output) {
+							$("#output").html(output);
+							//shows output div with the result of instant search when starting to type in it
+							$("#output").show();
 
-					// Add data to let the hover know which index of li (order number) they have
-					for(var i = 0; i < $("#output ul li").size(); i++) {
-						$("#output ul li").eq(i).data("number", i);
-						console.log("output li", i);
-					}
+							// Add data to let the hover know which index of li (order number) they have
+							for(var i = 0; i < $("#output ul li").size(); i++) {
+								$("#output ul li").eq(i).data("number", i);
+								console.log("output li", i);
+							}
 
-					$("#output ul li").hover(
-						function () {
-							//getting the number which is the order number of li
-							currentSelection = $(this).data("number");
-							console.log("currentSelection with hover"+currentSelection);
-							setSelected(currentSelection);
-						}, function() {
-							$("#output ul li").removeClass("search_hover");
-							currentUrl = '';
-							console.log(currentUrl);
-						}
-					);
-			});
+							$("#output ul li").hover(
+								function () {
+									//getting the number which is the order number of li
+									currentSelection = $(this).data("number");
+									console.log("currentSelection with hover"+currentSelection);
+									setSelected(currentSelection);
+								}, function() {
+									$("#output ul li").removeClass("search_hover");
+									currentUrl = '';
+									console.log(currentUrl);
+								}
+							);
+					});
+			}
 		}
 	}
 

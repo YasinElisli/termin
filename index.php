@@ -38,7 +38,7 @@
 
 
 						<div class="input-group">
-						      <input type="text"  name="search" class="form-control searchInp" placeholder="Search for..." aria-describedby="sizing-addon2" autocomplete="off" onkeyup="searchq()">
+						      <input required type="text"  name="search" class="form-control searchInp" placeholder="Axtar" aria-describedby="sizing-addon2" autocomplete="off" onkeyup="searchq()">
 						      <span class="input-group-btn input-group-addon" id="sizing-addon2">
 						        <button class="btn btn-default" type="submit">
 						        	<span class="glyphicon glyphicon-search"></span>
