@@ -13,7 +13,7 @@
       <div class="container terminMain">
         <div class="row">
           <div class="col-lg-12 padreset">
-            <div class="topBanner"></div>
+            <div class="topBanner"><center>1024 X 100 </center></div>
           </div>
         </div>
         <div class="row pull-left">
@@ -26,7 +26,7 @@
     <a href="#"><i class="fa fa-star  fa-lg"></i></a>
     <a href="#"><i class="fa fa-twitter fa-lg"></i></a>
             <a href="#"><i class="fa fa-facebook-official fa-lg"></i></a>
-            <a href="#"><i class="fa fa-google-plus fa-lg"></i></a>       
+            <a href="#"><i class="fa fa-google-plus fa-lg"></i></a>
         <a href="#"><i class="fa fa-share-alt fa-lg"></i></a> </div>
         <div class="demo"><?php echo $termin ?></div>
         <div class="izah"><?php echo $termin_desc ?></div>
@@ -40,7 +40,7 @@
 
       </div>
 
-        </div> 
+        </div>
       </div>
         </div>
           <div class="row pull-right">
@@ -56,7 +56,7 @@
 
 </div>
 
-  
+
 
 
   </body>

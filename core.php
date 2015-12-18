@@ -3,9 +3,9 @@
 $errors = array();
 //Sayta daxil olanin sehifeni gore bilmesi ucun qeydiyyatdan kecmeli oldugunu xeber vern func.
 function mustSign() {
-  return "Qeydiyyatdan kecmeden termin elave ede bilmezsiniz<br />
-  <a href='login.php'>Qeydiyyat</a>dan kecin
-  ";
+  return '<div class="row addTerminMess">
+    <p>Termin elave etmek ucun<br/> qeydiyyatdan kecmeli ve ya login olmalisiniz</p>
+  </div>';
 }
 //user termin elave ede bilmesi ucun form
 function addTermin(){
@@ -104,7 +104,7 @@ function tags(){
 			else
 				 return false;
 	}
-    
+
     /**
      *bu funksiya yoxlayir bu email bazada var ya yox
      *@return sorgunun neticesini qaytarir. yeni sorgunun neticesi 0,
@@ -122,31 +122,31 @@ function tags(){
 	}
 
 	/**
-	 *@param register_data userin daxil etdiyi deyerlerden ibaret olan array 
+	 *@param register_data userin daxil etdiyi deyerlerden ibaret olan array
 	 *bu funksiya yeni useri user table-na elave etsek
 	 *@return bazaya daxil etse inserted yazir, eks halda db error-u gosterir
 	 */
 	function register_user($register_data) {
-		
+
 				global $table_users, $db_connection;
 				$today = date("Y-m-d");
 
 				$table_columns = "(username, firstname, email, password, reg_date)";
-				$table_values = "('$register_data[username]', 
-								  '$register_data[name]', 
-								  '$register_data[email]', 
+				$table_values = "('$register_data[username]',
+								  '$register_data[name]',
+								  '$register_data[email]',
 								  '$register_data[password]',
 								  '$today')";
 				// echo $table_values;
 
 				$sql = "INSERT INTO $table_users ".$table_columns. " VALUES ".$table_values;
-				
+
 				$query = mysqli_query($db_connection, $sql);
-				
+
 				if ($query) {
-					if (!isset($_SESSION)) { 
-        				session_start(); 
-   					} 
+					if (!isset($_SESSION)) {
+        				session_start();
+   					}
 					$_SESSION['username'] = $register_data['username'];
 					$_SESSION['user_reg_date'] = $today;
 					//qeydiyyatdan kechmish userin yeni profiline kech
@@ -154,7 +154,7 @@ function tags(){
 				} else {
 					$errors[] =  "Error: " . $sql . mysqli_error($db_connection). "<br>";
 				}
-		
+
 	}
 	function elaveTermin(){
 		include('db.php');
@@ -167,10 +167,10 @@ function tags(){
 			$result=mysqli_query($db_connection,$selecet);
 			 $num_rows=mysqli_num_rows ($result);
 			 echo $num_rows;
-				
+
 				if($num_rows>0){
 				echo " termin artiq movcuddur";
-				
+
 
 				} else {
 
@@ -191,6 +191,6 @@ function tags(){
 				}
 			}
 		}
-	
+
 
  ?>
