@@ -58,7 +58,7 @@
 				$_SESSION['user_id'] = $dbuserID;
 				$_SESSION['user_reg_date'] = $dbregdate;
 				//redirect user to new Welcome user page
-				header('Location: profile.php');
+				header('Location: profile.php?id=1');
 			} else {
 				echo "incorrect password";
 			}

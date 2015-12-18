@@ -126,7 +126,7 @@
   width: 150px;
   height: 150px;
   border-radius: 50%;
-  background: url(../img/p.png);
+  background: url(../img/pf.png);
 }
 .profil_username{
   padding-left: 1px;
@@ -138,7 +138,7 @@
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background-image: url(../img/p.png);
+  background-image: url(../img/pf.png);
   background-size: cover;
 }
 .profil_username{
@@ -152,7 +152,7 @@
   width: 65px;
   height: 65px;
   border-radius: 50%;
-  background-image: url(../img/p.png);
+  background-image: url(../img/pf.png);
   background-size: cover;
 }
 .profil_username{
@@ -166,7 +166,7 @@
   width: 100px;
   height: 100px;
   border-radius: 50%;
-  background-image: url(../img/p.png);
+  background-image: url(../img/pf.png);
   background-size: cover;
 }
 .profil_username{
@@ -180,7 +180,7 @@
   width: 120px;
   height: 120px;
   border-radius: 50%;
-  background-image: url(../img/p.png);
+  background-image: url(../img/pf.png);
   background-size: cover;
 }
 .profil_username{
@@ -194,7 +194,7 @@
   width: 150px;
   height: 150px;
   border-radius: 50%;
-  background-image: url(../img/p.png);
+  background-image: url(../img/pf.png);
   background-size: cover;
 }
 }
@@ -257,7 +257,11 @@
 	.glyphicon-trash,.edit_button{
 		color: white;
 	}
-
+/*my termin pagenation css*/
+.current a{
+	background: #03A9F4 !important;
+	color: #fafafa !important;
+}
 	/*bookmarks*//*bookmarks*//*bookmarks*//*bookmarks*/
 	.bookmark{
 		margin-top: 10px;

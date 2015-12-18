@@ -39,6 +39,62 @@ function addTermin(){
 <button type="submit" class="btn btn-default" name="submit">Göndər</button>
 </form>';
 }
+function myTermin(){
+  include 'db.php';
+  $start = 0;
+  $limit = 3;
+
+  if(isset($_GET['id']))
+  {
+  $id=$_GET['id'];
+  $start=($id-1)*$limit;
+  }
+
+  $userID = $_SESSION['user_id'];
+  //echo myTermin();
+  $connection = mysqli_select_db($db_connection,$dbname);
+
+//$sqlMyTer = "SELECT * FROM termin WHERE user_id = $userID";
+  $query=mysqli_query($db_connection,"SELECT * FROM termin LIMIT $start, $limit");
+
+  while ($query2 = mysqli_fetch_assoc($query)) {
+
+             echo '<div class="my_termin">
+  				   	<h3 class="disp_in-block">
+  				   		<a href="">'.$query2["termin"].'</a>
+  				   	</h3>
+  				   	<div class="disp_in-block float_r">
+  				   		<div>
+  				   			<button class="glyphicon glyphicon-pencil edit_button"></button>
+  				   		</div>
+  				   		<div>
+  				   			<button class="glyphicon glyphicon-trash delete_glyphico"></button>
+  				   		</div>
+  				   	</div>
+  				   	<div class="disp_in-block float_r date_div">
+  				   		<p class="disp_in-block date">Add date:&nbsp;</p>
+  				   		<p class="disp_in-block date_time">9-12-2015</p>
+  				   	</div>
+  				   	<strong><p class="desct">Izahat:&nbsp;</p></strong>
+  				   	<div id="div1">
+  				   		<p class="desct">'.$query2["termin_desc"].'</p>
+  				   	</div>
+  				   </div><br>';
+
+
+  }
+
+      $rows=mysqli_num_rows(mysqli_query($db_connection,"SELECT * FROM termin"));
+      $total=ceil($rows/$limit);
+      echo "<ul class='pagination page'>";
+      for($i=1;$i<=$total;$i++)
+      {
+      if($i==$id) { echo "<li class='current'><a>".$i."</a></li>"; }
+
+      else { echo "<li><a href='?id=".$i."'>".$i."</a></li>"; }
+      }
+      echo "</ul>";
+}
 function bestWriter(){
 
 }
