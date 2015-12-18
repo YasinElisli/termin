@@ -25,6 +25,8 @@ if (isset($_SESSION['username'])) {
              });
              </script>';
    }
+
+    include 'loginModal.php';
  ?>
 <nav class="navbar navbar-default headNav">
     <div class="container-fluid">
