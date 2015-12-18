@@ -49,7 +49,7 @@ if (isset($_SESSION['username'])) {
           <li class="dropdown disable">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><?php echo $_SESSION['username']; ?><span class="caret"></span></a>
             <ul class="dropdown-menu ">
-              <li><a href="profile.php">Profil</a></li>
+              <li><a href="profile.php?id=1">Profil</a></li>
               <li><a href="logout.php">Çıxış</a></li>
             </ul>
           </li>
