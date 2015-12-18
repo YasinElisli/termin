@@ -55,7 +55,7 @@ function myTermin(){
   $connection = mysqli_select_db($db_connection,$dbname);
 
 //$sqlMyTer = "SELECT * FROM termin WHERE user_id = $userID";
-  $query=mysqli_query($db_connection,"SELECT * FROM termin LIMIT $start, $limit");
+  $query=mysqli_query($db_connection,"SELECT * FROM termin WHERE user_id= $userID LIMIT $start, $limit");
 
   while ($query2 = mysqli_fetch_assoc($query)) {
 
