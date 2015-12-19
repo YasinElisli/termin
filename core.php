@@ -55,7 +55,7 @@ function myTermin(){
   $connection = mysqli_select_db($db_connection,$dbname);
 
 //$sqlMyTer = "SELECT * FROM termin WHERE user_id = $userID";
-  $query=mysqli_query($db_connection,"SELECT * FROM termin LIMIT $start, $limit");
+  $query=mysqli_query($db_connection,"SELECT * FROM termin WHERE user_id= $userID LIMIT $start, $limit");
 
   while ($query2 = mysqli_fetch_assoc($query)) {
 
@@ -84,7 +84,7 @@ function myTermin(){
 
   }
 
-      $rows=mysqli_num_rows(mysqli_query($db_connection,"SELECT * FROM termin"));
+      $rows=mysqli_num_rows(mysqli_query($db_connection,"SELECT * FROM termin WHERE user_id= $userID"));
       $total=ceil($rows/$limit);
       echo "<ul class='pagination page'>";
       for($i=1;$i<=$total;$i++)

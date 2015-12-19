@@ -203,8 +203,9 @@
 		margin-top: 10px;
 		padding: 2px;
 		padding-left: 10px;
-		border-radius: 6px;
-		box-shadow:0px 1px 7px rgba(50, 50, 50, 0.93);
+		border-radius: 4px;
+		border: 2px dotted #ccc;
+		max-width: 500px;
 	}
 	.desct{
 		margin-bottom: 0px !important;
