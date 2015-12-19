@@ -86,14 +86,17 @@ function myTermin(){
 
       $rows=mysqli_num_rows(mysqli_query($db_connection,"SELECT * FROM termin WHERE user_id= $userID"));
       $total=ceil($rows/$limit);
-      echo "<ul class='pagination page'>";
-      for($i=1;$i<=$total;$i++)
-      {
-      if($i==$id) { echo "<li class='current'><a>".$i."</a></li>"; }
+      if ($total > 1) {
+        echo "<ul class='pagination page'>";
+        for($i=1;$i<=$total;$i++)
+        {
+        if($i==$id) { echo "<li class='current'><a>".$i."</a></li>"; }
 
-      else { echo "<li><a href='?id=".$i."'>".$i."</a></li>"; }
+        else { echo "<li><a href='?id=".$i."'>".$i."</a></li>"; }
+        }
+        echo "</ul>";
       }
-      echo "</ul>";
+
 }
 function bestWriter(){
 
