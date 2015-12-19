@@ -19,20 +19,30 @@
         <div class="row pull-left">
           <div class="col-lg-12 padreset">
             <div class="container-fluid">
-          <div class="month">
+          <div class="month row">
             <div class="mm">Daxil edilib: <?php echo $publ_date ?></div>
  <div class="term">Kategoriya: <?php echo $kategoriya ?></div>
-  <div class="sosial">
-    <a href="#"><i class="fa fa-star  fa-lg"></i></a>
-    <a href="#"><i class="fa fa-twitter fa-lg"></i></a>
-            <a href="#"><i class="fa fa-facebook-official fa-lg"></i></a>
-            <a href="#"><i class="fa fa-google-plus fa-lg"></i></a>
-        <a href="#"><i class="fa fa-share-alt fa-lg"></i></a> </div>
-        <div class="demo"><?php echo $termin ?></div>
+   <ul class="sosial pull-right">
+      <li><a href="#"><i class="fa fa-star  fa-lg"></i></a></li>
+      <li><a href="#"><i class="fa fa-twitter fa-lg"></i></a></li>
+      <li><a href="#"><i class="fa fa-facebook fa-lg"></i></a></li>
+      <li><a href="#"><i class="fa fa-google-plus fa-lg"></i></a></li>
+      <li><a href="#"><i class="fa fa-share-alt fa-lg"></i></a></li>
+   </ul>
+        <div class="demo"><?php echo "<h3 class=\"terName\">".$termin."</h3>" ?></div>
         <div class="izah"><?php echo $termin_desc ?></div>
       <div class="button">
-      <a href="#"><i class="fa fa-thumbs-o-up  fa-3x"></i></a>
-      <a href="#"><i class="fa fa-thumbs-o-down  fa-3x"></i></a>
+        <ul class="likeUnlike">
+          <li>
+            <a class="btn btn-success" href="#">
+            <i class="fa fa-thumbs-o-up fa-lg"></i> 342</a>
+          </li>
+          <li>
+            <a class="btn btn-danger" href="#">
+            <i class="fa fa-thumbs-o-down fa-lg"></i> 11</a>
+          </li>
+
+        </ul>
 
       </div>
       <div class="yazar" >Əlave etdi: <?php echo $user_name ?></div>
