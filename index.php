@@ -38,7 +38,7 @@
 
 
 						<div class="input-group">
-						      <input required type="text"  name="search" class="form-control searchInp" placeholder="Axtar" aria-describedby="sizing-addon2" autocomplete="off" onkeyup="searchq()">
+						      <input required type="text"  name="search" class="form-control searchInp" placeholder="Termin Axtarın..." aria-describedby="sizing-addon2" autocomplete="off" onkeyup="searchq()" autofocus>
 						      <span class="input-group-btn input-group-addon" id="sizing-addon2">
 						        <button class="btn btn-default" type="submit">
 						        	<span class="glyphicon glyphicon-search"></span>
@@ -52,8 +52,8 @@
 			<!-- Search div end here -->
 		</div>
 
-	</div>	
-	
+	</div>
+
 <div class="container"><?php include 'middle.php';  ?></div>
 <?php include 'footer.php'; ?>
 <?php include 'validation.php'; ?>
