@@ -54,7 +54,7 @@ if (isset($_SESSION['username'])) {
             </ul>
           </li>
         </ul>
-        <form class="navbar-form navbar-left topSearch disable" role="search" action="search.php">
+        <form class="navbar-form navbar-left topSearch disable" role="search" action="termin.php">
           <div class="form-group">
             <input type="text" class="form-control" placeholder="Search">
           </div>
