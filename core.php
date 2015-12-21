@@ -4,7 +4,9 @@ $errors = array();
 //Sayta daxil olanin sehifeni gore bilmesi ucun qeydiyyatdan kecmeli oldugunu xeber vern func.
 function mustSign() {
   return '<div class="row addTerminMess">
-    <p>Termin elave etmek ucun<br/> qeydiyyatdan kecmeli ve ya login olmalisiniz</p>
+    <p>Termin elave etmek ucun<br/>
+    <a href="#" data-toggle="modal" data-target="#loginModal" id="signupli">Qeydiyyat</a>
+    dan kecmeli ve ya <a href="#" data-toggle="modal" data-target="#loginModal">Login</a> olmalisiniz</p>
   </div>';
 }
 //user termin elave ede bilmesi ucun form
@@ -221,34 +223,39 @@ function tags(){
 			$termin = $_POST['termin'];
 			$termin_desc = $_POST['termin_desc'];
 			$ter_cat = $_POST['ter_cat'];
+      if (empty($termin) || empty($termin_desc)) {
+        echo "Xanaları boş buraxmayın";
+      }
+      else {
+        $selecet= "SELECT * FROM termin WHERE termin='$termin'";
+        $result=mysqli_query($db_connection,$selecet);
+         $num_rows=mysqli_num_rows ($result);
+         //echo $num_rows;
 
-			$selecet= "SELECT * FROM termin WHERE termin='$termin'";
-			$result=mysqli_query($db_connection,$selecet);
-			 $num_rows=mysqli_num_rows ($result);
-			 echo $num_rows;
-
-				if($num_rows>0){
-				echo " termin artiq movcuddur";
+          if($num_rows>0){
+          echo " termin artiq movcuddur";
 
 
-				} else {
+          } else {
 
-					$user=$_SESSION['user_id'];
-					$today = date("Y-m-d");
-						$add = "INSERT INTO termin(user_id,termin, termin_desc, ter_cat,ter_pub_date) VALUES('$user','$termin', '$termin_desc', '$ter_cat','$today')";
-						$insert = mysqli_query($db_connection,$add);
+            $user=$_SESSION['user_id'];
+            $today = date("Y-m-d");
+              $add = "INSERT INTO termin(user_id,termin, termin_desc, ter_cat,ter_pub_date) VALUES('$user','$termin', '$termin_desc', '$ter_cat','$today')";
+              $insert = mysqli_query($db_connection,$add);
 
-						if($insert){
+              if($insert){
 
-						  // header("Location:index.php");
-							echo "ay qaaaa alindidaaaaa elcekkkkk!!!!";
+                // header("Location:index.php");
+                echo "Termin elave olundu!!!!";
 
-						}else{
+              }else{
 
-						  echo 'ay qaaaaa alinmadidaaaa!!!';
+                echo 'Termin elave olunmadi!!!';
 
-				}
-			}
+          }
+        }
+      }
+
 		}
 
 

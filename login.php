@@ -39,6 +39,11 @@
 				$dbpassword = $row['password'];
 				$dbregdate = $row['reg_date'];
 				$dbuserID = $row['id'];
+				$dbFirst = $row['firstname'];
+				$dbLast = $row['lastname'];
+				$dbMail = $row['email'];
+				$dbBirth = $row['birthdate'];
+				$dbGender = $row['gender'];
 			}
 
 			echo "username ".$user_name." dbusername ". $dbusername."<br>";
@@ -57,6 +62,12 @@
 				$_SESSION['username'] = $user_name;
 				$_SESSION['user_id'] = $dbuserID;
 				$_SESSION['user_reg_date'] = $dbregdate;
+				$_SESSION['firstname'] = $dbFirst;
+				$_SESSION['lastname'] = $dbLast;
+				$_SESSION['email'] = $dbMail;
+				$_SESSION['pass'] = $dbpassword;
+				$_SESSION['birthdate'] = $dbBirth;
+				$_SESSION['gender'] = $dbGender;
 				//redirect user to new Welcome user page
 				header('Location: profile.php?id=1');
 			} else {
