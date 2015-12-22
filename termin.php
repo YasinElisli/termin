@@ -8,8 +8,9 @@
     <?php include 'script.php'; ?>
   </head>
   <body>
-    <?php include 'searchWords.php'; ?>
-    <?php include 'header.php'; ?>
+    <?php include 'searchWords.php';
+          include 'header.php';
+          include 'core.php'; ?>
       <div class="container terminMain">
         <div class="row">
           <div class="col-lg-12 padreset">

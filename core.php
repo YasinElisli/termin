@@ -101,15 +101,23 @@ function myTermin(){
 
 }
 function bestWriter(){
-
+  include 'db.php';
+  $connection = mysqli_select_db($db_connection,$dbname);
+  return $query=mysqli_query($db_connection,"SELECT * FROM user WHERE status = 'yazar' GROUP BY num_post DESC LIMIT 5");
 }
+
+
 
 function newestTermin(){
 
 }
-function mostSearch(){
-
+function mostRead(){
+  include 'db.php';
+  $connection = mysqli_select_db($db_connection,$dbname);
+  return $query=mysqli_query($db_connection,"SELECT * FROM termin GROUP BY ter_num_view DESC LIMIT 5");
 }
+
+
 function tags(){
 
 }

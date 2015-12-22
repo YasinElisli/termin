@@ -14,7 +14,7 @@
     <div class="row">
     	<?php include 'header.php'; ?>
     </div>
-		<div class="row" id="search">
+		<div class="row parallax-window" data-parallax="scroll" data-image-src="img/sb8.png" id="search" >
 			<!-- <div class="main">
 				<div class = "col-lg-6  col-lg-offset-3 input-group stylish-input-group">
 
