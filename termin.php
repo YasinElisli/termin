@@ -34,18 +34,19 @@
       <div class="button">
         <ul class="likeUnlike">
           <li>
-            <a class="btn btn-success" href="#">
-            <i class="fa fa-thumbs-o-up fa-lg"></i> 342</a>
+            <button class="btn btn-success" id="presslike" onclick="userLiked(<?php echo $termin_id ?>,<?php echo $termin_like ?>,<?php echo $like ?>)">
+                <i class="fa fa-thumbs-o-up fa-lg"></i><span id="num_like"><?php echo $termin_like ?></span>
+            </button>
           </li>
           <li>
-            <a class="btn btn-danger" href="#">
+            <a class="btn btn-danger" href="#" >
             <i class="fa fa-thumbs-o-down fa-lg"></i> 11</a>
           </li>
 
         </ul>
 
       </div>
-      <div class="yazar" >Əlave etdi: <?php echo $user_name ?></div>
+      <div class="yazar" >Əlavə etdi: <?php echo $user_name ?></div>
       <div class="random"><button type="button" class="btn btn-secondary">Random Termin</button></div>
 
       </div>
@@ -55,7 +56,10 @@
         </div>
           <div class="row pull-right">
             <div class="col-lg-12 padreset">
-        <?php include "rightPanel.php"; ?>
+        <?php 
+          // <div id="statistic" class="container-fluid">
+          include "rightPanel.php"; 
+        ?>
       </div>
   </div>
 </div>
@@ -66,7 +70,37 @@
 
 </div>
 
+<script type="text/javascript">
+// var like="a";
+ function userLiked (terminID, terminLike, act) {
+  
+      
+      console.log("Pressed like ", act);
+      
+      $.ajax({
+        url: 'like.php',
+        type:'POST',
+        data: 'term_id='+terminID+'&act='+act,
+        success: function(data) {
+            console.log(data);
+            data = $.trim(data);
+            console.log("entered function", data+"azik");
+            console.log("azik");
+            if (data == 'Success') {
+            
+                $('#num_like').html(++terminLike);
+                console.log(data);
+            }
+            else 
+              alert(data);
+        }
+      });
+}
 
+function handle(data) {
+      
+}
+</script>
 
 
   </body>
