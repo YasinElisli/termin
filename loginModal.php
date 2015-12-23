@@ -33,23 +33,23 @@
 								  	<div class="form-group">
 								    	<div class="input-group">
 								      		<div class="input-group-addon"><i class="fa fa-lock"></i></div>
-								      		<input type="password" name="password" class="form-control" id="password" placeholder="Password">
+								      		<input type="password" name="password" class="form-control" id="password" placeholder="Parol">
 								    	</div>
 								    	<span class="help-block has-error" id="password-error"></span>
 								  	</div>
-						  			<input type="submit" value="Göndər"name="submit" id="login_btn" class="btn btn-block bt-login" data-loading-text="Signing In....">
+						  			<input type="submit" value="Giriş"name="submit" id="login_btn" class="btn btn-block bt-login" data-loading-text="Signing In....">
 						  			<div class="clearfix"></div>
 						  			<div class="login-modal-footer">
 						  				<div class="row">
 											<div class="col-xs-8 col-sm-8 col-md-8">
 												<i class="fa fa-lock"></i>
-												<a href="javascript:;" class="forgetpass-tab"> Forgot password? </a>
+												<a href="javascript:;" class="forgetpass-tab"> Şifrəmi unutmuşam </a>
 
 											</div>
 
 											<div class="col-xs-4 col-sm-4 col-md-4">
 												<i class="fa fa-check"></i>
-												<a href="javascript:;" class="signup-tab"> Sign Up </a>
+												<a href="javascript:;" class="signup-tab"> Qeydiyyat </a>
 											</div>
 										</div>
 						  			</div>
@@ -69,15 +69,15 @@
 								  	</div>
 								  	<div class="form-group">
 								    	<div class="input-group">
-								      		<div class="input-group-addon"><i class="fa fa-at"></i></div>
-								      		<input type="password" name="password" class="form-control" id="inputPassword" placeholder="Password">
+								      		<div class="input-group-addon"><i class="fa fa-key"></i></div>
+								      		<input type="password" name="password" class="form-control" id="inputPassword" placeholder="Parol">
 								    	</div>
 								    	<span class="help-block has-error" data-error='0' id="remail-error"></span>
 								  	</div>
 								  	<div class="form-group">
 								    	<div class="input-group">
-								      		<div class="input-group-addon"><i class="fa fa-at"></i></div>
-								      		<input type="password" name="password_retyped" class="form-control" id="retypePassword" placeholder="Type password again">
+								      		<div class="input-group-addon"><i class="fa fa-key"></i></div>
+								      		<input type="password" name="password_retyped" class="form-control" id="retypePassword" placeholder="Parolun təkrarı">
 								    	</div>
 								    	<span class="help-block has-error" data-error='0' id="remail-error"></span>
 								  	</div>
@@ -90,24 +90,38 @@
 								  	</div>
 								  	<div class="form-group">
 								    	<div class="input-group">
-								      		<div class="input-group-addon"><i class="fa fa-at"></i></div>
-								      		<input type="text" name="name" class="form-control" id="inputNameSurname" placeholder="Name">
+								      		<div class="input-group-addon"><i class="fa fa-user"></i></div>
+								      		<input type="text" name="name" class="form-control" id="inputNameSurname" placeholder="Adınız">
 								    	</div>
 								    	<span class="help-block has-error" data-error='0' id="remail-error"></span>
 								  	</div>
+										<div class="form-group">
+											<div class="input-group">
+													<div class="input-group-addon"><i class="fa fa-user"></i></div>
+													<input type="text" name="surname" class="form-control" id="inputNameSurname" placeholder="Soyadınız">
+											</div>
+											<span class="help-block has-error" data-error='0' id="remail-error"></span>
+										</div>
+										<div class="form-group">
+											<div class="input-group">
+													<div class="input-group-addon"><i class="fa fa-birthday-cake"></i></div>
+													<input type="date" name="name" class="form-control" id="inputNameSurname" placeholder="Doğum tarixi">
+											</div>
+											<span class="help-block has-error" data-error='0' id="remail-error"></span>
+										</div>
 						  			<input type="submit" name="submit" id="register_btn" class="btn btn-block bt-login" data-loading-text="Registering...." value="Qeydiyyatdan keç">
 									<div class="clearfix"></div>
 									<div class="login-modal-footer">
 						  				<div class="row">
 											<div class="col-xs-8 col-sm-8 col-md-8">
 												<i class="fa fa-lock"></i>
-												<a href="javascript:;" class="forgetpass-tab"> Forgot password? </a>
+												<a href="javascript:;" class="forgetpass-tab"> Şifrəmi unutmuşam </a>
 
 											</div>
 
 											<div class="col-xs-4 col-sm-4 col-md-4">
 												<i class="fa fa-check"></i>
-												<a href="javascript:;" class="signin-tab"> Sign In </a>
+												<a href="javascript:;" class="signin-tab"> Giriş </a>
 											</div>
 										</div>
 						  			</div>
@@ -126,19 +140,19 @@
 									    	<span class="help-block has-error" data-error='0' id="femail-error"></span>
 									  	</div>
 
-							  			<button type="button" id="reset_btn" class="btn btn-block bt-login" data-loading-text="Please wait....">Forget Password</button>
+							  			<button type="button" id="reset_btn" class="btn btn-block bt-login" data-loading-text="Please wait....">Parolu göndər</button>
 										<div class="clearfix"></div>
 										<div class="login-modal-footer">
 							  				<div class="row">
 												<div class="col-xs-6 col-sm-6 col-md-6">
 													<i class="fa fa-lock"></i>
-													<a href="javascript:;" class="signin-tab"> Sign In </a>
+													<a href="javascript:;" class="signin-tab"> Giriş </a>
 
 												</div>
 
 												<div class="col-xs-6 col-sm-6 col-md-6">
 													<i class="fa fa-check"></i>
-													<a href="javascript:;" class="signup-tab"> Sign Up </a>
+													<a href="javascript:;" class="signup-tab"> Qeydiyyat </a>
 												</div>
 											</div>
 							  			</div>

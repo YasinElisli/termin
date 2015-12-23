@@ -22,43 +22,17 @@
     <div class="forborder">
       <h3><center>Ən sonuncu</center></h3>
       <ul class="termins">
-          <li class="article">
+        <?php $queryNewestTerm =  newestTermin();
+        while ($yeniTerm = mysqli_fetch_assoc($queryNewestTerm)) {
+          echo '<li class="article">
             <h4>
-              <a href="#">Kompyuter şəbəkəsi</a>
+              <a href="#">'.$yeniTerm['termin'].'</a>
             </h4>
             <span class="date">
-              03 Dek 2015
-              <a href="#"> IT </a>
+              '.$yeniTerm['ter_pub_date'].'
+              <a href="#">'.$yeniTerm['ter_cat'].' </a>
             </span>
-          </li>
-          <li class="article">
-            <h4>
-              <a href="#">Kompyuter elmləri</a>
-            </h4>
-            <span class="date">
-              03 Dek 2015
-              <a href="#"> IT </a>
-            </span>
-          </li>
-          <li class="article">
-            <h4>
-              <a href="#">Nanotexnologiya</a>
-            </h4>
-            <span class="date">
-              03 Dek 2015
-              <a href="#"> IT </a>
-            </span>
-          </li>
-          <li class="article">
-            <h4>
-              <a href="#">İnformasiya sitemləri</a>
-            </h4>
-            <span class="date">
-              03 Dek 2015
-              <a href="#"> IT </a>
-            </span>
-          </li>
-
+          </li>';}?>
       </ul>
     </div>
   </div>
@@ -86,55 +60,55 @@
       <h3 class="tag-heading"><center>Taglar</center></h3>
       <div class="row">
         <div class="col-lg-6 no-padding">
-          <a href="#" class="tags"> Java </a>
+          <a href="#" class="tags"> IT </a>
           <span class="item-multiplier-x">×</span>
-          <span class="item-multiplier-count">74384</span>
+          <span class="item-multiplier-count">9213</span>
           <div class="excerpt">
-            Java (not to be confused with JavaScript) is a general-purpose object-oriented programming language designed to be
+            İnformasiya ehtiyatlarından istifadə olunması proseslərinin ağırlığını azaltmaq, onların etibarlığını və operativliyini çoxaltmaq məqsədilə informasiyanın toplanması, emalı, saxlanması, ötürülməsini təmin edən və texnoloji zəncirdə birləşdirən metodlar, istehsal prosesləri və texniki-proqram vasitələri toplusu.
           </div>
         </div>
         <div class="col-lg-6 no-padding">
-          <a href="#" class="tags"> Java </a>
+          <a href="#" class="tags"> Diger </a>
           <span class="item-multiplier-x">×</span>
-          <span class="item-multiplier-count">74384</span>
+          <span class="item-multiplier-count">5553</span>
           <div class="excerpt">
-            Java (not to be confused with JavaScript) is a general-purpose object-oriented programming language designed to be
+            Diger terminler
           </div>
         </div>
       </div>
       <div class="row">
         <div class="col-lg-6 no-padding">
-          <a href="#" class="tags"> Java </a>
+          <a href="#" class="tags"> Sağlamlıq </a>
           <span class="item-multiplier-x">×</span>
-          <span class="item-multiplier-count">74384</span>
+          <span class="item-multiplier-count">2343</span>
           <div class="excerpt">
-            Java (not to be confused with JavaScript) is a general-purpose object-oriented programming language designed to be
+            insan sağlamlığını qorumaq və möhkəmləndirmək üçün müxtəlif xəstəlikləri və patoloji vəziyyətləri öyrənən, insan orqanizmində normal və patoloji proseslərin tədqiqatı üzrə elmi və praktik fəaliyyət sahəsidir.
           </div>
          </div>
          <div class="col-lg-6 no-padding">
-          <a href="#" class="tags"> Java </a>
+          <a href="#" class="tags"> Tarix </a>
           <span class="item-multiplier-x">×</span>
-          <span class="item-multiplier-count">74384</span>
+          <span class="item-multiplier-count">1112</span>
           <div class="excerpt">
-            Java (not to be confused with JavaScript) is a general-purpose object-oriented programming language designed to be
+          mənbələr üzrə insanın meydana gəlməsi və inkişafını, müxtəlif xalqların ən qədim zamanlardan bizim dövrümüzədək necə yaşamaları, onların həyatlarında hansı hadisələrin baş verməsi, insan cəmiyyətlərinin həyatı necə və niyə dəyişib indi mövcud olduğu hala düşməsini öyrənən elmdir.
           </div>
          </div>
       </div>
       <div class="row">
         <div class="col-lg-6 no-padding">
-          <a href="#" class="tags"> Java </a>
+          <a href="#" class="tags"> Hardware </a>
           <span class="item-multiplier-x">×</span>
-          <span class="item-multiplier-count">74384</span>
+          <span class="item-multiplier-count">244</span>
           <div class="excerpt">
-            Java (not to be confused with JavaScript) is a general-purpose object-oriented programming language designed to be
+            Hardware Təchizat - Kompüterin elektron / elektromexanik və mexaniki aksamına verilən ümumi addır.
           </div>
          </div>
          <div class="col-lg-6 no-padding">
-          <a href="#" class="tags"> Java </a>
+          <a href="#" class="tags"> Softwere </a>
           <span class="item-multiplier-x">×</span>
-          <span class="item-multiplier-count">74384</span>
+          <span class="item-multiplier-count">114</span>
           <div class="excerpt">
-            Java (not to be confused with JavaScript) is a general-purpose object-oriented programming language designed to be
+            Komputerin proqram təminatı
           </div>
          </div>
       </div>

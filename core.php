@@ -82,8 +82,6 @@ function myTermin(){
   				   		<p class="desct">'.$query2["termin_desc"].'</p>
   				   	</div>
   				   </div><br>';
-
-
   }
 
       $rows=mysqli_num_rows(mysqli_query($db_connection,"SELECT * FROM termin WHERE user_id= $userID"));
@@ -109,7 +107,9 @@ function bestWriter(){
 
 
 function newestTermin(){
-
+  include 'db.php';
+  $connection = mysqli_select_db($db_connection,$dbname);
+  return $query=mysqli_query($db_connection,"SELECT * FROM termin GROUP BY ter_pub_date DESC LIMIT 5");
 }
 function mostRead(){
   include 'db.php';

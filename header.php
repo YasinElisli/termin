@@ -38,7 +38,7 @@ if (isset($_SESSION['username'])) {
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="index.php">Termin</a>
+        <a class="navbar-brand logo" href="index.php">Termin</a>
       </div>
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="navbar-collapse collapse" id="bs-example-navbar-collapse-1" aria-expanded="false" style="height: 1px;">

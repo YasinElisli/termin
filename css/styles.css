@@ -7,9 +7,12 @@ ul li{
 /*header hissesi*/
 .headNav{
 	margin-bottom: 0 !important;
-	background: #3E4C4E;
+	background: linear-gradient(to left, #009688 , #26A69A);
 	border: none;
 	border-radius: 0px;
+}
+.logo{
+	color: #fff !important;
 }
 .topMenu *{
 	color: #fff !important;
@@ -427,7 +430,7 @@ ul li{
 /*Footer*/
 .footMain{
 	height: 100px;
-	background: #292c2f;
+	background: linear-gradient(to bottom, #26A69A , #267871);
 	margin-top: 10px;
 }
 .copyRight{
