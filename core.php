@@ -266,6 +266,58 @@ function tags(){
 
 		}
 
+
+    function insert_like($user_id, $term_id) {
+        include 'db.php';
+
+        $table_name = "termin_like";
+        $table_columns = "(termin_id, user_id)";
+        $table_values = "('$term_id', '$user_id')";
+
+        $sql = "INSERT INTO $table_name $table_columns VALUES $table_values";
+
+        $query = mysqli_query($db_connection, $sql);
+
+        if ($query) 
+          return true;
+        else 
+          return false;
+    }
+
+    function previously_liked($user_id, $term_id) {
+        include 'db.php';
+
+        $table_name = "termin_like";
+
+        $sql = "SELECT * FROM $table_name WHERE user_id=$user_id AND termin_id=$term_id";
+        $query = mysqli_query($db_connection, $sql);
+        
+        mysqli_close($db_connection);
+        if (mysqli_num_rows($query)) 
+          return true;
+        else 
+          return false;
+    }
+
+    function update_num_of_likes($term_id) {
+        include 'db.php';
+
+        $table_name = "termin";
+        $table_column = "ter_num_like";
+        
+        $sql = "UPDATE $table_name SET $table_column=$table_column+1 WHERE termin_id=$term_id";
+
+        $query = mysqli_query($db_connection, $sql);
+        
+        mysqli_close($db_connection);
+        // if ($query) 
+        //   return true;
+        // else 
+        //   return false;
+    }
+
+
+
     function signin($user_name,$user_password) {
 
   		include 'db.php';
