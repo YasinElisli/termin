@@ -7,9 +7,12 @@ ul li{
 /*header hissesi*/
 .headNav{
 	margin-bottom: 0 !important;
-	background: #3E4C4E;
+	background: linear-gradient(to left, #009688 , #26A69A);
 	border: none;
 	border-radius: 0px;
+}
+.logo{
+	color: #fff !important;
 }
 .topMenu *{
 	color: #fff !important;
@@ -41,7 +44,10 @@ ul li{
 /*axtaris hissesi*/
 #search {
 	height: 490px !important;
-	background: linear-gradient(to bottom, #00bf8f , #001510) !important;
+	/*background: linear-gradient(to bottom, #00bf8f , #001510) !important;*/
+
+	background-size: cover;
+	margin-bottom: 5px;
 }
 .searchGroup{
 	margin-top: 200px !important;
@@ -337,7 +343,10 @@ ul li{
     text-align: center;
     margin-bottom: 1px;
 }
-
+.mostReadItem{
+	padding-top: 5px !important;
+	padding-bottom: 4px !important;
+}
 .newest_term {
     height: 250px;
     text-align: center;
@@ -355,10 +364,10 @@ ul li{
 
 .panel-heading {
     font-weight: bold;
-		background: #3E4C4E !important;
-		color: #fafafa !important;
-		border-radius: 0px;
-		border: 0px !important;
+		background: #009688 !important;
+		color: #fff !important;
+		border-radius: 5px 5px 0px 0px ;
+		border: 0px  !important;
 }
 .a-clas{
 	display: block;
@@ -395,14 +404,15 @@ ul li{
 	border: none;
 }
 .article {
-	background: url(../img/standard.png) no-repeat;
-	padding-left: 24px;
+	/*background: url(../img/standard.png) no-repeat;*/
+	text-align: center;
 	border-bottom: 1px solid #dcdcdc;
 }
 /**/
 .article > h4 a{
 	text-decoration: none;
 	color:#111111;
+	margin-top: 15px !important;
 }
 /*display date of publishing*/
 .date {
@@ -420,7 +430,7 @@ ul li{
 /*Footer*/
 .footMain{
 	height: 100px;
-	background: #292c2f;
+	background: linear-gradient(to bottom, #26A69A , #267871);
 	margin-top: 10px;
 }
 .copyRight{

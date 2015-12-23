@@ -82,8 +82,6 @@ function myTermin(){
   				   		<p class="desct">'.$query2["termin_desc"].'</p>
   				   	</div>
   				   </div><br>';
-
-
   }
 
       $rows=mysqli_num_rows(mysqli_query($db_connection,"SELECT * FROM termin WHERE user_id= $userID"));
@@ -101,15 +99,25 @@ function myTermin(){
 
 }
 function bestWriter(){
-
+  include 'db.php';
+  $connection = mysqli_select_db($db_connection,$dbname);
+  return $query=mysqli_query($db_connection,"SELECT * FROM user WHERE status = 'yazar' GROUP BY num_post DESC LIMIT 5");
 }
+
+
 
 function newestTermin(){
-
+  include 'db.php';
+  $connection = mysqli_select_db($db_connection,$dbname);
+  return $query=mysqli_query($db_connection,"SELECT * FROM termin GROUP BY ter_pub_date DESC LIMIT 5");
 }
-function mostSearch(){
-
+function mostRead(){
+  include 'db.php';
+  $connection = mysqli_select_db($db_connection,$dbname);
+  return $query=mysqli_query($db_connection,"SELECT * FROM termin GROUP BY ter_num_view DESC LIMIT 5");
 }
+
+
 function tags(){
 
 }
@@ -258,55 +266,60 @@ function tags(){
 
 		}
 
-    function insert_like($user_id, $term_id) {
-        include 'db.php';
+    function signin($user_name,$user_password) {
 
-        $table_name = "termin_like";
-        $table_columns = "(termin_id, user_id)";
-        $table_values = "('$term_id', '$user_id')";
+  		include 'db.php';
+  		echo "username: ".$user_name."<br>";
+  		echo "password: ".$user_password."<br>";
+  		$sql = "SELECT * FROM user WHERE username='$user_name'";
+  		$query = mysqli_query($db_connection, $sql);
 
-        $sql = "INSERT INTO $table_name $table_columns VALUES $table_values";
+  		$numrow = mysqli_num_rows($query);
 
-        $query = mysqli_query($db_connection, $sql);
+  		if ($numrow === 1) {
 
-        if ($query) 
-          return true;
-        else 
-          return false;
-    }
+  			while ($row = mysqli_fetch_assoc($query)) {
+  				$dbusername = $row['username'];
+  				$dbpassword = $row['password'];
+  				$dbregdate = $row['reg_date'];
+  				$dbuserID = $row['id'];
+  				$dbFirst = $row['firstname'];
+  				$dbLast = $row['lastname'];
+  				$dbMail = $row['email'];
+  				$dbBirth = $row['birthdate'];
+  				$dbGender = $row['gender'];
+  			}
 
-    function previously_liked($user_id, $term_id) {
-        include 'db.php';
+  			echo "username ".$user_name." dbusername ". $dbusername."<br>";
+  			echo "password ".$user_password." dbpassword ". $dbpassword."<br>";
+  			//check with the given data
 
-        $table_name = "termin_like";
+  			if ($dbusername==$user_name && $dbpassword==$user_password) {
+  				echo "You are now logged in<br>";
+  				/*session-a yuklenen butun datalar profile sehifesinde
+  				 * lazim olacag ki muvafig yerlerde gosterilsin
+  				 */
+  				if (!isset($_SESSION)) {
+          			session_start();
+     				}
 
-        $sql = "SELECT * FROM $table_name WHERE user_id=$user_id AND termin_id=$term_id";
-        $query = mysqli_query($db_connection, $sql);
-        
-        mysqli_close($db_connection);
-        if (mysqli_num_rows($query)) 
-          return true;
-        else 
-          return false;
-    }
-
-    function update_num_of_likes($term_id) {
-        include 'db.php';
-
-        $table_name = "termin";
-        $table_column = "ter_num_like";
-        
-        $sql = "UPDATE $table_name SET $table_column=$table_column+1 WHERE termin_id=$term_id";
-
-        $query = mysqli_query($db_connection, $sql);
-        
-        mysqli_close($db_connection);
-        // if ($query) 
-        //   return true;
-        // else 
-        //   return false;
-    }
-
-
+  				$_SESSION['username'] = $user_name;
+  				$_SESSION['user_id'] = $dbuserID;
+  				$_SESSION['user_reg_date'] = $dbregdate;
+  				$_SESSION['firstname'] = $dbFirst;
+  				$_SESSION['lastname'] = $dbLast;
+  				$_SESSION['email'] = $dbMail;
+  				$_SESSION['pass'] = $dbpassword;
+  				$_SESSION['birthdate'] = $dbBirth;
+  				$_SESSION['gender'] = $dbGender;
+  				//redirect user to new Welcome user page
+  				header('Location: profile.php?id=1');
+  			} else {
+  				echo "incorrect password";
+  			}
+   		} else {
+  			die("That user does not exist");
+  		}
+  	}
 
  ?>
