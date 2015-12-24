@@ -72,11 +72,11 @@
 </div>
 
 <script type="text/javascript">
-// var like="a";
+var like="a";
  function userLiked (terminID, terminLike, act) {
   
       
-      console.log("Pressed like ", act);
+      console.log("Pressed like ", terminLike);
       
       $.ajax({
         url: 'like.php',
@@ -86,7 +86,6 @@
             console.log(data);
             data = $.trim(data);
             console.log("entered function", data+"azik");
-            console.log("azik");
             if (data == 'Success') {
             
                 $('#num_like').html(++terminLike);

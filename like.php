@@ -8,7 +8,6 @@
 			if (isset($_POST['term_id']))
 				$term_id = $_POST['term_id'];
 				$act = $_POST['act'];
-				echo $act;
 			//yoxluyurug user like edib ya yox
 			if (!previously_liked($user_id, $term_id)) {
 				
