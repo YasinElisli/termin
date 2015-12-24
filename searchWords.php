@@ -8,9 +8,11 @@
 		$user_name = "Daxil edilməyib";
 		$publ_date = "Daxil edilməyib";
 		$kategoriya = "Daxil edilməyib";
+		$termin_like = 0;
+		$like = "like";
 
 		//mehs bu sozu axtar.
-		$sql = "SELECT u.username, ter.termin, ter.termin_desc, ter.ter_pub_date, ter.ter_cat FROM user AS u, termin AS ter WHERE u.id = ter.user_id
+		$sql = "SELECT u.username, ter.termin_id, ter.termin, ter.termin_desc, ter.ter_pub_date, ter.ter_cat, ter.ter_num_like FROM user AS u, termin AS ter WHERE u.id = ter.user_id
 		 AND ter.termin LIKE '$termin'";
 
 		$query = mysqli_query($db_connection, $sql);
@@ -19,11 +21,12 @@
 				
 					$first_row = mysqli_fetch_assoc($query);
 					// $termin = $first_row['termin'];
+					$termin_id = $first_row['termin_id']; // like ve unlike edende bilinsin
 					$termin_desc = $first_row['termin_desc'];
 					$user_name = $first_row['username'];
 					$publ_date = $first_row['ter_pub_date'];
 					$kategoriya = $first_row['ter_cat'];
-
+					$termin_like = $first_row['ter_num_like'];
 		} else {
 			//oxshar terminleri axtar, yeni ichinde o achar soz olan 
 			$sql = "SELECT u.username, ter.termin, ter.termin_desc, ter.ter_pub_date, ter.ter_cat FROM user AS u, termin AS ter WHERE u.id = ter.user_id

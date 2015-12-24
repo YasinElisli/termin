@@ -151,7 +151,7 @@ function tags(){
 
 				echo $sql."<br>";
 				$result_query = mysqli_query($db_connection, $sql);
-
+        
 				$row = mysqli_fetch_assoc($result_query);
 				$num_of_users = $row['num_of_users'];
 				echo $num_of_users;
@@ -225,46 +225,99 @@ function tags(){
 				}
 
 	}
-	function elaveTermin(){
-		include('db.php');
+	function elaveTermin() {
+  		  include('db.php');
 
-			$termin = $_POST['termin'];
-			$termin_desc = $_POST['termin_desc'];
-			$ter_cat = $_POST['ter_cat'];
-      if (empty($termin) || empty($termin_desc)) {
-        echo "Xanaları boş buraxmayın";
-      }
-      else {
-        $selecet= "SELECT * FROM termin WHERE termin='$termin'";
-        $result=mysqli_query($db_connection,$selecet);
-         $num_rows=mysqli_num_rows ($result);
-         //echo $num_rows;
+  			$termin = $_POST['termin'];
+  			$termin_desc = $_POST['termin_desc'];
+  			$ter_cat = $_POST['ter_cat'];
+        if (empty($termin) || empty($termin_desc)) {
+          echo "Xanaları boş buraxmayın";
+        }
+        else {
+          $selecet= "SELECT * FROM termin WHERE termin='$termin'";
+          $result=mysqli_query($db_connection,$selecet);
+           $num_rows=mysqli_num_rows ($result);
+           //echo $num_rows;
 
-          if($num_rows>0){
-          echo " termin artiq movcuddur";
+            if($num_rows>0){
+            echo " termin artiq movcuddur";
 
 
-          } else {
+            } else {
 
-            $user=$_SESSION['user_id'];
-            $today = date("Y-m-d");
-              $add = "INSERT INTO termin(user_id,termin, termin_desc, ter_cat,ter_pub_date) VALUES('$user','$termin', '$termin_desc', '$ter_cat','$today')";
-              $insert = mysqli_query($db_connection,$add);
+              $user=$_SESSION['user_id'];
+              $today = date("Y-m-d");
+                $add = "INSERT INTO termin(user_id,termin, termin_desc, ter_cat,ter_pub_date) VALUES('$user','$termin', '$termin_desc', '$ter_cat','$today')";
+                $insert = mysqli_query($db_connection,$add);
 
-              if($insert){
+                if($insert){
 
-                // header("Location:index.php");
-                echo "Termin elave olundu!!!!";
+                  // header("Location:index.php");
+                  echo "Termin elave olundu!!!!";
 
-              }else{
+                }else{
 
-                echo 'Termin elave olunmadi!!!';
+                  echo 'Termin elave olunmadi!!!';
 
+            }
           }
         }
-      }
 
 		}
+
+
+    function insert_like($user_id, $term_id) {
+        include 'db.php';
+
+        $table_name = "termin_like";
+        $table_columns = "(termin_id, user_id)";
+        $table_values = "('$term_id', '$user_id')";
+
+        $sql = "INSERT INTO $table_name $table_columns VALUES $table_values";
+
+        $query = mysqli_query($db_connection, $sql);
+
+        if ($query) 
+          return true;
+        else 
+          return false;
+    }
+
+    function previously_liked($user_id, $term_id) {
+        include 'db.php';
+
+        $table_name = "termin_like";
+
+        $sql = "SELECT * FROM $table_name WHERE user_id=$user_id AND termin_id=$term_id";
+        $query = mysqli_query($db_connection, $sql);
+        
+        mysqli_close($db_connection);
+        if (mysqli_num_rows($query)) 
+          return true;
+        else 
+          return false;
+    }
+
+    function update_num_of_likes($term_id) {
+        include 'db.php';
+
+        $table_name = "termin";
+        $table_column = "ter_num_like";
+        
+        $sql = "UPDATE $table_name SET $table_column=$table_column+1 WHERE termin_id=$term_id";
+
+        $query = mysqli_query($db_connection, $sql);
+        
+        mysqli_close($db_connection);
+        // if ($query) 
+        //   return true;
+        // else 
+        //   return false;
+    }
+
+
+
     function signin($user_name,$user_password) {
 
   		include 'db.php';
