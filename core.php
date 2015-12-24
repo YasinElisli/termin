@@ -266,11 +266,16 @@ function tags(){
 
 		}
 
-
-    function insert_like($user_id, $term_id) {
+    /**
+     *bu funksiya edilen like ve ya dislike bazada, yeni muvafig cedvelde qeyd edir
+     *@param user_id like ve ya dislike eden userin id-si
+     *@param term_id like ve ya dislike edilen terminin id-si
+     *@param daxil edilen table-in adi: ya termin_like, ya da termin_dislike
+     *@return boolean deyer: true => insert olundu, false => insert zamani hansisa xeta bash verdi
+     */
+    function insert_like($user_id, $term_id, $table_name) {
         include 'db.php';
 
-        $table_name = "termin_like";
         $table_columns = "(termin_id, user_id)";
         $table_values = "('$term_id', '$user_id')";
 
@@ -278,16 +283,23 @@ function tags(){
 
         $query = mysqli_query($db_connection, $sql);
 
+        mysqli_close($db_connection);
         if ($query) 
           return true;
         else 
           return false;
     }
 
-    function previously_liked($user_id, $term_id) {
+    /**
+     *bu funksiya edilen like ve ya dislike evvel olunub ve ya olunmadigini yoxlayir
+     *@param user_id like ve ya dislike eden userin id-si
+     *@param term_id like ve ya dislike edilen terminin id-si
+     *@param daxil edilen table-in adi: ya termin_like, ya da termin_dislike
+     *@return boolean deyer: true => qaytarilan setirlerin sayin 0-dan choxdur, 
+     *false => qaytarilan setirlerin sayin 0-a beraberdir
+    */
+    function previously_liked($user_id, $term_id, $table_name) {
         include 'db.php';
-
-        $table_name = "termin_like";
 
         $sql = "SELECT * FROM $table_name WHERE user_id=$user_id AND termin_id=$term_id";
         $query = mysqli_query($db_connection, $sql);
@@ -298,22 +310,21 @@ function tags(){
         else 
           return false;
     }
-
-    function update_num_of_likes($term_id) {
+    /**
+     *bu funksiya termin sehifesinde lazim olan terminin like ve ya dislike sayini artirir
+     *@param term_id like ve ya dislike edilen terminin id-si
+     *@param like ve ya dislike-dan asili olarag artirilmali olan sutun
+     */
+    function update_num_of_likes($term_id, $table_column) {
         include 'db.php';
 
         $table_name = "termin";
-        $table_column = "ter_num_like";
         
         $sql = "UPDATE $table_name SET $table_column=$table_column+1 WHERE termin_id=$term_id";
 
         $query = mysqli_query($db_connection, $sql);
         
         mysqli_close($db_connection);
-        // if ($query) 
-        //   return true;
-        // else 
-        //   return false;
     }
 
 

@@ -35,14 +35,18 @@
       <div class="button">
         <ul class="likeUnlike">
           <li>
-            <button class="btn btn-success" id="presslike" onclick="userLiked(<?php echo $termin_id ?>,<?php echo $termin_like ?>,<?php echo $like ?>)">
-                <i class="fa fa-thumbs-o-up fa-lg"></i><span id="num_like"><?php echo $termin_like ?></span>
+            <button class="btn btn-success-outline" id="presslike" onclick="userLiked(<?php echo $termin_id ?>,<?php echo $termin_like ?>)">
+                <i class="fa fa-thumbs-o-up fa-lg"></i>
+                <span id="num_like"><?php echo $termin_like ?></span>
             </button>
           </li>
           <li>
-            <a class="btn btn-danger" href="#" >
-            <i class="fa fa-thumbs-o-down fa-lg"></i> 11</a>
+            <button class="btn btn-danger-outline" id="pressdislike" onclick="userDisliked(<?php echo $termin_id ?>,<?php echo $termin_dislike ?>)">
+                <i class="fa fa-thumbs-o-down fa-lg"></i>
+                <span id="num_dislike"><?php echo $termin_dislike ?></span>
+            </button>
           </li>
+          <button type="button" class="btn btn-primary-outline">Primary</button>
 
         </ul>
 
@@ -72,8 +76,8 @@
 </div>
 
 <script type="text/javascript">
-var like="a";
- function userLiked (terminID, terminLike, act) {
+
+ function userLiked (terminID, terminLike) {
   
       
       console.log("Pressed like ", terminLike);
@@ -81,7 +85,7 @@ var like="a";
       $.ajax({
         url: 'like.php',
         type:'POST',
-        data: 'term_id='+terminID+'&act='+act,
+        data: 'term_id='+terminID+'&act=like',
         success: function(data) {
             console.log(data);
             data = $.trim(data);
@@ -97,9 +101,33 @@ var like="a";
       });
 }
 
-function handle(data) {
+function userDisliked (terminID, terminDislike) {
+  
       
+      console.log("Pressed dislike ", terminDislike);
+      
+      $.ajax({
+        url: 'like.php',
+        type:'POST',
+        data: 'term_id='+terminID+'&act=dislike',
+        success: function(data) {
+            console.log(data);
+            data = $.trim(data);
+            console.log("entered function", data+"azik");
+            
+            if (data == 'Success') {
+            
+                $('#num_dislike').html(++terminDislike);
+                console.log(data);
+            }
+            else 
+              alert(data);
+        }
+      });
 }
+
+
+
 </script>
 
 

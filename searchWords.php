@@ -12,8 +12,16 @@
 		$like = "like";
 
 		//mehs bu sozu axtar.
-		$sql = "SELECT u.username, ter.termin_id, ter.termin, ter.termin_desc, ter.ter_pub_date, ter.ter_cat, ter.ter_num_like FROM user AS u, termin AS ter WHERE u.id = ter.user_id
-		 AND ter.termin LIKE '$termin'";
+		$sql = "SELECT u.username, 
+					   ter.termin_id, 
+					   ter.termin, 
+					   ter.termin_desc, 
+					   ter.ter_pub_date, 
+					   ter.ter_cat, 
+					   ter.ter_num_like,
+		 			   ter.ter_num_dislike 
+		 	    
+		 	    FROM user AS u, termin AS ter WHERE u.id = ter.user_id AND ter.termin LIKE '$termin'";
 
 		$query = mysqli_query($db_connection, $sql);
 		//eger 1 dene deyer varsa, demeli baza da var
@@ -27,6 +35,7 @@
 					$publ_date = $first_row['ter_pub_date'];
 					$kategoriya = $first_row['ter_cat'];
 					$termin_like = $first_row['ter_num_like'];
+					$termin_dislike = $first_row['ter_num_dislike'];
 		} else {
 			//oxshar terminleri axtar, yeni ichinde o achar soz olan 
 			$sql = "SELECT u.username, ter.termin, ter.termin_desc, ter.ter_pub_date, ter.ter_cat FROM user AS u, termin AS ter WHERE u.id = ter.user_id
