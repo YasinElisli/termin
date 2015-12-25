@@ -332,6 +332,24 @@ ul li{
 .likeUnlike{
 	padding: 0px !important
 }
+.terminLeft{
+	background: #fefefe;
+	height: 400px;
+	width: 650px;
+	padding: 0;
+}
+.terminRight{
+	height: 600px;
+	width: 370px;
+}
+.sliderTermin{
+	height: 100px;
+	background: #675acd;
+}
+.terminResult{
+	height: 400px;
+	background: #fff;
+}
 /*right-panel*/
 #statistic {
     width: 250px;
@@ -339,9 +357,9 @@ ul li{
 }
 
 .most_search_term {
-    height: 250px;
     text-align: center;
     margin-bottom: 1px;
+		width: 100%;
 }
 .mostReadItem{
 	padding-top: 5px !important;
