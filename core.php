@@ -291,7 +291,8 @@ function tags(){
     }
 
     /**
-     *bu funksiya edilen like ve ya dislike evvel olunub ve ya olunmadigini yoxlayir
+     *bu funksiya edilen like ve ya dislike evvel olunub 
+     *ve ya olunmadigini yoxlayir
      *@param user_id like ve ya dislike eden userin id-si
      *@param term_id like ve ya dislike edilen terminin id-si
      *@param daxil edilen table-in adi: ya termin_like, ya da termin_dislike
@@ -304,14 +305,15 @@ function tags(){
         $sql = "SELECT * FROM $table_name WHERE user_id=$user_id AND termin_id=$term_id";
         $query = mysqli_query($db_connection, $sql);
         
-        mysqli_close($db_connection);
-        if (mysqli_num_rows($query)) 
+        // mysqli_close($db_connection);
+        if (mysqli_num_rows($query) != 0) 
           return true;
         else 
           return false;
     }
     /**
-     *bu funksiya termin sehifesinde lazim olan terminin like ve ya dislike sayini artirir
+     *bu funksiya termin sehifesinde lazim olan terminin like
+     *ve ya dislike sayini artirir
      *@param term_id like ve ya dislike edilen terminin id-si
      *@param like ve ya dislike-dan asili olarag artirilmali olan sutun
      */
@@ -327,6 +329,27 @@ function tags(){
         mysqli_close($db_connection);
     }
 
+    function decrease_num_of_likes($term_id, $opposite_column) {
+        include 'db.php';
+
+        $table_name = "termin";
+
+        $sql = "UPDATE $table_name SET $opposite_column=$opposite_column-1 WHERE termin_id=$term_id";
+
+        $query = mysqli_query($db_connection, $sql);
+        
+        mysqli_close($db_connection);
+    }
+
+    function change_status_like($user_id, $term_id, $opposite_table) {
+        include 'db.php';
+
+        $sql = "DELETE FROM $opposite_table WHERE user_id=$user_id AND termin_id=$term_id";
+
+        $query = mysqli_query($db_connection, $sql);
+
+        mysqli_close($db_connection);
+    }
 
 
     function signin($user_name,$user_password) {

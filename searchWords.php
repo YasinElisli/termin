@@ -9,6 +9,7 @@
 		$publ_date = "Daxil edilməyib";
 		$kategoriya = "Daxil edilməyib";
 		$termin_like = 0;
+		$termin_dislike = 0;
 		$like = "like";
 
 		//mehs bu sozu axtar.

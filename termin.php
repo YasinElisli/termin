@@ -4,8 +4,9 @@
   <head>
     <meta charset="utf-8">
     <title>Termin</title>
-    <?php include 'link.php'; ?>
-    <?php include 'script.php'; ?>
+      <?php include 'link.php'; ?>
+      <?php include 'script.php'; ?>
+      <link rel="stylesheet" type="text/css" href="css/button.css">
   </head>
   <body>
     <?php include 'searchWords.php';
@@ -34,19 +35,41 @@
         <div class="izah"><?php echo $termin_desc ?></div>
       <div class="button">
         <ul class="likeUnlike">
-          <li>
-            <button class="btn btn-success-outline" id="presslike" onclick="userLiked(<?php echo $termin_id ?>,<?php echo $termin_like ?>)">
+          <li> <!-- birinci usul nece php ile userin like edib etmediyinnen asili olarag
+              buttonun rengin deyishirik -->
+            <button <?php if (isset($_SESSION['user_id'])): {
+                                      $user_id = $_SESSION['user_id'];
+                                      if (previously_liked($user_id, $termin_id, 'termin_like')): ?>
+                                          class="btn btn-success-outline liked"
+                                      <?php else: ?> 
+                                          class="btn btn-success-outline"
+                                      <?php endif; ?>
+                    <?php }
+                          else :?>
+                                          class ="btn btn-success-outline"
+                    <?php endif;  ?>
+                    id="presslike" onclick="userLiked(<?php echo $termin_id ?>,<?php echo $termin_like ?>)">
                 <i class="fa fa-thumbs-o-up fa-lg"></i>
                 <span id="num_like"><?php echo $termin_like ?></span>
             </button>
           </li>
-          <li>
-            <button class="btn btn-danger-outline" id="pressdislike" onclick="userDisliked(<?php echo $termin_id ?>,<?php echo $termin_dislike ?>)">
+          
+          <li> <!-- ikinci php usulu ile eyni sheyi edirik, amma dislike buttonu ile -->
+            <button class= <?php if (isset($_SESSION['user_id'])) {
+                                      $user_id = $_SESSION['user_id'];
+                                      if (previously_liked($user_id, $termin_id, 'termin_dislike'))
+                                          echo "\"btn btn-danger-outline disliked\"";
+                                       else
+                                          echo "\"btn btn-danger-outline\"";
+                                    }
+                                else 
+                                  echo "\"btn btn-danger-outline\"";
+                   ?>
+                id="pressdislike" onclick="userDisliked(<?php echo $termin_id ?>,<?php echo $termin_dislike ?>)">
                 <i class="fa fa-thumbs-o-down fa-lg"></i>
                 <span id="num_dislike"><?php echo $termin_dislike ?></span>
             </button>
           </li>
-          <button type="button" class="btn btn-primary-outline">Primary</button>
 
         </ul>
 
@@ -81,26 +104,40 @@
   
       
       console.log("Pressed like ", terminLike);
-      
+      // var act;
+      // //yoxluyurug eger likedan evvel dislike
+      // if (user pressed dislike before)
+      //     act = "dislikeOffAndLike";
+      //   else 
+      //     act = "like";
+
       $.ajax({
         url: 'like.php',
         type:'POST',
         data: 'term_id='+terminID+'&act=like',
         success: function(data) {
             console.log(data);
-            data = $.trim(data);
-            console.log("entered function", data+"azik");
-            if (data == 'Success') {
-            
-                $('#num_like').html(++terminLike);
-                console.log(data);
+            data =JSON.parse(data);
+            // data = $.trim(data);
+            console.log("entered function", data.result);
+            if (data.result == 'Success') {            
+                var num_of_likes = parseInt($('#num_like').text())+1;
+                $('#num_like').text(num_of_likes);
+                $('#presslike').addClass('liked');
+                //eger bu true deyerdir, demeli dislike-e evvel basilib ve 
+                //sayini bir vahid azaltmaq gerekdir
+                if (data.attr_changed == "ter_num_dislike") {
+                    
+                    var num_of_dislike = parseInt($('#num_dislike').text())-1;
+                    $('#num_dislike').text(num_of_dislike);
+                    $('#pressdislike').removeClass('disliked');
+                }
             }
             else 
-              alert(data);
+              alert(data.result); //bunu nece normal chixartmag olar          
         }
       });
 }
-
 function userDisliked (terminID, terminDislike) {
   
       
@@ -112,16 +149,29 @@ function userDisliked (terminID, terminDislike) {
         data: 'term_id='+terminID+'&act=dislike',
         success: function(data) {
             console.log(data);
-            data = $.trim(data);
-            console.log("entered function", data+"azik");
+            data =JSON.parse(data);
             
-            if (data == 'Success') {
+            console.log("entered function", data.result);
             
-                $('#num_dislike').html(++terminDislike);
-                console.log(data);
+            if (data.result == 'Success') {
+                //hazirda dislike sayini mueyyen edib onu artiriram ve menimsedirem
+                var num_of_dislikes = parseInt($('#num_dislike').text())+1;
+                $('#num_dislike').text(num_of_dislikes);
+                //classi deyishirik
+                $('#pressdislike').addClass('disliked');
+                // $('.btn btn-success-outline').removeClass()
+                //eger bu true deyerdir, demeli dislike-e evvel basilib ve 
+                //sayini bir vahid azaltmaq gerekdir
+                if (data.attr_changed == "ter_num_like") {
+                    
+                    var num_of_likes = parseInt($('#num_like').text())-1;
+                    $('#num_like').text(num_of_likes);
+                    $('#presslike').removeClass('liked');
+                }
             }
-            else 
-              alert(data);
+            else
+              alert(data.result);
+            
         }
       });
 }
