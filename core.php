@@ -283,12 +283,9 @@ function tags(){
 
         $query = mysqli_query($db_connection, $sql);
 
-<<<<<<< HEAD
         mysqli_close($db_connection);
         if ($query) 
-=======
-        if ($query)
->>>>>>> 67aa01b6f9c662955b3686a896f8464412207fb8
+       
           return true;
         else
           return false;
@@ -308,15 +305,9 @@ function tags(){
 
         $sql = "SELECT * FROM $table_name WHERE user_id=$user_id AND termin_id=$term_id";
         $query = mysqli_query($db_connection, $sql);
-<<<<<<< HEAD
         
         // mysqli_close($db_connection);
-        if (mysqli_num_rows($query) != 0) 
-=======
-
-        mysqli_close($db_connection);
-        if (mysqli_num_rows($query))
->>>>>>> 67aa01b6f9c662955b3686a896f8464412207fb8
+        if (mysqli_num_rows($query) != 0)
           return true;
         else
           return false;
@@ -331,24 +322,13 @@ function tags(){
         include 'db.php';
 
         $table_name = "termin";
-<<<<<<< HEAD
-        
-=======
-        $table_column = "ter_num_like";
 
->>>>>>> 67aa01b6f9c662955b3686a896f8464412207fb8
         $sql = "UPDATE $table_name SET $table_column=$table_column+1 WHERE termin_id=$term_id";
 
         $query = mysqli_query($db_connection, $sql);
 
         mysqli_close($db_connection);
-<<<<<<< HEAD
-=======
-        // if ($query)
-        //   return true;
-        // else
-        //   return false;
->>>>>>> 67aa01b6f9c662955b3686a896f8464412207fb8
+
     }
 
     function decrease_num_of_likes($term_id, $opposite_column) {

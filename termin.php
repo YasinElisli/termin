@@ -18,62 +18,7 @@
             <div class="topBanner"><center>1024 X 100 </center></div>
           </div>
         </div>
-<<<<<<< HEAD
-        <div class="row pull-left">
-          <div class="col-lg-12 padreset">
-            <div class="container-fluid">
-          <div class="month row">
-            <div class="mm">Daxil edilib: <?php echo $publ_date ?></div>
- <div class="term">Kategoriya: <?php echo $kategoriya ?></div>
-   <ul class="sosial pull-right">
-      <li><a href="#"><i class="fa fa-star  fa-lg"></i></a></li>
-      <li><a href="#"><i class="fa fa-twitter fa-lg"></i></a></li>
-      <li><a href="#"><i class="fa fa-facebook fa-lg"></i></a></li>
-      <li><a href="#"><i class="fa fa-google-plus fa-lg"></i></a></li>
-      <li><a href="#"><i class="fa fa-share-alt fa-lg"></i></a></li>
-   </ul>
-        <div class="demo"><?php echo "<h3 class=\"terName\">".$termin."</h3>" ?></div>
-        <div class="izah"><?php echo $termin_desc ?></div>
-      <div class="button">
-        <ul class="likeUnlike">
-          <li> <!-- birinci usul nece php ile userin like edib etmediyinnen asili olarag
-              buttonun rengin deyishirik -->
-            <button <?php if (isset($_SESSION['user_id'])): {
-                                      $user_id = $_SESSION['user_id'];
-                                      if (previously_liked($user_id, $termin_id, 'termin_like')): ?>
-                                          class="btn btn-success-outline liked"
-                                      <?php else: ?> 
-                                          class="btn btn-success-outline"
-                                      <?php endif; ?>
-                    <?php }
-                          else :?>
-                                          class ="btn btn-success-outline"
-                    <?php endif;  ?>
-                    id="presslike" onclick="userLiked(<?php echo $termin_id ?>,<?php echo $termin_like ?>)">
-                <i class="fa fa-thumbs-o-up fa-lg"></i>
-                <span id="num_like"><?php echo $termin_like ?></span>
-            </button>
-          </li>
-          
-          <li> <!-- ikinci php usulu ile eyni sheyi edirik, amma dislike buttonu ile -->
-            <button class= <?php if (isset($_SESSION['user_id'])) {
-                                      $user_id = $_SESSION['user_id'];
-                                      if (previously_liked($user_id, $termin_id, 'termin_dislike'))
-                                          echo "\"btn btn-danger-outline disliked\"";
-                                       else
-                                          echo "\"btn btn-danger-outline\"";
-                                    }
-                                else 
-                                  echo "\"btn btn-danger-outline\"";
-                   ?>
-                id="pressdislike" onclick="userDisliked(<?php echo $termin_id ?>,<?php echo $termin_dislike ?>)">
-                <i class="fa fa-thumbs-o-down fa-lg"></i>
-                <span id="num_dislike"><?php echo $termin_dislike ?></span>
-            </button>
-          </li>
 
-        </ul>
-=======
         <div class="row">
           <div class="col-md-8 terminLeft">
             <div class="col-md-12 pull-left terminResult ">
@@ -92,7 +37,7 @@
               <div class="izah"><?php echo $termin_desc ?></div>
               <div class="button">
               <ul class="likeUnlike">
-                <li> <!-- birinci usul nece php ile userin like edib etmediyinnen asili olarag
+               <li> <!-- birinci usul nece php ile userin like edib etmediyinnen asili olarag
                     buttonun rengin deyishirik -->
                   <button <?php if (isset($_SESSION['user_id'])): {
                                             $user_id = $_SESSION['user_id'];
@@ -145,7 +90,7 @@
        </div>
       <div class="carousel-caption"></div>
       </div>
->>>>>>> 67aa01b6f9c662955b3686a896f8464412207fb8
+
 
       <div class="item">
         <div class="word">
@@ -246,22 +191,12 @@
 
 
 <script type="text/javascript">
-<<<<<<< HEAD
+
 
  function userLiked (terminID, terminLike) {
   
       
       console.log("Pressed like ", terminLike);
-      // var act;
-      // //yoxluyurug eger likedan evvel dislike
-      // if (user pressed dislike before)
-      //     act = "dislikeOffAndLike";
-      //   else 
-      //     act = "like";
-=======
-var like="a";
- function userLiked (terminID, terminLike, act) {
->>>>>>> 67aa01b6f9c662955b3686a896f8464412207fb8
 
       $.ajax({
         url: 'like.php',
@@ -269,7 +204,6 @@ var like="a";
         data: 'term_id='+terminID+'&act=like',
         success: function(data) {
             console.log(data);
-<<<<<<< HEAD
             data =JSON.parse(data);
             // data = $.trim(data);
             console.log("entered function", data.result);
@@ -327,23 +261,7 @@ function userDisliked (terminID, terminDislike) {
             
         }
       });
-=======
-            data = $.trim(data);
-            console.log("entered function", data+"azik");
-            if (data == 'Success') {
 
-                $('#num_like').html(++terminLike);
-                console.log(data);
-            }
-            else
-              alert(data);
-        }
-      });
-}
-
-function handle(data) {
-
->>>>>>> 67aa01b6f9c662955b3686a896f8464412207fb8
 }
 
 

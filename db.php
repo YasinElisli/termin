@@ -13,9 +13,5 @@ $db_connection = mysqli_connect($hostname,$username, $password,$dbname)
 // $selectDb = mysqli_select_db($connectToServer,$dbname);
  ?>
 
-<!--  $hostname = "108.179.232.92";
-$username = "kerimovs_termin";
-$password = "termin123";
-$dbname = "kerimovs_termin"; -->
 
 
