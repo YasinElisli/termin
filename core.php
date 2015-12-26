@@ -151,7 +151,7 @@ function tags(){
 
 				echo $sql."<br>";
 				$result_query = mysqli_query($db_connection, $sql);
-        
+
 				$row = mysqli_fetch_assoc($result_query);
 				$num_of_users = $row['num_of_users'];
 				echo $num_of_users;
@@ -283,10 +283,14 @@ function tags(){
 
         $query = mysqli_query($db_connection, $sql);
 
+<<<<<<< HEAD
         mysqli_close($db_connection);
         if ($query) 
+=======
+        if ($query)
+>>>>>>> 67aa01b6f9c662955b3686a896f8464412207fb8
           return true;
-        else 
+        else
           return false;
     }
 
@@ -304,11 +308,17 @@ function tags(){
 
         $sql = "SELECT * FROM $table_name WHERE user_id=$user_id AND termin_id=$term_id";
         $query = mysqli_query($db_connection, $sql);
+<<<<<<< HEAD
         
         // mysqli_close($db_connection);
         if (mysqli_num_rows($query) != 0) 
+=======
+
+        mysqli_close($db_connection);
+        if (mysqli_num_rows($query))
+>>>>>>> 67aa01b6f9c662955b3686a896f8464412207fb8
           return true;
-        else 
+        else
           return false;
     }
     /**
@@ -321,12 +331,24 @@ function tags(){
         include 'db.php';
 
         $table_name = "termin";
+<<<<<<< HEAD
         
+=======
+        $table_column = "ter_num_like";
+
+>>>>>>> 67aa01b6f9c662955b3686a896f8464412207fb8
         $sql = "UPDATE $table_name SET $table_column=$table_column+1 WHERE termin_id=$term_id";
 
         $query = mysqli_query($db_connection, $sql);
-        
+
         mysqli_close($db_connection);
+<<<<<<< HEAD
+=======
+        // if ($query)
+        //   return true;
+        // else
+        //   return false;
+>>>>>>> 67aa01b6f9c662955b3686a896f8464412207fb8
     }
 
     function decrease_num_of_likes($term_id, $opposite_column) {
@@ -407,5 +429,11 @@ function tags(){
   			die("That user does not exist");
   		}
   	}
-
+function userData(){
+  include 'db.php';
+  $userIDedit = $_SESSION['user_id'];
+  $connection = mysqli_select_db($db_connection,$dbname);
+  $sql = "SELECT * FROM user WHERE id='$userIDedit'";
+  return $queryProfile = mysqli_query($db_connection, $sql);
+}
  ?>

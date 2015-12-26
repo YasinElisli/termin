@@ -332,16 +332,38 @@ ul li{
 .likeUnlike{
 	padding: 0px !important
 }
+.terminLeft{
+	background: #fefefe;
+	height: 400px;
+	width: 650px;
+	padding: 0;
+}
+.terminRight{
+	height: 600px;
+	width: 370px;
+}
+.sliderTermin{
+	height: 100px;
+	background: #fafafa;
+	padding: 0px;
+}
+.terminResult{
+	height: 400px;
+	background: #fff;
+}
 /*right-panel*/
 #statistic {
     width: 250px;
     padding: 0px !important;
 }
-
+.headList{
+	background: #07998B;
+	color: #fff;
+}
 .most_search_term {
-    height: 250px;
     text-align: center;
     margin-bottom: 1px;
+		width: 100%;
 }
 .mostReadItem{
 	padding-top: 5px !important;
@@ -441,6 +463,7 @@ ul li{
 .social{
 	margin-top: 30px !important;
 }
+<<<<<<< HEAD
 
 .btn-primary-outline {
   color: #0275d8;
@@ -469,3 +492,35 @@ ul li{
 .btn-primary-outline.disabled:hover, .btn-primary-outline:disabled:hover {
   border-color: #43a7fd;
 }
+=======
+/*slidetermin*/
+.carousel-inner > .item > img,
+  .carousel-inner > .item > .word > ul > a > p {
+      width: 40%;
+      margin: auto;
+  }
+
+  .word{
+    width: 100%;
+    height: 100px;
+    padding: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+
+  }
+/*wrapper for slide*/
+ .smr{
+  width: 100%;
+  height: 100px;
+
+ }
+
+.trmn{
+  margin-left: 8px;
+  margin-right: 8px;
+  margin-bottom: 4px;
+  margin-top: 4px;
+}
+>>>>>>> 67aa01b6f9c662955b3686a896f8464412207fb8

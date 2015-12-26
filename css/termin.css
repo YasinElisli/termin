@@ -6,24 +6,30 @@
 	background-color:#fff;
 	padding: 10px;
 }
+.pubCat{
+	margin-top: 15px;
+	margin-left: 15px;
+	padding: 0px;
+}
+.pubCat li{
+	margin-right: 10px;
+	display: inline-block;
+
+}
 .mm{
-	float: left;
-	padding-top: 15px;
-	margin-left: 10px;
 	font-size: 1.1em;
-	font-weight: bold;
 }
 .term{
-	float: left;
-	padding-left: 10px;
-	padding-top: 15px;
 }
 .sosial li{
 	display: inline;
 	margin-right: 10px;
 }
+.sosial li a{
+		color: #009688 !important;
+}
 .sosial{
-	margin-top: 10px !important;
+	margin-top: 15px !important;
 
 }
 .fa-facebook-official:hover{
@@ -42,23 +48,20 @@
 	color: blue;
 }
 .demo{
-	margin-top: 50px;
 	color: red;
 	font-family: Arial;
-	font-size: 20px;
-	margin-left: 10px;
-	padding-right: 100px;
+	font-size: 1.3em;
+	margin-left: 15px;
 }
 .izah{
 	margin-top: 20px;
-	margin-left: 10px;
-	color: grey;
-
+	margin-left: 15px;
+	color: #525466;
+	height: 200px;
 }
 .button{
-	margin-top: 170px;
 	float: left;
-	margin-left: 10px;
+	margin-left: 15px;
 }
 .fa-thumbs-o-up:active{
 	background-color: rgba(40,138,121,1);
@@ -67,16 +70,14 @@
 	background-color: rgba(40,138,121,1);
 }
 .yazar{
-	float:left;
-	margin-top: 177px;
 	margin-left: 15px;
-	font-weight: bold;
 	color: #3a00fe;
 }
+.menbe{
+	margin-left: 10px;
+}
 .random{
-	float:right;
-	margin-top: 170px;
-	margin-right: 30px;
+	margin-left: 40px;
 }
 .random button{
 	background: #009688;
@@ -90,9 +91,9 @@
 	border: 1px dashed #009688;
 }
 .terName{
-	margin-top: 70px;
-	color: #FF9800;
+	margin-top: 80px;
+	color: #D90429;
 	font-weight: bold;
-	text-shadow: 1px 1px 1px #fefefe;
+	text-shadow: 0px 1px 0px  #555;
 	font-size: 1.4em;
 }
