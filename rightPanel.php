@@ -1,6 +1,6 @@
 <div id="statistic" class="container-fluid">
         <ul class="list-group most_search_term">
-            <li class="list-group-item">En cox baxilan 5 termin</li>
+            <li class="list-group-item headList">En cox baxilan 5 termin</li>
 
               <?php $queryMostReadRight = mostRead();
               $sira = 0;
@@ -11,7 +11,7 @@
           </ul>
 
           <ul class="list-group most_search_term">
-              <li class="list-group-item">En cox baxilan 5 termin</li>
+              <li class="list-group-item headList">En cox baxilan 5 termin</li>
 
                 <?php $queryMostReadRight = mostRead();
                 $sira = 0;
@@ -22,7 +22,7 @@
             </ul>
 
         <ul class="list-group top_rated_wr">
-            <li class="list-group-item">En reytingli 5 yazar</li>
+            <li class="list-group-item headList">En reytingli 5 yazar</li>
 
               <?php $queryBestWriteRight = bestWriter();
               $sira2 = 0;

@@ -355,7 +355,10 @@ ul li{
     width: 250px;
     padding: 0px !important;
 }
-
+.headList{
+	background: #07998B;
+	color: #fff;
+}
 .most_search_term {
     text-align: center;
     margin-bottom: 1px;

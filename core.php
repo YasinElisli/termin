@@ -151,7 +151,7 @@ function tags(){
 
 				echo $sql."<br>";
 				$result_query = mysqli_query($db_connection, $sql);
-        
+
 				$row = mysqli_fetch_assoc($result_query);
 				$num_of_users = $row['num_of_users'];
 				echo $num_of_users;
@@ -278,9 +278,9 @@ function tags(){
 
         $query = mysqli_query($db_connection, $sql);
 
-        if ($query) 
+        if ($query)
           return true;
-        else 
+        else
           return false;
     }
 
@@ -291,11 +291,11 @@ function tags(){
 
         $sql = "SELECT * FROM $table_name WHERE user_id=$user_id AND termin_id=$term_id";
         $query = mysqli_query($db_connection, $sql);
-        
+
         mysqli_close($db_connection);
-        if (mysqli_num_rows($query)) 
+        if (mysqli_num_rows($query))
           return true;
-        else 
+        else
           return false;
     }
 
@@ -304,15 +304,15 @@ function tags(){
 
         $table_name = "termin";
         $table_column = "ter_num_like";
-        
+
         $sql = "UPDATE $table_name SET $table_column=$table_column+1 WHERE termin_id=$term_id";
 
         $query = mysqli_query($db_connection, $sql);
-        
+
         mysqli_close($db_connection);
-        // if ($query) 
+        // if ($query)
         //   return true;
-        // else 
+        // else
         //   return false;
     }
 
@@ -373,5 +373,11 @@ function tags(){
   			die("That user does not exist");
   		}
   	}
-
+function userData(){
+  include 'db.php';
+  $userIDedit = $_SESSION['user_id'];
+  $connection = mysqli_select_db($db_connection,$dbname);
+  $sql = "SELECT * FROM user WHERE id='$userIDedit'";
+  return $queryProfile = mysqli_query($db_connection, $sql);
+}
  ?>
