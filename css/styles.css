@@ -344,7 +344,8 @@ ul li{
 }
 .sliderTermin{
 	height: 100px;
-	background: #675acd;
+	background: #fafafa;
+	padding: 0px;
 }
 .terminResult{
 	height: 400px;
@@ -461,4 +462,34 @@ ul li{
 }
 .social{
 	margin-top: 30px !important;
+}
+/*slidetermin*/
+.carousel-inner > .item > img,
+  .carousel-inner > .item > .word > ul > a > p {
+      width: 40%;
+      margin: auto;
+  }
+
+  .word{
+    width: 100%;
+    height: 100px;
+    padding: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+
+  }
+/*wrapper for slide*/
+ .smr{
+  width: 100%;
+  height: 100px;
+
+ }
+
+.trmn{
+  margin-left: 8px;
+  margin-right: 8px;
+  margin-bottom: 4px;
+  margin-top: 4px;
 }
