@@ -1,0 +1,83 @@
+.btn-primary-outline {
+  color: #0275d8;
+  background-color: transparent;
+  background-image: none;
+  border-color: #0275d8;
+}
+
+.btn-primary-outline:focus, .btn-primary-outline.focus, .btn-primary-outline:active, .btn-primary-outline.active,
+.open > .btn-primary-outline.dropdown-toggle {
+  color: #fff;
+  background-color: #0275d8;
+  border-color: #0275d8;
+}
+
+.btn-primary-outline:hover {
+  color: #fff;
+  background-color: #0275d8;
+  border-color: #0275d8;
+}
+
+.btn-primary-outline.disabled:focus, .btn-primary-outline.disabled.focus, .btn-primary-outline:disabled:focus, .btn-primary-outline:disabled.focus {
+  border-color: #43a7fd;
+}
+
+.btn-primary-outline.disabled:hover, .btn-primary-outline:disabled:hover {
+  border-color: #43a7fd;
+}
+
+.btn-success-outline {
+  color: #5cb85c;
+  background-color: transparent;
+  background-image: none;
+  border-color: #5cb85c;
+}
+
+/*.btn-success-outline:focus, .btn-success-outline.focus, .btn-success-outline:active, .btn-success-outline.active,
+.open > .btn-success-outline.dropdown-toggle {
+  color: #fff;
+  background-color: #5cb85c;
+  border-color: #5cb85c;
+}*/
+
+.btn-success-outline:hover, .liked {
+  color: #fff;
+  background-color: #5cb85c;
+  border-color: #5cb85c;
+}
+
+/*.btn-success-outline.disabled:focus, .btn-success-outline.disabled.focus, .btn-success-outline:disabled:focus, .btn-success-outline:disabled.focus {
+  border-color: #a3d7a3;
+}*/
+
+/*.btn-success-outline.disabled:hover, .btn-success-outline:disabled:hover {
+  border-color: #a3d7a3;
+}*/
+
+.btn-danger-outline {
+  color: #d9534f;
+  background-color: transparent;
+  background-image: none;
+  border-color: #d9534f;
+}
+
+/*.btn-danger-outline:focus, .btn-danger-outline.focus, .btn-danger-outline:active, .btn-danger-outline.active,
+.open > .btn-danger-outline.dropdown-toggle {
+  color: #fff;
+  background-color: #d9534f;
+  border-color: #d9534f;
+}*/
+
+.btn-danger-outline:hover, .disliked {
+  color: #fff;
+  background-color: #d9534f;
+  border-color: #d9534f;
+}
+
+.btn-danger-outline.disabled:focus, .btn-danger-outline.disabled.focus, .btn-danger-outline:disabled:focus, .btn-danger-outline:disabled.focus {
+  border-color: #eba5a3;
+}
+
+.btn-danger-outline.disabled:hover, .btn-danger-outline:disabled:hover {
+  border-color: #eba5a3;
+}
