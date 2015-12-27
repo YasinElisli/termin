@@ -25,5 +25,5 @@ if (mysqli_query($db_connection, $sqlUserEdit)) {
 } else {
     echo "Error updating record: " . mysqli_error($db_connection);
 }
-header("location:../profile.php");
+header("location:../profile.php?id=1");
  ?>

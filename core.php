@@ -198,7 +198,8 @@ function tags(){
 	function register_user($register_data) {
 
 				global $table_users, $db_connection;
-				$today = date("Y-m-d");
+        date_default_timezone_set('Asia/Baku');
+				$today = date("Y-m-d  H:i:s");
 
 				$table_columns = "(username, firstname, email, password, reg_date)";
 				$table_values = "('$register_data[username]',
@@ -284,20 +285,20 @@ function tags(){
         $query = mysqli_query($db_connection, $sql);
 
         mysqli_close($db_connection);
-        if ($query) 
-       
+        if ($query)
+
           return true;
         else
           return false;
     }
 
     /**
-     *bu funksiya edilen like ve ya dislike evvel olunub 
+     *bu funksiya edilen like ve ya dislike evvel olunub
      *ve ya olunmadigini yoxlayir
      *@param user_id like ve ya dislike eden userin id-si
      *@param term_id like ve ya dislike edilen terminin id-si
      *@param daxil edilen table-in adi: ya termin_like, ya da termin_dislike
-     *@return boolean deyer: true => qaytarilan setirlerin sayin 0-dan choxdur, 
+     *@return boolean deyer: true => qaytarilan setirlerin sayin 0-dan choxdur,
      *false => qaytarilan setirlerin sayin 0-a beraberdir
     */
     function previously_liked($user_id, $term_id, $table_name) {
@@ -305,7 +306,7 @@ function tags(){
 
         $sql = "SELECT * FROM $table_name WHERE user_id=$user_id AND termin_id=$term_id";
         $query = mysqli_query($db_connection, $sql);
-        
+
         // mysqli_close($db_connection);
         if (mysqli_num_rows($query) != 0)
           return true;
@@ -339,7 +340,7 @@ function tags(){
         $sql = "UPDATE $table_name SET $opposite_column=$opposite_column-1 WHERE termin_id=$term_id";
 
         $query = mysqli_query($db_connection, $sql);
-        
+
         mysqli_close($db_connection);
     }
 

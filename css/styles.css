@@ -463,6 +463,18 @@ ul li{
 .social{
 	margin-top: 30px !important;
 }
+.social li{
+	display: inline;
+}
+.social > li > a:link > span > i{
+	background: #333333 !important;
+	border-radius: 50%;
+}
+.social > li > a > span > i:hover{
+	background: #fff !important;
+	border-radius: 50%;
+	color: #333333;
+}
 <<<<<<< HEAD
 
 .btn-primary-outline {

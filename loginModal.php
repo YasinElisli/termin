@@ -105,7 +105,7 @@
 										<div class="form-group">
 											<div class="input-group">
 													<div class="input-group-addon"><i class="fa fa-birthday-cake"></i></div>
-													<input type="date" name="name" class="form-control" id="inputNameSurname" placeholder="Doğum tarixi">
+													<input type="date" name="bdate" class="form-control" id="inputNameSurname" placeholder="Doğum tarixi">
 											</div>
 											<span class="help-block has-error" data-error='0' id="remail-error"></span>
 										</div>
