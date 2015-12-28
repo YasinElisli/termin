@@ -1,4 +1,5 @@
 <?php
+ob_start();
 include '../db.php';
 // error_reporting(E_ALL ^ E_NOTICE);
 // ini_set('error_reporting', E_ALL ^ E_NOTICE);
@@ -25,5 +26,5 @@ if (mysqli_query($db_connection, $sqlUserEdit)) {
 } else {
     echo "Error updating record: " . mysqli_error($db_connection);
 }
-header("location:../profile.php");
+header("location:../profile.php?id=1");
  ?>

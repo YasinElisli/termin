@@ -11,7 +11,7 @@ function mustSign() {
 }
 //user termin elave ede bilmesi ucun form
 function addTermin(){
-  return '<form class="terminForm" action="addTermin.php" method="POST">
+  return '<form class="terminForm" action="#" method="POST">
 <div class="form-group">
   <label for="terminInput">Termin</label>
   <input type="text" class="form-control" id="terminInput" placeholder="Termin" name="termin">
@@ -75,7 +75,7 @@ function myTermin(){
   				   			<button class="glyphicon glyphicon-pencil edit_button"></button>
   				   		</div>
   				   		<div>
-  				   			<button class="glyphicon glyphicon-trash delete_glyphico"></button>
+  				   			<a href="profile/delete.php?id='.$query2["termin_id"].'" ><button  class="glyphicon glyphicon-trash delete_glyphico"></button></a>
   				   		</div>
   				   	</div>
   				   	<div class="disp_in-block float_r date_div">
@@ -203,7 +203,8 @@ function tags(){
 	function register_user($register_data) {
 
 				global $table_users, $db_connection;
-				$today = date("Y-m-d");
+        date_default_timezone_set('Asia/Baku');
+				$today = date("Y-m-d  H:i:s");
 
 				$table_columns = "(username, firstname, email, password, reg_date)";
 				$table_values = "('$register_data[username]',
@@ -232,7 +233,7 @@ function tags(){
 	}
 	function elaveTermin() {
   		  include('db.php');
-
+       
   			$termin = $_POST['termin'];
   			$termin_desc = $_POST['termin_desc'];
   			$ter_cat = $_POST['ter_cat'];
@@ -252,8 +253,7 @@ function tags(){
             if($num_rows>0){
             echo " termin artiq movcuddur";
 
-
-            } else {
+             } else {
 
               $user=$_SESSION['user_id'];
 
@@ -262,20 +262,18 @@ function tags(){
                                VALUES('$user','$termin', '$termin_desc', '$ter_cat','$today', '$termin_source')";
                 $insert = mysqli_query($db_connection,$add);
 
-                if($insert){
+                 if($insert){
+                   echo "Termin elave olundu!!!!";
+                     header("Refresh:0");
 
-                  // header("Location:index.php");
-                  echo "Termin elave olundu!!!!";
+                 }else{
 
-                }else{
+                   echo 'Termin elave olunmadi!!!';
 
-                  echo 'Termin elave olunmadi!!!';
-
-            }
-          }
-        }
-
-		}
+             }
+           }
+         }
+       }
 
     /**
      *bu funksiya edilen like ve ya dislike bazada, yeni muvafig cedvelde qeyd edir
@@ -295,20 +293,20 @@ function tags(){
         $query = mysqli_query($db_connection, $sql);
 
         mysqli_close($db_connection);
-        if ($query) 
-       
+        if ($query)
+
           return true;
         else
           return false;
     }
 
     /**
-     *bu funksiya edilen like ve ya dislike evvel olunub 
+     *bu funksiya edilen like ve ya dislike evvel olunub
      *ve ya olunmadigini yoxlayir
      *@param user_id like ve ya dislike eden userin id-si
      *@param term_id like ve ya dislike edilen terminin id-si
      *@param daxil edilen table-in adi: ya termin_like, ya da termin_dislike
-     *@return boolean deyer: true => qaytarilan setirlerin sayin 0-dan choxdur, 
+     *@return boolean deyer: true => qaytarilan setirlerin sayin 0-dan choxdur,
      *false => qaytarilan setirlerin sayin 0-a beraberdir
     */
     function previously_liked($user_id, $term_id, $table_name) {
@@ -316,7 +314,7 @@ function tags(){
 
         $sql = "SELECT * FROM $table_name WHERE user_id=$user_id AND termin_id=$term_id";
         $query = mysqli_query($db_connection, $sql);
-        
+
         // mysqli_close($db_connection);
         if (mysqli_num_rows($query) != 0)
           return true;
@@ -350,7 +348,7 @@ function tags(){
         $sql = "UPDATE $table_name SET $opposite_column=$opposite_column-1 WHERE termin_id=$term_id";
 
         $query = mysqli_query($db_connection, $sql);
-        
+
         mysqli_close($db_connection);
     }
 
