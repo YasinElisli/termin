@@ -111,7 +111,10 @@ ul li{
   padding: 0px !important;
 }
 .my_profile_leftside{
-	background: linear-gradient(to bottom, #abbaab , #ffffff);
+	/*background: linear-gradient(to top, #abbaab , #ffffff);*/
+	background: linear-gradient(to bottom, #0E9C8F , #fff);
+	color: #555;
+	font-size: 1.1em;
   padding: 10px;
   padding-top: 50px;
   height: 100%;

@@ -11,7 +11,7 @@ function mustSign() {
 }
 //user termin elave ede bilmesi ucun form
 function addTermin(){
-  return '<form class="terminForm" action="addTermin.php" method="POST">
+  return '<form class="terminForm" action="#" method="POST">
 <div class="form-group">
   <label for="terminInput">Termin</label>
   <input type="text" class="form-control" id="terminInput" placeholder="Termin" name="termin">
@@ -70,7 +70,7 @@ function myTermin(){
   				   			<button class="glyphicon glyphicon-pencil edit_button"></button>
   				   		</div>
   				   		<div>
-  				   			<button class="glyphicon glyphicon-trash delete_glyphico"></button>
+  				   			<a href="profile/delete.php?id='.$query2["termin_id"].'" ><button  class="glyphicon glyphicon-trash delete_glyphico"></button></a>
   				   		</div>
   				   	</div>
   				   	<div class="disp_in-block float_r date_div">
@@ -228,42 +228,43 @@ function tags(){
 	}
 	function elaveTermin() {
   		  include('db.php');
+       if (isset($_POST["submit"])) {
+         $termin = $_POST['termin'];
+         $termin_desc = $_POST['termin_desc'];
+         $ter_cat = $_POST['ter_cat'];
+         if (empty($termin) || empty($termin_desc)) {
+           echo "Xanaları boş buraxmayın";
+         }
+         else {
+           $selecet= "SELECT * FROM termin WHERE termin='$termin'";
+           $result=mysqli_query($db_connection,$selecet);
+            $num_rows=mysqli_num_rows ($result);
+            //echo $num_rows;
 
-  			$termin = $_POST['termin'];
-  			$termin_desc = $_POST['termin_desc'];
-  			$ter_cat = $_POST['ter_cat'];
-        if (empty($termin) || empty($termin_desc)) {
-          echo "Xanaları boş buraxmayın";
-        }
-        else {
-          $selecet= "SELECT * FROM termin WHERE termin='$termin'";
-          $result=mysqli_query($db_connection,$selecet);
-           $num_rows=mysqli_num_rows ($result);
-           //echo $num_rows;
-
-            if($num_rows>0){
-            echo " termin artiq movcuddur";
+             if($num_rows>0){
+             echo " termin artiq movcuddur";
 
 
-            } else {
+             } else {
 
-              $user=$_SESSION['user_id'];
-              $today = date("Y-m-d");
-                $add = "INSERT INTO termin(user_id,termin, termin_desc, ter_cat,ter_pub_date) VALUES('$user','$termin', '$termin_desc', '$ter_cat','$today')";
-                $insert = mysqli_query($db_connection,$add);
+               $user=$_SESSION['user_id'];
+               $today = date("Y-m-d");
+                 $add = "INSERT INTO termin(user_id,termin, termin_desc, ter_cat,ter_pub_date) VALUES('$user','$termin', '$termin_desc', '$ter_cat','$today')";
+                 $insert = mysqli_query($db_connection,$add);
 
-                if($insert){
+                 if($insert){
+                   echo "Termin elave olundu!!!!";
+                     header("Refresh:0");
 
-                  // header("Location:index.php");
-                  echo "Termin elave olundu!!!!";
+                 }else{
 
-                }else{
+                   echo 'Termin elave olunmadi!!!';
 
-                  echo 'Termin elave olunmadi!!!';
+             }
+           }
+         }
+       }
 
-            }
-          }
-        }
 
 		}
 

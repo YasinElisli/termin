@@ -52,7 +52,9 @@
       <p>Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
     </div>
     <div id="addtermin" class="tab-pane fade">
-    <?php echo addTermin(); ?>
+    <?php echo addTermin();
+              elaveTermin();
+     ?>
     </div>
   </div>
 </div>
