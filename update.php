@@ -5,7 +5,7 @@
 			
 			$termin = $_POST['termin'];
 			$idAndColumn = $_POST['idAndColumn'];
-			echo $termin ." ".$idAndColumn;
+			
 			$convertedToArray = explode(":", $idAndColumn);
 			$column = $convertedToArray[0];
 			$id = $convertedToArray[1];

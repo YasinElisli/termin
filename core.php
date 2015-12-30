@@ -71,10 +71,11 @@ function myTermin(){
   				   	<h3 class="disp_in-block">
   				   		<a href="" id='."termin:".$query2['termin_id'].' contenteditable=true data-type="textarea">'.$query2["termin"].'</a>
   				   	</h3>
+
+                  <button class="glyphicon glyphicon-pencil edit_button"></button>
+                
   				   	<div class="disp_in-block float_r">
-  				   		<div>
-  				   			<button class="glyphicon glyphicon-pencil edit_button"></button>
-  				   		</div>
+  				   		
   				   		<div>
   				   			<a href="profile/delete.php?id='.$query2["termin_id"].'" ><button  class="glyphicon glyphicon-trash delete_glyphico"></button></a>
   				   		</div>
@@ -83,9 +84,10 @@ function myTermin(){
   				   		<p class="disp_in-block date">Add date:&nbsp;</p>
   				   		<p class="disp_in-block date_time">9-12-2015</p>
   				   	</div>
-  				   	<strong><p class="desct">Izahat:&nbsp;</p></strong>
+  				   	<strong><p class=>Izahat:&nbsp;</p></strong>
   				   	<div id="div1">
   				   		<p class="desct" id="'."termin_desc:".$query2["termin_id"].'" contenteditable=true data-type="textarea">'.$query2["termin_desc"].'</p>
+                <button class="glyphicon glyphicon-pencil edit_button"></button>
   				   	</div>
   				   </div><br>';
   }

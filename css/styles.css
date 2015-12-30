@@ -217,16 +217,15 @@ ul li{
 		padding-left: 10px;
 		border-radius: 4px;
 		border: 2px dotted #ccc;
-		max-width: 500px;
+		max-width: 800px;
 	}
 	.desct{
 		margin-bottom: 0px !important;
 		color: #404040;
 	}
 	#div1 {
-    white-space: nowrap;
-    width: 70%;
-    overflow: hidden;
+
+    width: 80%;
     text-overflow: clip;
     display: inline-block;
 }
@@ -237,8 +236,8 @@ ul li{
 	float: right;
 }
 .edit_button{
-	width: 35px;
-	height: 38px;
+	width: 25px;
+	height: 20px;
 	border:0px;
 	margin-top:5px;
 	border-radius: 5px;
@@ -286,7 +285,13 @@ ul li{
 	.desct{
 		margin-bottom: 0px !important;
 		color: #404040;
+		display: inline;
+		line-height: 230%;
 	}
+	.editable{
+     color: #000;
+     background-color: #ffffd3;
+ }
 /*profil edit*//*profil edit*//*profil edit*//*profil edit*/
 .prf-edt input{
 		width: 300px;
