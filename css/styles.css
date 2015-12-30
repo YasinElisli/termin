@@ -115,10 +115,22 @@ ul li{
 	background: linear-gradient(to bottom, #0E9C8F , #fff);
 	color: #555;
 	font-size: 1.1em;
-  padding: 10px;
-  padding-top: 50px;
-  height: 100%;
+  padding: 0px;
+  height: 617px;
   overflow: hidden;
+}
+.addPhoto{
+	background: green;
+	border-radius: 50%;
+}
+.uploadBtn{
+	margin-left: 25px;
+	padding: 0px;
+	width: 100%;
+}
+.uploadBtn li{
+	display: inline !important;
+	margin-right: 5px;
 }
 .mypara{
   display: inline-block;
@@ -128,8 +140,8 @@ ul li{
 .my_profile{
   padding-top: 10px;
 	padding-left: 20px;
-  background: #fafafa;
-  height: 100%;
+  background: #fefefe;
+  height: 615px;
 }
 .profilNav{
 	margin-bottom: 20px;
@@ -138,12 +150,13 @@ ul li{
   width: 150px;
   height: 150px;
   border-radius: 50%;
-  background: url(../img/pf.png);
+	margin-top: 50px;
+	background-size: 100%100%;
 }
 .profil_username{
-  padding-left: 1px;
-  padding-right: 1px;
-  font-size: 22px;
+	margin-top: 30px !important;
+  font-size: 1.6em !important;
+	text-transform: capitalize;
 }
 @media (min-width: 144px) {
   .pp{
@@ -298,8 +311,7 @@ ul li{
 		display: inline-block;
 	}
 	.prf-edt{
-	padding: 15px;
-	margin-left: 2%;
+	margin-left: 10px;
 	min-width: 500px;
 	max-width: 500px;
 }

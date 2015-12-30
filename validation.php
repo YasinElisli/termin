@@ -2,7 +2,7 @@
 include 'db.php';
 if (isset($_POST['submit'])) {
 
-			$required_fields = array('username','password','password_retyped','name','email');
+			$required_fields = array('username','password','password_retyped','name','email','surname','bdate','gender');
 
 			foreach ($_POST as $field => $user_input) {
 				// echo $field. " ";
@@ -15,19 +15,26 @@ if (isset($_POST['submit'])) {
 			$password_retyped = trim($_POST['password_retyped']);
 			$name = trim($_POST['name']);
 			$email = trim($_POST['email']);
-
+			$surname = trim($_POST['surname']);
+			$birth = trim($_POST['bdate']);
+			$gender = $_POST['gender'];
+			$pphoto = "img/pf.png";
 
 			$user_data = array('username' => trim($_POST['username']),
 							   'password' => trim($_POST['password']),
 					   'password_retyped' => trim($_POST['password_retyped']),
 								   'name' => trim($_POST['name']),
-								  'email' => trim($_POST['email'])
+								  'email' => trim($_POST['email']),
+									'surname' => trim($_POST['surname']),
+									'birth' => trim($_POST['bdate']),
+									'pphoto' => "img/pf.png",
+									'gender' => $gender
 								);
 			//check password. break the process if no errors found
 			//initialize empty array
 
 
-			if (strlen($password) < 6)
+			if (strlen($password) < 4)
 				$errors[] = "Password is too short<br>";
 			else if (strlen($password) > 40)
 				$errors[] = "Password is too long<br>";
@@ -53,7 +60,7 @@ if (isset($_POST['submit'])) {
 			$user_verified = true;
 			if ($user_verified && empty($errors)) {
 					register_user($user_data);	//add to database
-					signin($username,$password)	;//session-larin yaranmasi ucun bu function cagrilir						
+					signin($username,$password)	;//session-larin yaranmasi ucun bu function cagrilir
 			}
 			mysqli_close($db_connection);
 		}

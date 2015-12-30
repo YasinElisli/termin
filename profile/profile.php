@@ -1,12 +1,35 @@
 <?php ob_start();?>
 <?php
     include 'core.php';
-    // include 'user.php';
+
+    $queryEdit =  userData();
+   while ($row = mysqli_fetch_assoc($queryEdit)) {
+     $dbPPhoto = $row['user_photo'];
+   }
+
 ?>
 <div class="my_main col-xs-12 col-sm-12 col-md-12 col-lg-12">
 	<div class="my_profile_leftside col-xs-2 col-sm-2 col-md-2 col-lg-2">
-		<center><div class="pp"></div></center>
-		<center><h3 class="profil_username">
+		<center><div class="pp" style="background:url('<?php echo $dbPPhoto; ?>');background-size:cover">
+  </div></center><br>
+    <form class="addPhotoForm" action="profile\upload.php" method="POST" enctype="multipart/form-data">
+      <!-- <input type="file" accept="image/*"> -->
+      <ul class="uploadBtn">
+        <li class="pull-left">
+          <input type="file" name="pphoto" accept="image/*" class="filestyle" data-classButton="btn btn-primary" data-input="false" data-classIcon="icon-plus" data-buttonText=" Sekil seçin">
+        </li>
+        <li class="pull-left">
+          <button type="submit" class="btn btn-success">
+						<span class="glyphicon glyphicon-ok"></span> OK
+					</button>
+        </li>
+      </ul>
+    </form><br>
+    <!-- <center><span class="fa-stack fa-lg">
+      <i class="fa fa-circle fa-stack-2x"></i>
+      <i class="fa fa-camera fa-stack-1x fa-inverse addPhoto"></i>
+   </span><center> -->
+		<center><p class="profil_username">
         <?php
               //eger user log in olubsa onda onun adini goster profile sehifesine
               if (logged_in()) {
@@ -14,7 +37,7 @@
                   echo $_SESSION['username'];
               } else echo "Username";
         ?>
-    </h3></center>
+    </p></center>
 		<center>
             <p class="mypara">Qeydiyyat Tarixi:<p class="mypara">&nbsp;&nbsp;&nbsp;&nbsp;</p><p class="mypara">
               <?php

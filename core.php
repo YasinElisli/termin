@@ -209,11 +209,15 @@ function tags(){
         date_default_timezone_set('Asia/Baku');
 				$today = date("Y-m-d  H:i:s");
 
-				$table_columns = "(username, firstname, email, password, reg_date)";
+				$table_columns = "(username, firstname,lastname,birthdate,email,gender,password,user_photo,reg_date)";
 				$table_values = "('$register_data[username]',
 								  '$register_data[name]',
+                  '$register_data[surname]',
+                  '$register_data[birth]',
 								  '$register_data[email]',
+                  '$register_data[gender]',
 								  '$register_data[password]',
+                  '$register_data[pphoto]',
 								  '$today')";
 				// echo $table_values;
 
@@ -423,9 +427,15 @@ function tags(){
   	}
 function userData(){
   include 'db.php';
+  global $userIDedit;
   $userIDedit = $_SESSION['user_id'];
   $connection = mysqli_select_db($db_connection,$dbname);
   $sql = "SELECT * FROM user WHERE id='$userIDedit'";
   return $queryProfile = mysqli_query($db_connection, $sql);
+}
+function uploadPhoto(){
+  include 'db.php';
+
+
 }
  ?>
