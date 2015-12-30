@@ -34,6 +34,7 @@ function addTermin(){
     <option value="Biologiya">Biologiya</option>
     <option value="Fizika">Fizika</option>
     <option value="Neft">Neft</option>
+    <option value="Kino">Kino</option>
   </select>
 </div>
 <div class="form-group">
@@ -68,7 +69,7 @@ function myTermin(){
 
              echo '<div class="my_termin">
   				   	<h3 class="disp_in-block">
-  				   		<a href="">'.$query2["termin"].'</a>
+  				   		<a href="" id='."termin:".$query2['termin_id'].' contenteditable=true data-type="textarea">'.$query2["termin"].'</a>
   				   	</h3>
   				   	<div class="disp_in-block float_r">
   				   		<div>
@@ -84,7 +85,7 @@ function myTermin(){
   				   	</div>
   				   	<strong><p class="desct">Izahat:&nbsp;</p></strong>
   				   	<div id="div1">
-  				   		<p class="desct">'.$query2["termin_desc"].'</p>
+  				   		<p class="desct" id="'."termin_desc:".$query2["termin_id"].'" contenteditable=true data-type="textarea">'.$query2["termin_desc"].'</p>
   				   	</div>
   				   </div><br>';
   }
