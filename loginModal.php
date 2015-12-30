@@ -109,6 +109,20 @@
 											</div>
 											<span class="help-block has-error" data-error='0' id="remail-error"></span>
 										</div>
+										<div class="form-group">
+											<div class="input-group">
+												<label for="male">Kisi </label>
+												<input type="radio" name="gender" value="k" id="male">
+											</div>
+											<span class="help-block has-error" data-error='0' id="remail-error"></span>
+										</div>
+										<div class="form-group">
+											<div class="input-group">
+												<label for="female">Qadın </label>
+												<input type="radio" name="gender" value="q" id="female">
+											</div>
+											<span class="help-block has-error" data-error='0' id="remail-error"></span>
+										</div>
 						  			<input type="submit" name="submit" id="register_btn" class="btn btn-block bt-login" data-loading-text="Registering...." value="Qeydiyyatdan keç">
 									<div class="clearfix"></div>
 									<div class="login-modal-footer">

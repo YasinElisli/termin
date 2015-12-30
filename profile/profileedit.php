@@ -12,6 +12,7 @@
   				$dbMail = $row['email'];
   				$dbBirth = $row['birthdate'];
   				$dbGender = $row['gender'];
+					$dbPPhoto = $row['user_photo'];
   			}
 
 				?>

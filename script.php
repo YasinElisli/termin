@@ -4,3 +4,4 @@
 <script src="js/tabsPopup.js" type="text/javascript"></script>
 <script src="js/parallax.js"></script>
 <script language="javascript" src="http://is.sitekodlari.com/yukaricik13.js"></script>
+<script type="text/javascript" src="js/bootstrap-filestyle.min.js"> </script>
