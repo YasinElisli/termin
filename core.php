@@ -28,11 +28,18 @@ function addTermin(){
     <option value="Tibb">Tibb</option>
     <option value="Kimya">Kimya</option>
     <option value="Riyaziyyat">Riyaziyyat</option>
+    <option value="Mədəniyyət">Mədəniyyət</option>
+    <option value="Tarix">Tarix</option>
+    <option value="Coğrafiya">Coğrafiya</option>
+    <option value="Biologiya">Biologiya</option>
+    <option value="Fizika">Fizika</option>
+    <option value="Neft">Neft</option>
+    <option value="Kino">Kino</option>
   </select>
 </div>
 <div class="form-group">
   <label for="source">Mənbə</label>
-  <input type="text" class="form-control" name="source" id="source" placeholder="Əgər varsa">
+  <input type="text" class="form-control" name="termin_source" id="source" placeholder="Əgər varsa">
 </div>
 <div class="form-group">
   <label for="keyWord">Açar söz (arasında vergül qoymaqla)</label>
@@ -46,10 +53,9 @@ function myTermin(){
   $start = 0;
   $limit = 3;
 
-  if(isset($_GET['id']))
-  {
-  $id=$_GET['id'];
-  $start=($id-1)*$limit;
+  if(isset($_GET['id'])) {
+    $id=$_GET['id'];
+    $start=($id-1)*$limit;
   }
 
   $userID = $_SESSION['user_id'];
@@ -63,12 +69,13 @@ function myTermin(){
 
              echo '<div class="my_termin">
   				   	<h3 class="disp_in-block">
-  				   		<a href="">'.$query2["termin"].'</a>
+  				   		<a href="" id='."termin:".$query2['termin_id'].' contenteditable=true data-type="textarea">'.$query2["termin"].'</a>
   				   	</h3>
+
+                  <button class="glyphicon glyphicon-pencil edit_button"></button>
+                
   				   	<div class="disp_in-block float_r">
-  				   		<div>
-  				   			<button class="glyphicon glyphicon-pencil edit_button"></button>
-  				   		</div>
+  				   		
   				   		<div>
   				   			<a href="profile/delete.php?id='.$query2["termin_id"].'" ><button  class="glyphicon glyphicon-trash delete_glyphico"></button></a>
   				   		</div>
@@ -77,9 +84,10 @@ function myTermin(){
   				   		<p class="disp_in-block date">Add date:&nbsp;</p>
   				   		<p class="disp_in-block date_time">9-12-2015</p>
   				   	</div>
-  				   	<strong><p class="desct">Izahat:&nbsp;</p></strong>
+  				   	<strong><p class=>Izahat:&nbsp;</p></strong>
   				   	<div id="div1">
-  				   		<p class="desct">'.$query2["termin_desc"].'</p>
+  				   		<p class="desct" id="'."termin_desc:".$query2["termin_id"].'" contenteditable=true data-type="textarea">'.$query2["termin_desc"].'</p>
+                <button class="glyphicon glyphicon-pencil edit_button"></button>
   				   	</div>
   				   </div><br>';
   }
@@ -232,29 +240,34 @@ function tags(){
 	}
 	function elaveTermin() {
   		  include('db.php');
-       if (isset($_POST["submit"])) {
-         $termin = $_POST['termin'];
-         $termin_desc = $_POST['termin_desc'];
-         $ter_cat = $_POST['ter_cat'];
-         if (empty($termin) || empty($termin_desc)) {
-           echo "Xanaları boş buraxmayın";
-         }
-         else {
-           $selecet= "SELECT * FROM termin WHERE termin='$termin'";
-           $result=mysqli_query($db_connection,$selecet);
-            $num_rows=mysqli_num_rows ($result);
-            //echo $num_rows;
+       
+  			$termin = $_POST['termin'];
+  			$termin_desc = $_POST['termin_desc'];
+  			$ter_cat = $_POST['ter_cat'];
+        $termin_source = $_POST['termin_source'];
+        //eger boshdursa onda userid adi menbe olacag
+        if (empty($termin_source)) $termin_source = $_SESSION['username'];
+        
+        if (empty($termin) || empty($termin_desc)) {
+          echo "Xanaları boş buraxmayın";
+        }
+        else {
+          $selecet= "SELECT * FROM termin WHERE termin='$termin'";
+          $result=mysqli_query($db_connection,$selecet);
+           $num_rows=mysqli_num_rows ($result);
+           //echo $num_rows;
 
-             if($num_rows>0){
-             echo " termin artiq movcuddur";
-
+            if($num_rows>0){
+            echo " termin artiq movcuddur";
 
              } else {
 
-               $user=$_SESSION['user_id'];
-               $today = date("Y-m-d");
-                 $add = "INSERT INTO termin(user_id,termin, termin_desc, ter_cat,ter_pub_date) VALUES('$user','$termin', '$termin_desc', '$ter_cat','$today')";
-                 $insert = mysqli_query($db_connection,$add);
+              $user=$_SESSION['user_id'];
+
+              $today = date("Y-m-d");
+                $add = "INSERT INTO termin(user_id,termin, termin_desc, ter_cat,ter_pub_date, ter_source)
+                               VALUES('$user','$termin', '$termin_desc', '$ter_cat','$today', '$termin_source')";
+                $insert = mysqli_query($db_connection,$add);
 
                  if($insert){
                    echo "Termin elave olundu!!!!";
@@ -268,9 +281,6 @@ function tags(){
            }
          }
        }
-
-
-		}
 
     /**
      *bu funksiya edilen like ve ya dislike bazada, yeni muvafig cedvelde qeyd edir

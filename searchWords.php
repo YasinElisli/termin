@@ -11,6 +11,7 @@
 		$termin_like = 0;
 		$termin_dislike = 0;
 		$like = "like";
+		$termin_source = "";
 
 		//mehs bu sozu axtar.
 		$sql = "SELECT u.username, 
@@ -20,7 +21,8 @@
 					   ter.ter_pub_date, 
 					   ter.ter_cat, 
 					   ter.ter_num_like,
-		 			   ter.ter_num_dislike 
+		 			   ter.ter_num_dislike,
+		 			   ter.ter_source 
 		 	    
 		 	    FROM user AS u, termin AS ter WHERE u.id = ter.user_id AND ter.termin LIKE '$termin'";
 
@@ -37,6 +39,7 @@
 					$kategoriya = $first_row['ter_cat'];
 					$termin_like = $first_row['ter_num_like'];
 					$termin_dislike = $first_row['ter_num_dislike'];
+					$termin_source = $first_row['ter_source'];
 		} else {
 			//oxshar terminleri axtar, yeni ichinde o achar soz olan 
 			$sql = "SELECT u.username, ter.termin, ter.termin_desc, ter.ter_pub_date, ter.ter_cat FROM user AS u, termin AS ter WHERE u.id = ter.user_id

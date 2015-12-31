@@ -72,7 +72,12 @@
                       <span id="num_dislike"><?php echo $termin_dislike ?></span>
                   </button>
                 </li>
+
+                <li class="yazar" >Əlavə etdi: <?php echo $user_name ?></li>
+                <li class="menbe"> Mənbə : <?php echo $termin_source ?></li>
               </ul>
+              <button type="button" class="random btn btn-secondary">Random Termin</button>
+
               </div>
             </div>
             <div class="col-md-12 pull-left sliderTermin">
