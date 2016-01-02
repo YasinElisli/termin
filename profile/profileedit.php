@@ -33,7 +33,7 @@
 				</div>
 				<div>
 					<label><p class="prf-edt-paragr">E-mail</p>
-						<input value="<?php echo $dbMail; ?>" class="form-control" style="padding:0px;" type="mail" name="emailEdit">
+						<input value="<?php echo $dbMail; ?>" class="form-control" type="mail" name="emailEdit">
 					</label>
 				</div>
 				<div>

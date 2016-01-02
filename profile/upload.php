@@ -1,12 +1,11 @@
 <?php
+ob_start();
 session_start();
 include '../core.php';
 include '../db.php';
 
 $user_id_photo = $_SESSION['user_id'];
 
-
-  global $fayl_adi;
   $fayl = $_FILES["pphoto"];
   $fayl_adi = $_FILES["pphoto"]["name"];
   $fayl_kecici_adres = $_FILES["pphoto"]["tmp_name"];
