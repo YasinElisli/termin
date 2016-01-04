@@ -66,10 +66,18 @@ function myTermin(){
   $query=mysqli_query($db_connection,"SELECT * FROM termin WHERE user_id= $userID LIMIT $start, $limit");
 
   while ($query2 = mysqli_fetch_assoc($query)) {
+    $terVer = $query2['ter_verified'];
+    $verMessage = "";
+    $terOpacity = ".9";
+    if ($terVer == 0) {
+      $verMessage = "(termin tesdiqlenmeyib)";
+      $terOpacity = ".5";
+    }
 
-             echo '<div class="my_termin">
+             echo '<div class="my_termin" style="opacity:'.$terOpacity.'">
   				   	<h3 class="disp_in-block">
   				   		<a href="" id='."termin:".$query2['termin_id'].' contenteditable=true data-type="textarea">'.$query2["termin"].'</a>
+                '.$verMessage.'
   				   	</h3>
 
                   <button class="glyphicon glyphicon-pencil edit_button"></button>
@@ -117,12 +125,12 @@ function bestWriter(){
 function newestTermin(){
   include 'db.php';
   $connection = mysqli_select_db($db_connection,$dbname);
-  return $query=mysqli_query($db_connection,"SELECT * FROM termin GROUP BY ter_pub_date DESC LIMIT 5");
+  return $query=mysqli_query($db_connection,"SELECT * FROM termin WHERE ter_verified = '1' GROUP BY ter_pub_date DESC LIMIT 5");
 }
 function mostRead(){
   include 'db.php';
   $connection = mysqli_select_db($db_connection,$dbname);
-  return $query=mysqli_query($db_connection,"SELECT * FROM termin GROUP BY ter_num_view DESC LIMIT 5");
+  return $query=mysqli_query($db_connection,"SELECT * FROM termin WHERE ter_verified = '1' GROUP BY ter_num_view DESC LIMIT 5");
 }
 
 
@@ -265,9 +273,9 @@ function tags(){
 
                 $user=$_SESSION['user_id'];
 
-                $today = date("Y-m-d");
-                  $add = "INSERT INTO termin(user_id,termin, termin_desc, ter_cat,ter_pub_date, ter_source)
-                                 VALUES('$user','$termin', '$termin_desc', '$ter_cat','$today', '$termin_source')";
+                $today = date("Y-m-d  H:i:s");
+                  $add = "INSERT INTO termin(user_id,termin, termin_desc, ter_cat,ter_pub_date, ter_source,ter_verified)
+                                 VALUES('$user','$termin', '$termin_desc', '$ter_cat','$today', '$termin_source',0)";
                   $insert = mysqli_query($db_connection,$add);
 
                    if($insert){

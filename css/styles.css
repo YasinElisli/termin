@@ -380,12 +380,12 @@ ul li{
 	background: #07998B;
 	color: #fff;
 }
-.most_search_term {
+.rightList {
     text-align: center;
     margin-bottom: 1px;
 		width: 100%;
 }
-.mostReadItem{
+.listItem{
 	padding-top: 5px !important;
 	padding-bottom: 4px !important;
 }
