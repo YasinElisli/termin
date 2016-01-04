@@ -1,0 +1,18 @@
+.adminMain{
+  margin-bottom: 0px !important;
+}
+.leftCollection{
+  margin: 0px !important;
+}
+.left-panel{
+  background: #009688;
+  height: 100%;
+  position: fixed;
+  padding: 0px !important;
+}
+.right-panel{
+  background: #eeeeee;
+  height: 100%;
+  position: absolute;
+  right:0;
+}
