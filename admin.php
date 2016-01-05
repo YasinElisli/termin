@@ -9,28 +9,13 @@
      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   </head>
   <body>
+    <?php include 'db.php'; ?>
     <div class="container-fluid">
       <div class="row adminMain">
-        <div class="col l2 left-panel">
-          <div class="collection leftCollection">
-            <a href="#!" class="collection-item">Terminler<span class="badge">1</span></a>
-            <a href="#!" class="collection-item">Yeni terminlər<span class="new badge">4</span></a>
-            <a href="#!" class="collection-item">Menular</a>
-            <a href="#!" class="collection-item">Kateqoriya<span class="badge">14</span></a>
-          </div>
-        </div>
+      <?php include 'adminLeft.php'; ?>
         <div class="col l10 right-panel">
-          <div class="fixed-action-btn horizontal" style="bottom: 45px; right: 24px;">
-        <a class="btn-floating btn-large red">
-     <i class="large material-icons">edit</i>
-   </a>
-          <ul>
-            <!-- <li><a class="btn-floating red"><i class="material-icons">queue</i></a></li> -->
-            <li><a class="btn-floating yellow darken-1"><i class="material-icons">search</i></a> Termin axtar</li>
-            <li><a class="btn-floating green"><i class="material-icons">perm_identity</i></a> Userler</li>
-            <li><a class="btn-floating blue"><i class="material-icons">add</i></a> Termin Elave Et</li>
-          </ul>
- </div>
+          admin panel right
+          <?php include 'editBtn.php'; ?>
        </div>
      </div>
       </div>

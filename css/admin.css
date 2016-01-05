@@ -1,3 +1,6 @@
+li{
+  list-style-type: none;
+}
 .adminMain{
   margin-bottom: 0px !important;
 }
@@ -16,3 +19,16 @@
   position: absolute;
   right:0;
 }
+/*yeni terminler sehifesi kodlari START*/
+.verify{
+  margin-left: 10px;
+  border: 1px dotted #fff;
+  border-radius: 5px;
+  background: #009688;
+  color: #fff;
+}
+.newTermin{
+  margin-bottom: 10px;
+  list-style-type: none;
+}
+/*yeni terminler sehifesi kodlari END*/
