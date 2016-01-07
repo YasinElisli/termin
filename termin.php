@@ -9,7 +9,9 @@
       <link rel="stylesheet" type="text/css" href="css/button.css">
   </head>
   <body>
-    <?php include 'searchWords.php';
+    <?php
+
+          include 'searchWords.php';
           include 'header.php';
           include 'core.php'; ?>
       <div class="container-fluid terminMain">
@@ -80,19 +82,41 @@
 
 
               </div>
+              <?php
+                include 'db.php';
+                $connection = mysqli_select_db($db_connection,$dbname);
+                $sqlTag = "SELECT * FROM fk_tag WHERE termin_id = '$termin_id'";
+                $query = mysqli_query($db_connection, $sqlTag);
+                $row_cnt = mysqli_num_rows($query);
+                if ($row_cnt !== 0) {
+                  while ($row = mysqli_fetch_assoc($query)) {
+                    $tagID[] =  $row['tag_id'];
+                  }
+                  foreach ($tagID as $key => $value) {
+                    $sql = "SELECT * FROM tag WHERE id = '$value'";
+                    $query = mysqli_query($db_connection, $sql);
+                    while ($row = mysqli_fetch_assoc($query)) {
+                      $tag[] =  $row['tag'];
+                    }
+                  }
+                  echo "Açar sözlər: ";
+                  foreach ($tag as $key => $value) {
+                    echo $value." ";
+                  }
+                }
+               ?>
             </div>
             <div class="col-md-12 pull-left sliderTermin">
               <div class="smr">
   <br>
-  <div id="myCarousel" class="carousel slide" data-ride="carousel">
+  <div id="myCarousel" class="carousel slide smrSlider" data-ride="carousel">
 
     <!-- Wrapper for slides -->
     <div class="carousel-inner" role="listbox">
 
       <div class="item active">
         <div class="word">
-          <ul><a href=""><p>Lorem ipsum dolor sit . Excepteur sint occaecat cupidatat non
-         proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p></a></ul>
+          <ul><a href=""><p>Termin1</p></a></ul>
        </div>
       <div class="carousel-caption"></div>
       </div>
@@ -100,24 +124,21 @@
 
       <div class="item">
         <div class="word">
-         <ul><a href=""><p>Lorem ipsum dolor sit . Excepteur sint occaecat cupidatat non
-         proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p></a></ul>
+         <ul><a href=""><p>Termin2</p></a></ul>
         </div>
       <div class="carousel-caption"></div>
       </div>
 
           <div class="item">
        <div class="word">
-       <ul><a href=""><p>Lorem ipsum dolor sit . Excepteur sint occaecat cupidatat non
-         proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p></a></ul>
+       <ul><a href=""><p>Termin3</p></a></ul>
        </div>
        <div class="carousel-caption"></div>
       </div>
 
       <div class="item">
         <div class="word">
-         <ul><a href=""><p>Lorem ipsum dolor sit . Excepteur sint occaecat cupidatat non
-         proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p></a></ul>
+         <ul><a href=""><p>Termin4</p></a></ul>
         </div>
         <div class="carousel-caption"></div>
       </div>

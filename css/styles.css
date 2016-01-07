@@ -531,7 +531,9 @@ ul li{
       width: 40%;
       margin: auto;
   }
-
+.smrSlider{
+	position: inherit !important;
+}
   .word{
     width: 100%;
     height: 100px;
@@ -540,13 +542,14 @@ ul li{
     margin-right: auto;
     margin-top: auto;
     margin-bottom: auto;
-
   }
+	.word p{
+		text-align: center;
+	}
 /*wrapper for slide*/
  .smr{
   width: 100%;
   height: 100px;
-
  }
 
 .trmn{

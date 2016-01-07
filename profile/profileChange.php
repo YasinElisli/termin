@@ -18,7 +18,7 @@ if (isset($_POST["submit"])) {
 
 $userEditID =  $_SESSION['user_id'];
 $connection = mysqli_select_db($db_connection,$dbname);
-$sqlUserEdit = "UPDATE user SET username = '$usernameEdit',firstname = '$nameEdit',lastname = '$surnameEdit',birthdate = '$birthEdit',email='$emailEdit',gender = '$genderEdit',password = '$newPassEdit' WHERE id = '$userEditID'";
+$sqlUserEdit = "UPDATE user SET username = '$usernameEdit',firstname = '$nameEdit',lastname = '$surnameEdit',birthdate = '$birthEdit',email='$emailEdit',gender = '$genderEdit',password = '$lastPassEdit' WHERE id = '$userEditID'";
 
 $query=mysqli_query($db_connection,$sqlUserEdit);
 if (mysqli_query($db_connection, $sqlUserEdit)) {
