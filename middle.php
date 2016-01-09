@@ -58,60 +58,27 @@
   <div class="col-lg-3 popular">
     <div class="forborder norightborder">
       <h3 class="tag-heading"><center>Taglar</center></h3>
-      <div class="row">
-        <div class="col-lg-6 no-padding">
-          <a href="#" class="tags"> IT </a>
-          <span class="item-multiplier-x">×</span>
-          <span class="item-multiplier-count">9213</span>
-          <div class="excerpt">
-            İnformasiya ehtiyatlarından istifadə olunması proseslərinin ağırlığını azaltmaq, onların etibarlığını və operativliyini çoxaltmaq məqsədilə informasiyanın toplanması, emalı, saxlanması, ötürülməsini təmin edən və texnoloji zəncirdə birləşdirən metodlar, istehsal prosesləri və texniki-proqram vasitələri toplusu.
-          </div>
-        </div>
-        <div class="col-lg-6 no-padding">
-          <a href="#" class="tags"> Diger </a>
-          <span class="item-multiplier-x">×</span>
-          <span class="item-multiplier-count">5553</span>
-          <div class="excerpt">
-            Diger terminler
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-lg-6 no-padding">
-          <a href="#" class="tags"> Sağlamlıq </a>
-          <span class="item-multiplier-x">×</span>
-          <span class="item-multiplier-count">2343</span>
-          <div class="excerpt">
-            insan sağlamlığını qorumaq və möhkəmləndirmək üçün müxtəlif xəstəlikləri və patoloji vəziyyətləri öyrənən, insan orqanizmində normal və patoloji proseslərin tədqiqatı üzrə elmi və praktik fəaliyyət sahəsidir.
-          </div>
-         </div>
-         <div class="col-lg-6 no-padding">
-          <a href="#" class="tags"> Tarix </a>
-          <span class="item-multiplier-x">×</span>
-          <span class="item-multiplier-count">1112</span>
-          <div class="excerpt">
-          mənbələr üzrə insanın meydana gəlməsi və inkişafını, müxtəlif xalqların ən qədim zamanlardan bizim dövrümüzədək necə yaşamaları, onların həyatlarında hansı hadisələrin baş verməsi, insan cəmiyyətlərinin həyatı necə və niyə dəyişib indi mövcud olduğu hala düşməsini öyrənən elmdir.
-          </div>
-         </div>
-      </div>
-      <div class="row">
-        <div class="col-lg-6 no-padding">
-          <a href="#" class="tags"> Hardware </a>
-          <span class="item-multiplier-x">×</span>
-          <span class="item-multiplier-count">244</span>
-          <div class="excerpt">
-            Hardware Təchizat - Kompüterin elektron / elektromexanik və mexaniki aksamına verilən ümumi addır.
-          </div>
-         </div>
-         <div class="col-lg-6 no-padding">
-          <a href="#" class="tags"> Softwere </a>
-          <span class="item-multiplier-x">×</span>
-          <span class="item-multiplier-count">114</span>
-          <div class="excerpt">
-            Komputerin proqram təminatı
-          </div>
-         </div>
-      </div>
+      <div class="row tagMain">
+      <?php
+      include 'db.php';
+      $connection = mysqli_select_db($db_connection,$dbname);
+      $sql = "SELECT * FROM tag GROUP BY tag_num DESC LIMIT 20";
+      $query = mysqli_query($db_connection,$sql);
+      while ($row = mysqli_fetch_assoc($query)) {
+        $tagNum = $row['tag_num'];
+        $tagName = $row['tag'];
+        echo '
+            <div class="col-lg-6 no-padding tagItem">
+              <a href="#" class="tags">'.$tagName.' </a>
+              <span class="item-multiplier-x">×</span>
+              <span class="item-multiplier-count">'.$tagNum.'</span>
+
+            </div>
+
+          ';
+      }
+       ?>
+</div>
   </div>
 </div>
 </div>
