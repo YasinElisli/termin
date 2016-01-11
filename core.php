@@ -255,8 +255,8 @@ function tags(){
     			$ter_cat = $_POST['ter_cat'];
           $termin_source = $_POST['termin_source'];
           $termin_tags = $_POST['keyWord'];
-          $tagPost = explode(",",$termin_tags);
-          print_r($tagPost);
+          $tagPost = explode(",",$termin_tags);//userden gelen tag-lar explode f-si vasitesile ayrir ve $tagPost- massivine yazilir
+          // print_r($tagPost);
           //userden gelen taglarin bazada olub-olmadigini yoxlayiriq
           //ve eger yoxdusa bazaya elave edirik
           foreach ($tagPost as $key => $value) {
@@ -272,12 +272,10 @@ function tags(){
             else {
               @$sqlTagNum = "UPDATE tag SET tag_num=tag_num+1 WHERE tag = '$tagExist'";
               $resultTagNum=mysqli_query($db_connection,$sqlTagNum);
-              echo @$tagExist."+1";
+              // echo @$tagExist."+1";
             }
 
           }
-
-
           //eger boshdursa onda userid adi menbe olacag
           if (empty($termin_source)) $termin_source = $_SESSION['username'];
 
@@ -304,31 +302,32 @@ function tags(){
 
                    if($insert){
                      echo "Termin elave olundu!!!!";
-                       //header("Refresh:0");
+                       header("Refresh:2");
 
                    }else{
 
                      echo 'Termin elave olunmadi!!!';
-
                }
              }
            }
+           $sqll = "SELECT * FROM termin WHERE termin = '$termin'";
+           $quer = mysqli_query($db_connection,$sqll);
+           while ($row = mysqli_fetch_assoc($quer)) {
+             $terID_FK = $row['termin_id'];
+           }
+           foreach ($tagPost as $key => $valuee) {
+               $sqlGetIdTag = "SELECT * FROM tag WHERE tag = '$valuee'";
+               $query = mysqli_query($db_connection,$sqlGetIdTag);
+               while ($row = mysqli_fetch_assoc($query)) {
+                 $tagID[] = $row['id'];
+               }
+           }
+           foreach ($tagID as $key => $val) {
+             $sqlAddFk = "INSERT INTO fk_tag(termin_id,tag_id) VALUES('$terID_FK','$val')";
+             $query = mysqli_query($db_connection,$sqlAddFk);
+           }
+             // print_r($tagID);
   			}
-        $sqll = "SELECT * FROM termin WHERE termin = '$termin'";
-        $quer = mysqli_query($db_connection,$sqll);
-        while ($row = mysqli_fetch_assoc($quer)) {
-          $terID_FK = $row['termin_id'];
-        }
-        foreach ($tagPost as $key => $valuee) {
-            $sqlGetIdTag = "SELECT * FROM tag WHERE tag = '$valuee'";
-            $query = mysqli_query($db_connection,$sqlGetIdTag);
-            while ($row = mysqli_fetch_assoc($query)) {
-              echo  $tagID = "<hr>".$row['id'];
-            }
-            $sqlAddFk = "INSERT INTO fk_tag(termin_id,tag_id) VALUES('$terID_FK','$tagID')";//burada qalmisam
-            $query = mysqli_query($db_connection,$sqlAddFk);
-        }
-
 
 
        }
