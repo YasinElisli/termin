@@ -288,6 +288,12 @@ ul li{
 	color: #fafafa !important;
 }
 	/*bookmarks*//*bookmarks*//*bookmarks*//*bookmarks*/
+	.bookmarkList{
+		max-width: 500px;
+	}
+	.bookmarkList li:last-child{
+		border: 1px solid #DDDDDD;
+	}
 	.bookmark{
 		margin-top: 10px;
 		padding: 2px;
