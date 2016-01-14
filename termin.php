@@ -13,7 +13,17 @@
 
           include 'searchWords.php';
           include 'header.php';
-          include 'core.php'; ?>
+          include 'core.php';
+          include 'db.php';
+          $userID = $_SESSION['user_id'];
+          $connection = mysqli_select_db($db_connection,$dbname);
+          $query=mysqli_query($db_connection,"SELECT * FROM bookmark WHERE user_id = '$userID' AND termin_id = '$termin_id'");
+          $numRow = mysqli_num_rows($query);
+          $btnColor = "";
+          if ($numRow > 0) {
+            $btnColor = "gold";
+          }
+          ?>
       <div class="container-fluid terminMain">
         <div class="row">
           <div class="col-lg-12 padreset">
@@ -29,7 +39,7 @@
                 <li class="term">Kategoriya: <?php echo $kategoriya ?></li>
               </ul>
               <ul class="sosial pull-right">
-                <li><a href="#"><i class="fa fa-star  fa-lg"></i></a></li>
+                <li><a href="addBook.php?id=<?php echo $termin_id."&btncolor=".$btnColor;?>" ><i class="fa fa-star  fa-lg" style="color:<?php echo $btnColor;?>"></i></a></li>
                 <li><a href="#"><i class="fa fa-twitter fa-lg"></i></a></li>
                 <li><a href="#"><i class="fa fa-facebook fa-lg"></i></a></li>
                 <li><a href="#"><i class="fa fa-google-plus fa-lg"></i></a></li>

@@ -7,15 +7,21 @@ include 'db.php';
 $connection = mysqli_select_db($db_connection,$dbname);
 $sql = "SELECT * FROM bookmark WHERE user_id = '$userIDBook' GROUP BY add_date DESC";
 $query = mysqli_query($db_connection,$sql);
-while ($row = mysqli_fetch_assoc($query)) {
-	$usersTermin[] =  $row['termin_id'];
-}
-foreach ($usersTermin as $key => $value) {
-	$sqlBookmark = "SELECT * FROM termin WHERE termin_id = '$value'";
-	$query = mysqli_query($db_connection,$sqlBookmark);
+$numRowbook = mysqli_num_rows($query);
+if ($numRowbook > 0) {
 	while ($row = mysqli_fetch_assoc($query)) {
-		echo '<li class="list-group-item">'.$row['termin'].'<a href="#" class="pull-right" ><i class="fa fa-star  fa-lg" style="color:gold"></i></a></li>';
+		$usersTermin[] =  $row['termin_id'];
 	}
+	foreach ($usersTermin as $key => $value) {
+		$sqlBookmark = "SELECT * FROM termin WHERE termin_id = '$value'";
+		$query = mysqli_query($db_connection,$sqlBookmark);
+		while ($row = mysqli_fetch_assoc($query)) {
+			echo '<li class="list-group-item">'.$row['termin'].'<a href="#" class="pull-right" ><i class="fa fa-star  fa-lg" style="color:gold"></i></a></li>';
+		}
+	}
+}
+else {
+	echo "Bookmarks əlave edilməyib";
 }
 
  ?>

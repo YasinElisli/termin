@@ -18,14 +18,13 @@ if (isset($_SESSION['username'])) {
             });
           </script>';
         }
-        if ($_SERVER['REQUEST_URI'] !== "/~kerimovs/termin/index.php") {
+        if ($_SERVER['SCRIPT_NAME'] != "/~kerimovs/termin/index.php") {//online-da islemesi ucun
           echo '<script type="text/javascript">
                  $(document).ready(function() {
               $(".topSearch").removeClass("disable");
              });
              </script>';
    }
-
     include 'loginModal.php';
  ?>
 <nav class="navbar navbar-default headNav">
