@@ -47,8 +47,8 @@
                  <a href="#">'.$yazar['username'].'</a>
                </h4>
                <span class="date">
-                 Termin Sayı
-                 <a href="#">'.$yazar['num_post'].' </a>
+                 Reytinq : 
+                 <a href="#">'.$yazar['user_rating'].' </a>
                </span>
              </li>';
           }; ?>

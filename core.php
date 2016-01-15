@@ -117,7 +117,7 @@ function myTermin(){
 function bestWriter(){
   include 'db.php';
   $connection = mysqli_select_db($db_connection,$dbname);
-  return $query=mysqli_query($db_connection,"SELECT * FROM user WHERE status = 'yazar' GROUP BY num_post DESC LIMIT 5");
+  return $query=mysqli_query($db_connection,"SELECT * FROM user WHERE status = 'yazar' GROUP BY user_rating DESC LIMIT 5");
 }
 
 
