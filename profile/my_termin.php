@@ -57,7 +57,7 @@ var onMouseOut = function() {
 		 			function(){
 		 				element.css('background-color','#fff');
 		 				//mueeyyen vaxtan sonra transition legv ediriki,
-		 				//hover edende transimission olmasin.
+		 				//hover edende transmission olmasin.
 		 				setTimeout(
 		 					function(){
 		 						element.css('transition','none');
