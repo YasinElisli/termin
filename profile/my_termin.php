@@ -1,8 +1,4 @@
-
-<link rel="stylesheet" type="text/css" href="css/profile.css">
 <?php
-
-
 if (isset($_SESSION['username'])) {
 	myTermin();
 }
@@ -22,7 +18,7 @@ else {
  var onMouseOver = function() {
  	$(this).css('background-color','#ffffd3');
 
- 	if ($(this).next().hasClass('edit_button')) {		
+ 	if ($(this).next().hasClass('edit_button')) {
  		$(this).next().show();
  	}
  	else if ($(this).parent().next().hasClass('edit_button'))
@@ -32,7 +28,7 @@ else {
 var onMouseOut = function() {
  	$(this).css('background-color','#fff');
 
- 	if ($(this).next().hasClass('edit_button')) {		
+ 	if ($(this).next().hasClass('edit_button')) {
  		$(this).next().hide();
  	}
  	else if ($(this).parent().next().hasClass('edit_button'))
@@ -74,7 +70,7 @@ var onMouseOut = function() {
  				console.log(jqXHR, errorThrown);
  			}
  		});
- 		//user fokusu buraxanda derhal yashil renge boyanir 
+ 		//user fokusu buraxanda derhal yashil renge boyanir
  		element.css('background-color','#5cb85c');
 
  	}

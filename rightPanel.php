@@ -1,23 +1,23 @@
 <div id="statistic" class="container-fluid">
-        <ul class="list-group most_search_term">
-            <li class="list-group-item headList">En cox baxilan 5 termin</li>
+        <ul class="list-group rightList">
+            <li class="list-group-item headList">Ən çox oxunan 5 termin</li>
 
               <?php $queryMostReadRight = mostRead();
               $sira = 0;
-              while ($termin2 = mysqli_fetch_assoc($queryMostReadRight)) {
+              while ($termin1 = mysqli_fetch_assoc($queryMostReadRight)) {
                 $sira++;
-                echo '<li class="list-group-item mostReadItem"><p>'.$sira.'.'.$termin2['termin'].'</p></li>';
+                echo '<li class="list-group-item listItem"><p>'.$sira.'.'.$termin1['termin'].'</p></li>';
               }; ?>
           </ul>
 
-          <ul class="list-group most_search_term">
-              <li class="list-group-item headList">En cox baxilan 5 termin</li>
+          <ul class="list-group rightList">
+              <li class="list-group-item headList">Ən yeni 5 termin</li>
 
-                <?php $queryMostReadRight = mostRead();
+                <?php $queryNewestTerminRight = newestTermin();
                 $sira = 0;
-                while ($termin2 = mysqli_fetch_assoc($queryMostReadRight)) {
+                while ($termin2 = mysqli_fetch_assoc($queryNewestTerminRight)) {
                   $sira++;
-                  echo '<li class="list-group-item mostReadItem"><p>'.$sira.'.'.$termin2['termin'].'</p></li>';
+                  echo '<li class="list-group-item listItem"><p>'.$sira.'.'.$termin2['termin'].'</p></li>';
                 }; ?>
             </ul>
 
@@ -28,7 +28,7 @@
               $sira2 = 0;
               while ($termin3 = mysqli_fetch_assoc($queryBestWriteRight)) {
                 $sira2++;
-                echo '<li class="list-group-item mostReadItem"><p>'.$sira2.'.'.$termin3['username'].'</p></li>';
+                echo '<li class="list-group-item listItem"><p>'.$sira2.'.'.$termin3['username'].'</p></li>';
               }; ?>
 
             </ul>

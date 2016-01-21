@@ -14,22 +14,22 @@
 		$termin_source = "";
 
 		//mehs bu sozu axtar.
-		$sql = "SELECT u.username, 
-					   ter.termin_id, 
-					   ter.termin, 
-					   ter.termin_desc, 
-					   ter.ter_pub_date, 
-					   ter.ter_cat, 
+		$sql = "SELECT u.username,
+					   ter.termin_id,
+					   ter.termin,
+					   ter.termin_desc,
+					   ter.ter_pub_date,
+					   ter.ter_cat,
 					   ter.ter_num_like,
 		 			   ter.ter_num_dislike,
-		 			   ter.ter_source 
-		 	    
+		 			   ter.ter_source
+
 		 	    FROM user AS u, termin AS ter WHERE u.id = ter.user_id AND ter.termin LIKE '$termin'";
 
 		$query = mysqli_query($db_connection, $sql);
 		//eger 1 dene deyer varsa, demeli baza da var
-		if (mysqli_num_rows($query)) { 
-				
+		if (mysqli_num_rows($query)) {
+
 					$first_row = mysqli_fetch_assoc($query);
 					// $termin = $first_row['termin'];
 					$termin_id = $first_row['termin_id']; // like ve unlike edende bilinsin
@@ -41,7 +41,7 @@
 					$termin_dislike = $first_row['ter_num_dislike'];
 					$termin_source = $first_row['ter_source'];
 		} else {
-			//oxshar terminleri axtar, yeni ichinde o achar soz olan 
+			//oxshar terminleri axtar, yeni ichinde o achar soz olan
 			$sql = "SELECT u.username, ter.termin, ter.termin_desc, ter.ter_pub_date, ter.ter_cat FROM user AS u, termin AS ter WHERE u.id = ter.user_id
 		 	AND ter.termin LIKE '%$termin%'";
 
@@ -60,7 +60,7 @@
 			}
 
 		}
-		
+
 		mysqli_close($db_connection);
 	};
 ?>

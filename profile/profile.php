@@ -6,7 +6,16 @@
    while ($row = mysqli_fetch_assoc($queryEdit)) {
      $dbPPhoto = $row['user_photo'];
    }
-
+   include 'db.php';
+   $userID =  $_SESSION['user_id'];
+   $userRating = [];
+   $connection = mysqli_select_db($db_connection,$dbname);
+   $query2=mysqli_query($db_connection,"SELECT * FROM termin WHERE user_id = '$userID'");
+   while ($row = mysqli_fetch_assoc($query2)) {
+     $userRating[] = $row['ter_num_like'];
+   }
+    $userRat = array_sum($userRating);
+    $query=mysqli_query($db_connection,"UPDATE user SET user_rating = '$userRat' WHERE id = '$userID'");
 ?>
 <div class="my_main col-xs-12 col-sm-12 col-md-12 col-lg-12">
 	<div class="my_profile_leftside col-xs-2 col-sm-2 col-md-2 col-lg-2">
@@ -39,7 +48,7 @@
         ?>
     </p></center>
 		<center>
-            <p class="mypara">Qeydiyyat Tarixi:<p class="mypara">&nbsp;&nbsp;&nbsp;&nbsp;</p><p class="mypara">
+            <span class="">Qeydiyyat Tarixi:</span><br /><br /><span>
               <?php
                 //eger user log in olubsa onda onun adini qeydiyyet tarixini goster profile sehifesine
                   if (logged_in()) {
@@ -48,8 +57,9 @@
                   } else
                     echo "7.12.2015";
               ?>
-            </p>
-    </center>
+            </span>
+    </center><br />
+    <center><?php echo "Istifadəçi reytinqi : ".$userRat; ?></center>
 	</div>
 	<div class="my_profile col-xs-10 col-sm-10 col-md-10 col-lg-10">
 

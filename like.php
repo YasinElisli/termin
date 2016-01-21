@@ -1,4 +1,4 @@
-<?php 
+<?php
 		include 'core.php';
 		session_start();
 
@@ -9,7 +9,7 @@
 			$user_id = $_SESSION['user_id'];
 
 			if (isset($_POST['term_id']) && isset($_POST['act']))  {
-				
+
 				$term_id = $_POST['term_id'];
 				$act = $_POST['act'];
 
@@ -27,12 +27,12 @@
 			   	}
 				//yoxluyurug user like edib ya yox
 				if (!previously_liked($user_id, $term_id, $table_name)) {
-					
+
 					$inserted = insert_like($user_id, $term_id, $table_name);
 
-					if ($inserted) 
+					if ($inserted)
 						$data['result'] = "Success";
-					else 
+					else
 						$data['result'] = "Fail";
 					//yoxluyurug eger bundan evvel eks action atilibsa (eger user like edibse
 					//baxirig evvelden dislike olunub ve eksine)
@@ -47,14 +47,14 @@
 					}
 					$updated = update_num_of_likes($term_id, $table_column);
 
-				} else 
+				} else
 					$data['result'] = "Siz artıq bunu bəyənmisiz";
-			} else 
-				$data['result'] = "Termin sechimi ile problem var"; 
-			  
+			} else
+				$data['result'] = "Termin sechimi ile problem var";
+
 	 }
-	    else 
-			$data['result'] = "You must first log in to like";
+	    else
+			$data['result'] = "Like etmek ucun evvelce giris etmelisiniz!!";
 		echo json_encode($data);
 
-?>	
+?>

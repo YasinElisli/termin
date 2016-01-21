@@ -1,8 +1,14 @@
 .tags {
 	color: #3e6d8e;
 	background: #e4edf4;
+	font-size: 1.2em;
 }
-
+.tagMain{
+	height: 360px;
+}
+.tagItem{
+	margin-bottom: 10px;
+}
 .item-multiplier-x {
 	margin:5px;
 }
@@ -32,4 +38,4 @@
 
 .forborder .row {
 	padding: 10px 0px;
-} 
+}

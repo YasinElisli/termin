@@ -63,19 +63,27 @@ function myTermin(){
   $connection = mysqli_select_db($db_connection,$dbname);
 
 //$sqlMyTer = "SELECT * FROM termin WHERE user_id = $userID";
-  $query=mysqli_query($db_connection,"SELECT * FROM termin WHERE user_id= $userID LIMIT $start, $limit");
+  $query=mysqli_query($db_connection,"SELECT * FROM termin WHERE user_id= '$userID' GROUP BY ter_pub_date  LIMIT $start, $limit");
 
   while ($query2 = mysqli_fetch_assoc($query)) {
+    $terVer = $query2['ter_verified'];
+    $verMessage = "";
+    $terOpacity = ".9";
+    if ($terVer == 0) {
+      $verMessage = "(termin tesdiqlenmeyib)";
+      $terOpacity = ".5";
+    }
 
-             echo '<div class="my_termin">
+             echo '<div class="my_termin" style="opacity:'.$terOpacity.'">
   				   	<h3 class="disp_in-block">
   				   		<a href="" id='."termin:".$query2['termin_id'].' contenteditable=true data-type="textarea">'.$query2["termin"].'</a>
+                '.$verMessage.'
   				   	</h3>
 
                   <button class="glyphicon glyphicon-pencil edit_button"></button>
-                
+
   				   	<div class="disp_in-block float_r">
-  				   		
+
   				   		<div>
   				   			<a href="profile/delete.php?id='.$query2["termin_id"].'" ><button  class="glyphicon glyphicon-trash delete_glyphico"></button></a>
   				   		</div>
@@ -109,7 +117,7 @@ function myTermin(){
 function bestWriter(){
   include 'db.php';
   $connection = mysqli_select_db($db_connection,$dbname);
-  return $query=mysqli_query($db_connection,"SELECT * FROM user WHERE status = 'yazar' GROUP BY num_post DESC LIMIT 5");
+  return $query=mysqli_query($db_connection,"SELECT * FROM user WHERE status = 'yazar' GROUP BY user_rating DESC LIMIT 5");
 }
 
 
@@ -117,12 +125,12 @@ function bestWriter(){
 function newestTermin(){
   include 'db.php';
   $connection = mysqli_select_db($db_connection,$dbname);
-  return $query=mysqli_query($db_connection,"SELECT * FROM termin GROUP BY ter_pub_date DESC LIMIT 5");
+  return $query=mysqli_query($db_connection,"SELECT * FROM termin WHERE ter_verified = '1' GROUP BY ter_pub_date DESC LIMIT 5");
 }
 function mostRead(){
   include 'db.php';
   $connection = mysqli_select_db($db_connection,$dbname);
-  return $query=mysqli_query($db_connection,"SELECT * FROM termin GROUP BY ter_num_view DESC LIMIT 5");
+  return $query=mysqli_query($db_connection,"SELECT * FROM termin WHERE ter_verified = '1' GROUP BY ter_num_view DESC LIMIT 5");
 }
 
 
@@ -240,46 +248,88 @@ function tags(){
 	}
 	function elaveTermin() {
   		  include('db.php');
-       
-  			$termin = $_POST['termin'];
-  			$termin_desc = $_POST['termin_desc'];
-  			$ter_cat = $_POST['ter_cat'];
-        $termin_source = $_POST['termin_source'];
-        //eger boshdursa onda userid adi menbe olacag
-        if (empty($termin_source)) $termin_source = $_SESSION['username'];
-        
-        if (empty($termin) || empty($termin_desc)) {
-          echo "Xanaları boş buraxmayın";
-        }
-        else {
-          $selecet= "SELECT * FROM termin WHERE termin='$termin'";
-          $result=mysqli_query($db_connection,$selecet);
-           $num_rows=mysqli_num_rows ($result);
-           //echo $num_rows;
 
-            if($num_rows>0){
-            echo " termin artiq movcuddur";
+  			if (isset($_POST['submit'])) {
+          $termin = $_POST['termin'];
+    			$termin_desc = $_POST['termin_desc'];
+    			$ter_cat = $_POST['ter_cat'];
+          $termin_source = $_POST['termin_source'];
+          $termin_tags = $_POST['keyWord'];
+          $tagPost = explode(",",$termin_tags);//userden gelen tag-lar explode f-si vasitesile ayrir ve $tagPost- massivine yazilir
+          // print_r($tagPost);
+          //userden gelen taglarin bazada olub-olmadigini yoxlayiriq
+          //ve eger yoxdusa bazaya elave edirik
+          foreach ($tagPost as $key => $value) {
+            $sqlTagExist = "SELECT * FROM tag WHERE tag = '$value'";
+            $resultTag=mysqli_query($db_connection,$sqlTagExist);
+            while ($row = mysqli_fetch_assoc($resultTag)) {
+                  @$tagExist = $row['tag'];
+            }
+            if ($value != @$tagExist) {
+              $sqlTagAdd = "INSERT INTO tag(tag) VALUES('$value')";
+              $resultTagAdd=mysqli_query($db_connection,$sqlTagAdd);
+            }
+            else {
+              @$sqlTagNum = "UPDATE tag SET tag_num=tag_num+1 WHERE tag = '$tagExist'";
+              $resultTagNum=mysqli_query($db_connection,$sqlTagNum);
+              // echo @$tagExist."+1";
+            }
 
-             } else {
+          }
+          //eger boshdursa onda userid adi menbe olacag
+          if (empty($termin_source)) $termin_source = $_SESSION['username'];
 
-              $user=$_SESSION['user_id'];
+          if (empty($termin) || empty($termin_desc)) {
+            echo "Xanaları boş buraxmayın";
+          }
+          else {
+            $selecet= "SELECT * FROM termin WHERE termin='$termin'";
+            $result=mysqli_query($db_connection,$selecet);
+             $num_rows=mysqli_num_rows ($result);
+             //echo $num_rows;
 
-              $today = date("Y-m-d");
-                $add = "INSERT INTO termin(user_id,termin, termin_desc, ter_cat,ter_pub_date, ter_source)
-                               VALUES('$user','$termin', '$termin_desc', '$ter_cat','$today', '$termin_source')";
-                $insert = mysqli_query($db_connection,$add);
+              if($num_rows>0){
+              echo " termin artiq movcuddur";
 
-                 if($insert){
-                   echo "Termin elave olundu!!!!";
-                     header("Refresh:0");
+               } else {
 
-                 }else{
+                $user=$_SESSION['user_id'];
 
-                   echo 'Termin elave olunmadi!!!';
+                $today = date("Y-m-d  H:i:s");
+                  $add = "INSERT INTO termin(user_id,termin, termin_desc, ter_cat,ter_pub_date, ter_source,ter_verified)
+                                 VALUES('$user','$termin', '$termin_desc', '$ter_cat','$today', '$termin_source',0)";
+                  $insert = mysqli_query($db_connection,$add);
 
+                   if($insert){
+                     echo "Termin elave olundu!!!!";
+                       header("Refresh:2");
+
+                   }else{
+
+                     echo 'Termin elave olunmadi!!!';
+               }
              }
            }
-         }
+           $sqll = "SELECT * FROM termin WHERE termin = '$termin'";
+           $quer = mysqli_query($db_connection,$sqll);
+           while ($row = mysqli_fetch_assoc($quer)) {
+             $terID_FK = $row['termin_id'];
+           }
+           foreach ($tagPost as $key => $valuee) {
+               $sqlGetIdTag = "SELECT * FROM tag WHERE tag = '$valuee'";
+               $query = mysqli_query($db_connection,$sqlGetIdTag);
+               while ($row = mysqli_fetch_assoc($query)) {
+                 $tagID[] = $row['id'];
+               }
+           }
+           foreach ($tagID as $key => $val) {
+             $sqlAddFk = "INSERT INTO fk_tag(termin_id,tag_id) VALUES('$terID_FK','$val')";
+             $query = mysqli_query($db_connection,$sqlAddFk);
+           }
+             // print_r($tagID);
+  			}
+
+
        }
 
     /**

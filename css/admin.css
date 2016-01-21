@@ -1,0 +1,34 @@
+li{
+  list-style-type: none;
+}
+.adminMain{
+  margin-bottom: 0px !important;
+}
+.leftCollection{
+  margin: 0px !important;
+}
+.left-panel{
+  background: #009688;
+  height: 100%;
+  position: fixed;
+  padding: 0px !important;
+}
+.right-panel{
+  background: #eeeeee;
+  height: 100%;
+  position: absolute;
+  right:0;
+}
+/*yeni terminler sehifesi kodlari START*/
+.verify{
+  margin-left: 10px;
+  border: 1px dotted #fff;
+  border-radius: 5px;
+  background: #009688;
+  color: #fff;
+}
+.newTermin{
+  margin-bottom: 10px;
+  list-style-type: none;
+}
+/*yeni terminler sehifesi kodlari END*/

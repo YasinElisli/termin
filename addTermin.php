@@ -3,7 +3,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Termin.az</title>
+    <title>Termin</title>
     <?php include 'link.php';
           include 'core.php'; ?>
   </head>
