@@ -1,5 +1,7 @@
 <?php
 include 'db.php';
+include 'core.php';
+session_start();
 $mailGet = $_GET['mail'];
 $kodGet = $_GET['kod'];
 
