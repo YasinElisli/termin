@@ -9,6 +9,14 @@
       <link rel="stylesheet" type="text/css" href="css/button.css">
   </head>
   <body>
+    <div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/tr_TR/sdk.js#xfbml=1&version=v2.5";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
     <?php
 
           include 'searchWords.php';
@@ -153,6 +161,7 @@
         <div class="carousel-caption"></div>
       </div>
       </div>
+      <div class="fb-comments" data-href="http://108.179.232.92/~kerimovs/termin/termin.php" data-width="100%" data-numposts="10"></div>
     <!-- Left and right controls -->
     <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
       <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
@@ -174,8 +183,14 @@
             </div>
           </div>
         </div>
-      </div>
 
+
+      </div>
+      <div class="container-fluid">
+        <div class="row">
+          <?php include 'footer.php'; ?>
+        </div>
+      </div>
 <script type="text/javascript">
 
 
