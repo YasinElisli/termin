@@ -12,7 +12,6 @@ else {
  	//adding callbacks specifying what to do when the change is done
  	$("a[contenteditable=true]").blur(changeDbValues).hover(onMouseOver, onMouseOut);
  	$(".desct").blur(changeDbValues).hover(onMouseOver, onMouseOut);
- 	$(".edit_button").hide();
 	// $("a[contenteditable=true]").hover(onMouseOver, onMouseOut);
  })
 
@@ -53,12 +52,12 @@ var onMouseOut = function() {
  				//transitionle boyansin
  				element.css('transition','background-color 2s');
  				//mueyyen vaxtan sonra rengi deyishir ki, zapros tex gedib chatsa
- 				//yashil renge boyanmagi chatdirsi
+ 				//yashil renge boyanmagi chatdirsi. Firefox ishlememe ehtimali var
  				setTimeout(
 		 			function(){
 		 				element.css('background-color','#fff');
 		 				//mueeyyen vaxtan sonra transition legv ediriki,
-		 				//hover edende transi
+		 				//hover edende transmission olmasin.
 		 				setTimeout(
 		 					function(){
 		 						element.css('transition','none');

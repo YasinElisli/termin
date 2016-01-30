@@ -55,7 +55,9 @@ if (isset($_SESSION['username'])) {
         </ul>
         <form class="navbar-form navbar-left topSearch disable" role="search" action="termin.php">
           <div class="form-group">
-            <input type="text" class="form-control" placeholder="Search" required="">
+
+            <input required type="text" class="form-control" placeholder="Termin axtarın">
+
           </div>
           <button type="submit" class="btn btn-default topSearchIco"><span class="glyphicon glyphicon-search"></span></button>
         </form>

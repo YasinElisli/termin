@@ -23,14 +23,16 @@
           include 'header.php';
           include 'core.php';
           include 'db.php';
-          $userID = $_SESSION['user_id'];
-          $connection = mysqli_select_db($db_connection,$dbname);
-          $query=mysqli_query($db_connection,"SELECT * FROM bookmark WHERE user_id = '$userID' AND termin_id = '$termin_id'");
-          $numRow = mysqli_num_rows($query);
-          $btnColor = "";
-          if ($numRow > 0) {
-            $btnColor = "gold";
-          }
+          if (isset($_SESSION['user_id'])) {
+                  $userID = $_SESSION['user_id'];
+                  $connection = mysqli_select_db($db_connection,$dbname);
+                  $query=mysqli_query($db_connection,"SELECT * FROM bookmark WHERE user_id = '$userID' AND termin_id = '$termin_id'");
+                  $numRow = mysqli_num_rows($query);
+                  $btnColor = "";
+                  if ($numRow > 0) {
+                    $btnColor = "gold";
+                  }
+            }
           ?>
       <div class="container-fluid terminMain">
         <div class="row">

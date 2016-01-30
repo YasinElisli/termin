@@ -1,8 +1,8 @@
 <?php
 	include 'db.php';
-	if (isset($_POST)) {
+	if (isset($_GET)) {
 
-		$termin = $_POST['search'];
+		$termin = $_GET['search'];
 		//Default deyerler. Yeni hetta oxsharlar da tapilmasa bunu gosterecek
 		$termin_desc = "Bu termin üçün heç bir izahat yoxdur. Bəlkə özünüz izah edəsiniz?";
 		$user_name = "Daxil edilməyib";
