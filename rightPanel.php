@@ -21,7 +21,7 @@
                 }; ?>
             </ul>
 
-        <ul class="list-group top_rated_wr">
+        <ul class="list-group rightList">
             <li class="list-group-item headList">En reytingli 5 yazar</li>
 
               <?php $queryBestWriteRight = bestWriter();

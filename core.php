@@ -217,7 +217,7 @@ function tags(){
         date_default_timezone_set('Asia/Baku');
 				$today = date("Y-m-d  H:i:s");
 
-				$table_columns = "(username, firstname,lastname,birthdate,email,gender,password,user_photo,reg_date)";
+				$table_columns = "(username, firstname,lastname,birthdate,email,gender,password,user_photo,reg_date,kod)";
 				$table_values = "('$register_data[username]',
 								  '$register_data[name]',
                   '$register_data[surname]',
@@ -226,7 +226,8 @@ function tags(){
                   '$register_data[gender]',
 								  '$register_data[password]',
                   '$register_data[pphoto]',
-								  '$today')";
+								  '$today',
+                  '$register_data[kod]')";
 				// echo $table_values;
 
 				$sql = "INSERT INTO $table_users ".$table_columns. " VALUES ".$table_values;

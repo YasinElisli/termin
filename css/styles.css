@@ -222,7 +222,7 @@ ul li{
   background-image: url(../img/pf.png);
   background-size: cover;
 }
-}
+
 /*my termin*//*my termin*//*my termin*//*my termin*//*my termin*/
 .my_termin{
 		margin-top: 10px;
@@ -346,6 +346,7 @@ ul li{
 /*termin axtaris sehifesinin kodlari*/
 .terminMain{
 	width: 1024px;
+	height: auto;
 }
 .topBanner{
 	width: 1024px;
@@ -366,7 +367,6 @@ ul li{
 	padding: 0;
 }
 .terminRight{
-	height: 600px;
 	width: 370px;
 }
 .sliderTermin{
@@ -391,6 +391,9 @@ ul li{
     text-align: center;
     margin-bottom: 1px;
 		width: 100%;
+}
+.rightList li:last-child{
+	border: 1px solid #DDDDDD;
 }
 .listItem{
 	padding-top: 5px !important;
@@ -481,6 +484,7 @@ ul li{
 	height: 100px;
 	background: linear-gradient(to bottom, #26A69A , #267871);
 	margin-top: 10px;
+	position: relative;
 }
 .copyRight{
 	color: #fafafa;
