@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	<title>Termin</title>
   <meta charset="utf-8">
 	<?php include 'link.php';
 		  include 'core.php';
@@ -32,7 +32,7 @@
 			</div> -->
 			<div class="col-lg-6 col-lg-offset-3">
 				<div class="searchGroup">
-					<form action="termin.php" method="get">
+					<form action="searchTest.php" method="get">
 							<!-- <input type="text" name="search" class="form-control searchInp" placeholder="Search" autocomplete="off" onkeyup="searchq()"> -->
 						  <!-- <span class="input-group-addon" id="basic-addon2">search</span> -->
 
