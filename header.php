@@ -53,10 +53,10 @@ if (isset($_SESSION['username'])) {
             </ul>
           </li>
         </ul>
-        <form class="navbar-form navbar-left topSearch disable" role="search" action="termin.php">
+        <form class="navbar-form navbar-left topSearch disable" role="search" action="searchE.php" method="get">
           <div class="form-group">
 
-            <input required type="text" class="form-control" placeholder="Termin axtarın">
+            <input name="search" required type="text" class="form-control" placeholder="Termin axtarın">
 
           </div>
           <button type="submit" class="btn btn-default topSearchIco"><span class="glyphicon glyphicon-search"></span></button>

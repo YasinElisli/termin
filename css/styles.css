@@ -378,10 +378,17 @@ ul li{
 	height: 400px;
 	background: #fff;
 }
+/*search sehifesi*/
+.adBanner{
+	height: 100px;
+	background: #fafafa;
+}
+.rightPanel{
+	padding-right: 0;
+}
 /*right-panel*/
 #statistic {
-    width: 250px;
-    padding: 0px !important;
+
 }
 .headList{
 	background: #07998B;
@@ -400,13 +407,13 @@ ul li{
 	padding-bottom: 4px !important;
 }
 .newest_term {
-    height: 250px;
+    height: auto;
     text-align: center;
     margin-bottom: 1px;
 }
 
 .top_rated_wr {
-    height: 250px;
+    height: auto;
     text-align: center;
 }
 
@@ -506,8 +513,7 @@ ul li{
 	border-radius: 50%;
 	color: #333333;
 }
-<<<<<<< HEAD
-
+/*buttons*/
 .btn-primary-outline {
   color: #0275d8;
   background-color: transparent;
@@ -535,7 +541,6 @@ ul li{
 .btn-primary-outline.disabled:hover, .btn-primary-outline:disabled:hover {
   border-color: #43a7fd;
 }
-=======
 /*slidetermin*/
 .carousel-inner > .item > img,
   .carousel-inner > .item > .word > ul > a > p {
@@ -569,4 +574,3 @@ ul li{
   margin-bottom: 4px;
   margin-top: 4px;
 }
->>>>>>> 67aa01b6f9c662955b3686a896f8464412207fb8

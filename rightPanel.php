@@ -1,4 +1,4 @@
-<div id="statistic" class="container-fluid">
+<div id="statistic">
         <ul class="list-group rightList">
             <li class="list-group-item headList">Ən çox oxunan 5 termin</li>
 
