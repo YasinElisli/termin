@@ -1,6 +1,12 @@
 ul li{
 	list-style-type: none;
 }
+a:hover{
+	text-decoration: none;
+}
+.linkColor{
+	color: #07998B;
+}
 .disable{
 	display: none !important;
 }
@@ -105,7 +111,7 @@ ul li{
 	background-color:#FFFFFF;
 	text-align: left;
 }
-/* profile page *//* profile page *//* profile page *//* profile page */
+/* profile page */
 .my_main{
   height: 550px;
   padding: 0px !important;
@@ -386,6 +392,14 @@ ul li{
 .rightPanel{
 	padding-right: 0;
 }
+.searchResult h2{
+
+}
+.terDesc{
+	white-space: nowrap;
+	overflow:hidden !important;
+	text-overflow: ellipsis;
+}
 /*right-panel*/
 #statistic {
 
@@ -466,6 +480,12 @@ ul li{
 	/*background: url(../img/standard.png) no-repeat;*/
 	text-align: center;
 	border-bottom: 1px solid #dcdcdc;
+}
+.writerImg{
+	width:40px;
+	height:40px;
+	border-radius: 50%;
+	float: left;
 }
 /**/
 .article > h4 a{

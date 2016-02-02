@@ -6,7 +6,7 @@
               $sira = 0;
               while ($termin1 = mysqli_fetch_assoc($queryMostReadRight)) {
                 $sira++;
-                echo '<li class="list-group-item listItem"><p>'.$sira.'.'.$termin1['termin'].'</p></li>';
+                echo '<li class="list-group-item listItem"><a class="linkColor" href="termin.php?termin='.$termin1['termin'].'"><p>'.$sira.'.'.$termin1['termin'].'</p></a></li>';
               }; ?>
           </ul>
 
@@ -17,7 +17,7 @@
                 $sira = 0;
                 while ($termin2 = mysqli_fetch_assoc($queryNewestTerminRight)) {
                   $sira++;
-                  echo '<li class="list-group-item listItem"><p>'.$sira.'.'.$termin2['termin'].'</p></li>';
+                  echo '<li class="list-group-item listItem"><a class="linkColor" href="termin.php?termin='.$termin2['termin'].'"><p>'.$sira.'.'.$termin2['termin'].'</p></a></li>';
                 }; ?>
             </ul>
 

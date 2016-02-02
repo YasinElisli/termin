@@ -1,3 +1,4 @@
+<?php ob_start(); ?>
 <!DOCTYPE html>
 <html>
   <head>
@@ -36,7 +37,7 @@
           }
           $queryResult=mysqli_query($db_connection,$query);
           while ($row = mysqli_fetch_assoc($queryResult)) {
-            echo '<a href="termin.php?termin='.$row['termin'].'">'.$row['termin'].'</a>'."<hr>";
+            echo '<a class="searchResult" href="termin.php?termin='.$row['termin'].'"><h2>'.$row['termin'].'</h2></a><p class="terDesc">'.$row['termin_desc'].'</p><hr>';
           }
           // echo $query;
            ?>
@@ -45,8 +46,6 @@
           <?php include 'rightPanel.php'; ?>
         </div>
       </div>
-
-
      </div>
   </body>
 </html>

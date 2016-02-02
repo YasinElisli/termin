@@ -7,7 +7,7 @@
         while ($termin = mysqli_fetch_assoc($queryMostRead)) {
           echo '<li class="article">
              <h4>
-               <a href="termin.php?search='.$termin['termin'].'">'.$termin['termin'].'</a>
+               <a href="termin.php?termin='.$termin['termin'].'">'.$termin['termin'].'</a>
              </h4>
              <span class="date">
               '.$termin['ter_pub_date'].'
@@ -26,7 +26,7 @@
         while ($yeniTerm = mysqli_fetch_assoc($queryNewestTerm)) {
           echo '<li class="article">
             <h4>
-              <a href="termin.php?search='.$yeniTerm['termin'].'">'.$yeniTerm['termin'].'</a>
+              <a href="termin.php?termin='.$yeniTerm['termin'].'">'.$yeniTerm['termin'].'</a>
             </h4>
             <span class="date">
               '.$yeniTerm['ter_pub_date'].'
@@ -45,11 +45,13 @@
             echo '<li class="article">
                <h4>
                  <a href="#">'.$yazar['username'].'</a>
+                 <div class="writerImg" style="background:url('.$yazar['user_photo'].');background-size:cover;background-position:center"></div>
                </h4>
                <span class="date">
-                 Reytinq : 
+                 Reytinq :
                  <a href="#">'.$yazar['user_rating'].' </a>
                </span>
+
              </li>';
           }; ?>
         </ul>
