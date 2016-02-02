@@ -10,6 +10,9 @@ a:hover{
 .disable{
 	display: none !important;
 }
+.nav .open > a, .nav .open > a:hover, .nav .open > a:focus{
+	background: #06998B !important;
+}
 /*header hissesi*/
 .headNav{
 	margin-bottom: 0 !important;
@@ -24,10 +27,18 @@ a:hover{
 	color: #fff !important;
 }
 .dropdown-menu a{
-	color: red !important;
+	color: #fff !important;
+	text-align: center;
+	padding: 10px 5px;
+}
+.dropdown-menu a:hover{
+	color: #06998B !important;
+}
+.dropdown-menu{
+	background: #06998B;
+	min-width: 100px !important;
 }
 .dropdown-toggle{
-	background: #0f6f2e;
 }
 .topSearchIco{
 	color: #555 !important;
