@@ -19,21 +19,39 @@
 }(document, 'script', 'facebook-jssdk'));</script>
     <?php
 
-          include 'searchWords.php';
+          //include 'searchWords.php';
           include 'header.php';
           include 'core.php';
           include 'db.php';
-          if (isset($_SESSION['user_id'])) {
-                  $userID = $_SESSION['user_id'];
-                  $connection = mysqli_select_db($db_connection,$dbname);
-                  $query=mysqli_query($db_connection,"SELECT * FROM bookmark WHERE user_id = '$userID' AND termin_id = '$termin_id'");
-                  $numRow = mysqli_num_rows($query);
-                  $btnColor = "";
-                  if ($numRow > 0) {
-                    $btnColor = "gold";
-                  }
-            }
-          ?>
+          $connection = mysqli_select_db($db_connection,$dbname);
+
+    $terminGet = $_GET['termin'];
+    $query=mysqli_query($db_connection,"SELECT * FROM termin WHERE termin = '$terminGet' ");
+    while($row = mysqli_fetch_assoc($query)) {
+        $termin_id = $row['termin_id'];
+        $termin = $row['termin'];
+        $terDesc = $row['termin_desc'];
+        $terPublish = $row['ter_pub_date'];
+        $terLike = $row['ter_num_like'];
+        $terDislike = $row['ter_num_dislike'];
+        $terCat = $row['ter_cat'];
+        $terSource = $row['ter_source'];
+        $addUserID = $row['user_id'];
+    }
+    if (isset($_SESSION['user_id'])) {
+        $userID = $_SESSION['user_id'];
+        $query=mysqli_query($db_connection,"SELECT * FROM bookmark WHERE user_id = '$userID' AND termin_id = '$termin_id'");
+        $numRow = mysqli_num_rows($query);
+        $btnColor = "";
+        if ($numRow > 0) {
+            $btnColor = "gold";
+        }
+    }
+    $query=mysqli_query($db_connection,"SELECT * FROM user WHERE id = '$addUserID' ");
+    while($row = mysqli_fetch_assoc($query)){
+        $userName = $row['username'];
+    }
+    ?>
       <div class="container-fluid terminMain">
         <div class="row">
           <div class="col-lg-12 padreset">
@@ -45,8 +63,8 @@
           <div class="col-md-8 terminLeft">
             <div class="col-md-12 pull-left terminResult ">
               <ul class="pubCat pull-left">
-                <li class="mm ">Daxil edilib: <?php echo $publ_date ?></li>
-                <li class="term">Kategoriya: <?php echo $kategoriya ?></li>
+                <li class="mm ">Daxil edilib: <?php echo $terPublish ?></li>
+                <li class="term">Kategoriya: <?php echo $terCat ?></li>
               </ul>
               <ul class="sosial pull-right">
                 <li><a href="addBook.php?id=<?php echo $termin_id."&btncolor=".$btnColor;?>" ><i class="fa fa-star  fa-lg" style="color:<?php echo $btnColor;?>"></i></a></li>
@@ -56,7 +74,7 @@
                 <li><a href="#"><i class="fa fa-share-alt fa-lg"></i></a></li>
               </ul>
               <div class="demo"><?php echo "<h3 class=\"terName\">".$termin."</h3>" ?></div>
-              <div class="izah"><?php echo $termin_desc ?></div>
+              <div class="izah"><?php echo $terDesc ?></div>
               <div class="button">
               <ul class="likeUnlike">
                <li> <!-- birinci usul nece php ile userin like edib etmediyinnen asili olarag
@@ -72,9 +90,9 @@
                                 else :?>
                                                 class ="btn btn-success-outline"
                           <?php endif;  ?>
-                          id="presslike" onclick="userLiked(<?php echo $termin_id ?>,<?php echo $termin_like ?>)">
+                          id="presslike" onclick="userLiked(<?php echo $termin_id ?>,<?php echo $terLike ?>)">
                       <i class="fa fa-thumbs-o-up fa-lg"></i>
-                      <span id="num_like"><?php echo $termin_like ?></span>
+                      <span id="num_like"><?php echo $terLike ?></span>
                   </button>
                 </li>
 
@@ -89,14 +107,14 @@
                                       else
                                         echo "\"btn btn-danger-outline\"";
                          ?>
-                      id="pressdislike" onclick="userDisliked(<?php echo $termin_id ?>,<?php echo $termin_dislike ?>)">
+                      id="pressdislike" onclick="userDisliked(<?php echo $termin_id; ?>,<?php echo $terDislike; ?>)">
                       <i class="fa fa-thumbs-o-down fa-lg"></i>
-                      <span id="num_dislike"><?php echo $termin_dislike ?></span>
+                      <span id="num_dislike"><?php echo $terDislike ?></span>
                   </button>
                 </li>
 
-                <li class="yazar" ><span>Əlavə etdi: <?php echo $user_name ?></span></li>
-                <li class="menbe"> Mənbə : <?php echo $termin_source ?></li>
+                <li class="yazar" ><span>Əlavə etdi: <?php echo $userName ?></span></li>
+                <li class="menbe"> Mənbə : <?php echo $terSource ?></li>
                 <li><button type="button" class="random btn btn-secondary pull-right">Random Termin</button></li>
               </ul>
 

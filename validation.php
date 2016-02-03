@@ -17,7 +17,6 @@ if (isset($_POST['submit'])) {
 			$email = trim($_POST['email']);
 			$surname = trim($_POST['surname']);
 			$birth = trim($_POST['bdate']);
-			$gender = $_POST['gender'];
 			$pphoto = "img/pf.png";
 			$kod = md5(rand(0,1000));
 
@@ -29,7 +28,6 @@ if (isset($_POST['submit'])) {
 									'surname' => trim($_POST['surname']),
 									'birth' => trim($_POST['bdate']),
 									'pphoto' => "img/pf.png",
-									'gender' => $gender,
 									'kod' => $kod
 								);
 			//check password. break the process if no errors found

@@ -63,28 +63,28 @@
 									<div class="form-group">
 								    	<div class="input-group">
 								      		<div class="input-group-addon"><i class="fa fa-user"></i></div>
-								      		<input type="text" name="username" class="form-control" id="username" placeholder="Username">
+								      		<input type="text" name="username" class="form-control" id="username" placeholder="Username" required>
 								    	</div>
 								    	<span class="help-block has-error" data-error='0' id="username-error"></span>
 								  	</div>
 								  	<div class="form-group">
 								    	<div class="input-group">
 								      		<div class="input-group-addon"><i class="fa fa-key"></i></div>
-								      		<input type="password" name="password" class="form-control" id="inputPassword" placeholder="Parol">
+								      		<input type="password" name="password" class="form-control" id="inputPassword" placeholder="Parol" required>
 								    	</div>
 								    	<span class="help-block has-error" data-error='0' id="remail-error"></span>
 								  	</div>
 								  	<div class="form-group">
 								    	<div class="input-group">
 								      		<div class="input-group-addon"><i class="fa fa-key"></i></div>
-								      		<input type="password" name="password_retyped" class="form-control" id="retypePassword" placeholder="Parolun təkrarı">
+								      		<input type="password" name="password_retyped" class="form-control" id="retypePassword" placeholder="Parolun təkrarı" required>
 								    	</div>
 								    	<span class="help-block has-error" data-error='0' id="remail-error"></span>
 								  	</div>
 								  	<div class="form-group">
 								    	<div class="input-group">
 								      		<div class="input-group-addon"><i class="fa fa-at"></i></div>
-								      		<input type="email" name="email" class="form-control" id="inputEmail" placeholder="Email">
+								      		<input type="email" name="email" class="form-control" id="inputEmail" placeholder="Email" required>
 								    	</div>
 								    	<span class="help-block has-error" data-error='0' id="remail-error"></span>
 								  	</div>
@@ -106,20 +106,6 @@
 											<div class="input-group">
 													<div class="input-group-addon"><i class="fa fa-birthday-cake"></i></div>
 													<input type="date" name="bdate" class="form-control" id="inputNameSurname" placeholder="Doğum tarixi">
-											</div>
-											<span class="help-block has-error" data-error='0' id="remail-error"></span>
-										</div>
-										<div class="form-group">
-											<div class="input-group">
-												<label for="male">Kisi </label>
-												<input type="radio" name="gender" value="k" id="male">
-											</div>
-											<span class="help-block has-error" data-error='0' id="remail-error"></span>
-										</div>
-										<div class="form-group">
-											<div class="input-group">
-												<label for="female">Qadın </label>
-												<input type="radio" name="gender" value="q" id="female">
 											</div>
 											<span class="help-block has-error" data-error='0' id="remail-error"></span>
 										</div>
