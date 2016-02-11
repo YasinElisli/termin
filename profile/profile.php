@@ -5,18 +5,11 @@
     $queryEdit =  userData();
    while ($row = mysqli_fetch_assoc($queryEdit)) {
      $dbPPhoto = $row['user_photo'];
+     $userRating = $row['user_rating'];
    }
-   include 'db.php';
-   $userID =  $_SESSION['user_id'];
-   $userRating = [];
-   $connection = mysqli_select_db($db_connection,$dbname);
-   $query2=mysqli_query($db_connection,"SELECT * FROM termin WHERE user_id = '$userID'");
-   while ($row = mysqli_fetch_assoc($query2)) {
-     $userRating[] = $row['ter_num_like'];
-   }
-    $userRat = array_sum($userRating);
-    $query=mysqli_query($db_connection,"UPDATE user SET user_rating = '$userRat' WHERE id = '$userID'");
+
 ?>
+
 <div class="my_main col-xs-12 col-sm-12 col-md-12 col-lg-12">
 	<div class="my_profile_leftside col-xs-2 col-sm-2 col-md-2 col-lg-2">
 		<center><div class="pp" style="background:url('<?php echo $dbPPhoto; ?>');background-size:cover">
@@ -59,7 +52,7 @@
               ?>
             </span>
     </center><br />
-    <center><?php echo "Istifadəçi reytinqi : ".$userRat; ?></center>
+    <center><?php echo "Istifadəçi reytinqi : ".$userRating ; ?></center>
 	</div>
 	<div class="my_profile col-xs-10 col-sm-10 col-md-10 col-lg-10">
 

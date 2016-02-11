@@ -323,10 +323,12 @@ function tags(){
                  $tagID[] = $row['id'];
                }
            }
-           foreach ($tagID as $key => $val) {
-             $sqlAddFk = "INSERT INTO fk_tag(termin_id,tag_id) VALUES('$terID_FK','$val')";
-             $query = mysqli_query($db_connection,$sqlAddFk);
-           }
+          if (!empty($tagID)) {
+            foreach ($tagID as $key => $val) {
+              $sqlAddFk = "INSERT INTO fk_tag(termin_id,tag_id) VALUES('$terID_FK','$val')";
+              $query = mysqli_query($db_connection,$sqlAddFk);
+            }
+          }
              // print_r($tagID);
   			}
 

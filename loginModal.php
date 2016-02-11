@@ -59,7 +59,7 @@
 					    	    &nbsp;&nbsp;
 					    	    <span id="registration_fail" class="response_error" style="display: none;">Registration failed, please try again.</span>
 					    		<div class="clearfix"></div>
-					    		<form role="form" action="index.php" method="post">
+					    		<form role="form" action="validation.php" method="post">
 									<div class="form-group">
 								    	<div class="input-group">
 								      		<div class="input-group-addon"><i class="fa fa-user"></i></div>
@@ -91,21 +91,21 @@
 								  	<div class="form-group">
 								    	<div class="input-group">
 								      		<div class="input-group-addon"><i class="fa fa-user"></i></div>
-								      		<input type="text" name="name" class="form-control" id="inputNameSurname" placeholder="Adınız">
+								      		<input type="text" name="name" class="form-control" id="inputNameSurname" placeholder="Adınız (istəyə bağlı)">
 								    	</div>
 								    	<span class="help-block has-error" data-error='0' id="remail-error"></span>
 								  	</div>
 										<div class="form-group">
 											<div class="input-group">
 													<div class="input-group-addon"><i class="fa fa-user"></i></div>
-													<input type="text" name="surname" class="form-control" id="inputNameSurname" placeholder="Soyadınız">
+													<input type="text" name="surname" class="form-control" id="inputNameSurname" placeholder="Soyadınız (istəyə bağlı)">
 											</div>
 											<span class="help-block has-error" data-error='0' id="remail-error"></span>
 										</div>
 										<div class="form-group">
 											<div class="input-group">
 													<div class="input-group-addon"><i class="fa fa-birthday-cake"></i></div>
-													<input type="date" name="bdate" class="form-control" id="inputNameSurname" placeholder="Doğum tarixi">
+													<input type="date" name="bdate" class="form-control" id="inputNameSurname" placeholder="Doğum tarixi(istəyə bağlı)">
 											</div>
 											<span class="help-block has-error" data-error='0' id="remail-error"></span>
 										</div>

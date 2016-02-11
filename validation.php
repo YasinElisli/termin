@@ -1,8 +1,9 @@
 <?php
 include 'db.php';
+include 'core.php';
 if (isset($_POST['submit'])) {
 
-			$required_fields = array('username','password','password_retyped','name','email','surname','bdate','gender');
+			$required_fields = array('username','password','password_retyped','email');
 
 			foreach ($_POST as $field => $user_input) {
 				// echo $field. " ";
@@ -19,6 +20,15 @@ if (isset($_POST['submit'])) {
 			$birth = trim($_POST['bdate']);
 			$pphoto = "img/pf.png";
 			$kod = md5(rand(0,1000));
+			if(empty($name)){
+				$name = "";
+			}
+			if(empty($surname)){
+				$surname = "";
+			}
+			if(empty($birth)){
+				$birth = "";
+			}
 
 			$user_data = array('username' => trim($_POST['username']),
 							   'password' => trim($_POST['password']),
@@ -40,22 +50,22 @@ if (isset($_POST['submit'])) {
 				$errors[] = "Password is too long<br>";
 
 			if ($password !== $password_retyped) {
-				$errors = "The passwords do not match";
+				$errors = "Şifrələr eyni deyil";
 			}
 
 			if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-				$errors = "E-mail is not correct";
+				$errors = "E-mail forması düzgün deyil";
 			}
 
 			if (user_exists($username)) {
-				$errors[] = "Sorry, the username ".$username." is already taken. Try another one<br>";
+				$errors[] = $username." artıq mövcuddur.Basqa istifadəçi adı yoxlayın<br>";
 			}
 
 			if (email_exists($email)) {
-				$errors[] = "Sorry, the email ".$email." is already in use. Try another one<br>";
+				$errors[] = $email." artiq mövcuddur.Basqa email  yoxlayın<br>";
 			}
 
-			var_dump($errors);
+
 		// change it afterwards when the code for sending email is added
 			$user_verified = true;
 			if ($user_verified && empty($errors)) {
@@ -83,4 +93,6 @@ $headers = 'From:noreply@yourwebsite.com' . "\r\n"; // Set from headers
 			}
 			mysqli_close($db_connection);
 		}
+
+//print_r($errors);
 ?>

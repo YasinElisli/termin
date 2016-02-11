@@ -24,7 +24,7 @@
           $connection = mysqli_select_db($db_connection,$dbname);
           $searchWord = $_GET['search'];
           $terms = explode(" ",$searchWord);
-          $query = "SELECT * FROM termin WHERE";
+          $query = "SELECT * FROM termin WHERE ter_verified = 1 AND";
           $terminPart = 0;
           foreach ($terms as $key => $value) {
             $terminPart++;
