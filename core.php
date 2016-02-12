@@ -422,14 +422,19 @@ function tags(){
         mysqli_close($db_connection);
     }
 
-    function change_writer_rating($term_id) {
+    function change_writer_rating($term_id, $act) {
         include 'db.php';
 
         $table_toupdate = "user";
         $table_togetwriter = "termin";
 
-        $sql = "UPDATE $table_toupdate SET user_rating = user_rating + 1 WHERE id = (
-                SELECT user_id FROM $table_togetwriter WHERE termin_id = $term_id)";
+        if ($act === "termin_like") {
+            $sql = "UPDATE $table_toupdate SET user_rating = user_rating + 1 WHERE id = (
+                    SELECT user_id FROM $table_togetwriter WHERE termin_id = $term_id)";
+        } else {
+            $sql = "UPDATE $table_toupdate SET user_rating = user_rating - 1 WHERE id = (
+                    SELECT user_id FROM $table_togetwriter WHERE termin_id = $term_id)";
+        }
 
         $query = mysqli_query($db_connection, $sql);
 
