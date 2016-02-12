@@ -47,6 +47,9 @@
 					}
 					$updated = update_num_of_likes($term_id, $table_column);
 
+					if (isset($_POST['term_writer']))
+						$data['writer'] = $_POST['term_writer'];
+
 				} else
 					$data['result'] = "Siz artıq bunu bəyənmisiz";
 			} else

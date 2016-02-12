@@ -90,7 +90,7 @@
                                 else :?>
                                                 class ="btn btn-success-outline"
                           <?php endif;  ?>
-                          id="presslike" onclick="userLiked(<?php echo $termin_id ?>,<?php echo $terLike ?>)">
+                          id="presslike" onclick="userLiked(<?php echo $termin_id ?>,<?php echo $terLike ?>, '<?php echo $userName ?>')">
                       <i class="fa fa-thumbs-o-up fa-lg"></i>
                       <span id="num_like"><?php echo $terLike ?></span>
                   </button>
@@ -214,15 +214,15 @@
 <script type="text/javascript">
 
 
- function userLiked (terminID, terminLike) {
+ function userLiked (terminID, terminLike, terminWriter) {
 
 
-      console.log("Pressed like ", terminLike);
+      console.log("Pressed like ", terminWriter);
 
       $.ajax({
         url: 'like.php',
         type:'POST',
-        data: 'term_id='+terminID+'&act=like',
+        data: 'term_id='+terminID+'&act=like'+'&term_writer='+terminWriter,
         success: function(data) {
             console.log(data);
             data =JSON.parse(data);

@@ -138,7 +138,7 @@ function tags(){
 
 }
 
-	/*
+	/**
 	 *bu funksiya hansisa bir userin
 	 *log olub olmadigini yoxlayir
 	 */
@@ -414,6 +414,20 @@ function tags(){
         include 'db.php';
 
         $sql = "DELETE FROM $opposite_table WHERE user_id=$user_id AND termin_id=$term_id";
+
+        $query = mysqli_query($db_connection, $sql);
+
+        mysqli_close($db_connection);
+    }
+
+    function change_writer_rating($term_id) {
+        include 'db.php';
+
+        $table_toupdate = "user";
+        $table_togetwriter = "termin";
+
+        $sql = "UPDATE $table_toupdate SET user_rating = user_rating + 1 WHERE id = (
+                SELECT user_id FROM $table_togetwriter WHERE termin_id = $term_id)";
 
         $query = mysqli_query($db_connection, $sql);
 
