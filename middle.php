@@ -40,7 +40,24 @@
     <div class="forborder">
       <h3><center>Populyar yazarlar</center></h3>
       <ul class="termins">
-          <?php $queryBestWrite =  bestWriter();
+          <?php
+          // include 'db.php';
+          // $userID =  $_SESSION['user_id'];
+          // $userLike = [];
+          // $userDislike = [];
+          // $connection = mysqli_select_db($db_connection,$dbname);
+          // $query2=mysqli_query($db_connection,"SELECT * FROM termin WHERE user_id = '$userID'");
+          // while ($row = mysqli_fetch_assoc($query2)) {
+          //   $userLike[] = $row['ter_num_like'];
+          //   $userDislike[] = $row['ter_num_dislike'];
+          // }
+          //  $userNumLike = array_sum($userLike);
+          //  $userNumDislike = array_sum($userDislike);
+          //  $userRat = ($userNumLike - $userNumDislike);
+          //  $query=mysqli_query($db_connection,"UPDATE user SET user_rating = '$userRat' WHERE id = '$userID'");
+
+
+          $queryBestWrite =  bestWriter();
           while ($yazar = mysqli_fetch_assoc($queryBestWrite)) {
             echo '<li class="article">
                <h4>

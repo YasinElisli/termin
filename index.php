@@ -56,7 +56,6 @@
 
 <div class="container"><?php include 'middle.php';  ?></div>
 <?php include 'footer.php'; ?>
-<?php include 'validation.php'; ?>
 <script type="text/javascript">
 	$("#signupli").click(function() {
 		console.log("changing class");
