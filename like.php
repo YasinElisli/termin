@@ -44,8 +44,15 @@
 							//buradan mueyyenleshdire bilecem ki men neyin sayini deyishdim
 							//yeni sehifede hemchinin like ve ya dislike azaltmaliya
 							$data['attr_changed'] = $opposite_column;
+							change_writer_rating($term_id, $table_name);
 					}
 					$updated = update_num_of_likes($term_id, $table_column);
+
+					//eger userin
+					
+						change_writer_rating($term_id, $table_name);
+					
+
 
 				} else
 					$data['result'] = "Siz artıq bunu bəyənmisiz";
