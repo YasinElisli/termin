@@ -22,7 +22,7 @@
           <?php
           include 'db.php';
           $connection = mysqli_select_db($db_connection,$dbname);
-          $searchWord = $_GET['search'];
+          $searchWord = $_GET['headersearch'];
           $terms = explode(" ",$searchWord);
           $query = "SELECT * FROM termin WHERE ter_verified = 1 AND";
           $terminPart = 0;

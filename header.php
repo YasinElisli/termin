@@ -43,7 +43,7 @@ if (isset($_SESSION['username'])) {
       <div class="navbar-collapse collapse" id="bs-example-navbar-collapse-1" aria-expanded="false" style="height: 1px;">
         <ul class="nav navbar-nav navbar-right container-full topMenu">
           <li><a href="addTermin.php">Termin əlavə et <span class="sr-only">(current)</span></a></li>
-          <li class="reg disable"><a href="#" data-toggle="modal" data-target="#loginModal">Login</a></li>
+          <li class="reg disable"><a href="#" data-toggle="modal" data-target="#loginModal" id="signinli">Login</a></li>
           <li class="reg disable"><a href="#" data-toggle="modal" data-target="#loginModal" id="signupli">Qeydiyyat</a></li>
           <li class="dropdown disable">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><?php echo $_SESSION['username']; ?><span class="caret"></span></a>
@@ -56,7 +56,7 @@ if (isset($_SESSION['username'])) {
         <form class="navbar-form navbar-left topSearch disable" role="search" action="searchE.php" method="get">
           <div class="form-group">
 
-            <input name="search" required type="text" class="form-control" placeholder="Termin axtarın">
+            <input name="headersearch" required type="text" class="form-control" placeholder="Termin axtarın">
 
           </div>
           <button type="submit" class="btn btn-default topSearchIco"><span class="glyphicon glyphicon-search"></span></button>
