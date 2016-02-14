@@ -2,7 +2,7 @@ var doSearch = true;
 		function searchq() {
 			if (doSearch) {
 			var searchTxt = $("input[name='search']").val();
-			console.log("I am searching ",searchTxt.length);
+			console.log("I am searching ",searchTxt);
 			//eger daxil edilen textin uzunlugu 2 den choxdursa yalniz onda axtarish et
 			if (searchTxt.length > 0) {
 					
