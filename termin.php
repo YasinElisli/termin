@@ -7,6 +7,7 @@
       <?php include 'link.php'; ?>
       <?php include 'script.php'; ?>
       <link rel="stylesheet" type="text/css" href="css/button.css">
+
   </head>
   <body>
     <div id="fb-root"></div>
@@ -205,11 +206,6 @@
         </div>
 
 
-      </div>
-      <div class="container-fluid">
-        <div class="row">
-          <?php include 'footer.php'; ?>
-        </div>
       </div>
 <script type="text/javascript">
 

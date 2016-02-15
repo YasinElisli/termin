@@ -4,6 +4,9 @@ ul li{
 a:hover{
 	text-decoration: none;
 }
+a:visited{
+	color: #555 ;
+}
 .linkColor{
 	color: #07998B;
 }
@@ -108,19 +111,28 @@ a:hover{
 	max-height: 220px !important;
 	border:1px solid #CCCCCC;
 	padding: 0px;
-	overflow-x: scroll !important;
+	overflow-x: hidden !important;
+}
+
+#sizing-addon2{
+margin: 0 !important;
 }
 
 #output ul {
 	list-style:none;
-	padding:0px;
-	margin:0px;
+	padding:0;
+	margin:0;
 }
 
 /*each result is inside the li tag*/
 #output ul li {
 	background-color:#FFFFFF;
 	text-align: left;
+		padding:0;
+	margin:0;
+}
+#output a{
+
 }
 /* profile page */
 .my_main{
@@ -521,8 +533,7 @@ a:hover{
 .footMain{
 	height: 100px;
 	background: linear-gradient(to bottom, #26A69A , #267871);
-	margin-top: 10px;
-	position: relative;
+	clear: both !important;
 }
 .copyRight{
 	color: #fafafa;

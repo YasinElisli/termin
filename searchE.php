@@ -20,10 +20,18 @@
       <div class="row">
         <div class="col-md-9">
           <?php
+          //eger headerdaki inputdan axtaris olsa onu esas gotursun eks halda index-deki search esas goturulur
           include 'db.php';
           $connection = mysqli_select_db($db_connection,$dbname);
-          $searchWord = $_GET['headersearch'];
-          $terms = explode(" ",$searchWord);
+          if (isset($_GET['search'])) {
+            $searchWord = $_GET['search'];
+            $terms = explode(" ",$searchWord);
+          }
+          elseif (isset($_GET['headersearch'])) {
+            $searchHeader = $_GET['headersearch'];
+            $terms = explode(" ",$searchHeader);
+          }
+          
           $query = "SELECT * FROM termin WHERE ter_verified = 1 AND";
           $terminPart = 0;
           foreach ($terms as $key => $value) {
