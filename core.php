@@ -250,7 +250,7 @@ function tags(){
 	function elaveTermin() {
   		  include('db.php');
 
-  			if (isset($_POST['submit'])) {
+  			if ((isset($_POST['submit'])) && ($_SESSION['mailVerify'] == true)) {
           $termin = $_POST['termin'];
     			$termin_desc = $_POST['termin_desc'];
     			$ter_cat = $_POST['ter_cat'];
@@ -331,6 +331,9 @@ function tags(){
           }
              // print_r($tagID);
   			}
+        else {
+          echo "Mailinizi tesdiq etdikden sonra  termin elave ede bilersiniz";
+        }
 
 
        }

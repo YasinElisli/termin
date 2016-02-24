@@ -79,7 +79,9 @@
     </div>
     <div id="addtermin" class="tab-pane fade">
     <?php echo addTermin();
-              elaveTermin();
+    if(isset($_POST['submit'])) {
+     elaveTermin();
+    }
      ?>
     </div>
   </div>
