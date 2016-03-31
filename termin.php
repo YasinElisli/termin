@@ -18,6 +18,8 @@
   js.src = "//connect.facebook.net/tr_TR/sdk.js#xfbml=1&version=v2.5";
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
+<script type="text/javascript" src="//yastatic.net/es5-shims/0.0.2/es5-shims.min.js" charset="utf-8"></script>
+<script type="text/javascript" src="//yastatic.net/share2/share.js" charset="utf-8"></script>
     <?php
 
           //include 'searchWords.php';
@@ -69,11 +71,16 @@
               </ul>
               <ul class="sosial pull-right">
                 <li><a href="addBook.php?id=<?php echo $termin_id."&btncolor=".$btnColor;?>" ><i class="fa fa-star  fa-lg" style="color:<?php echo $btnColor;?>"></i></a></li>
-                <li><a href="#"><i class="fa fa-twitter fa-lg"></i></a></li>
+                <!-- <li><a href="#"><i class="fa fa-twitter fa-lg"></i></a></li>
                 <li><a href="#"><i class="fa fa-facebook fa-lg"></i></a></li>
                 <li><a href="#"><i class="fa fa-google-plus fa-lg"></i></a></li>
-                <li><a href="#"><i class="fa fa-share-alt fa-lg"></i></a></li>
+                <li><a href="#"><i class="fa fa-share-alt fa-lg"></i></a></li> -->
+                <li><div class="ya-share2" data-services="facebook,gplus,twitter,linkedin,whatsapp" data-counter=""></div></li>
               </ul>
+              <!-- yandex social -->
+
+
+              <!--  -->
               <div class="demo"><?php echo "<h3 class=\"terName\">".$termin."</h3>" ?></div>
               <div class="izah"><?php echo $terDesc ?></div>
               <div class="button">
